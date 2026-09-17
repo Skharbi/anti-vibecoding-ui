@@ -15,7 +15,7 @@ Covers: visual style, typography, headings/copy, icons, cards/containers, naviga
 
 ## Install
 
-**Claude (web/mobile app, claude.ai)**: download [`anti-vibecoding-ui.skill`](./anti-vibecoding-ui.skill) from this repo, then in Claude go to **Settings → Skills → Add → Upload skill** and select the file.
+**Easiest, works on any device (recommended)**: open [`PASTE-TO-INSTALL.md`](./PASTE-TO-INSTALL.md), copy the code block, and paste it as your first message in a new Claude (or ChatGPT/Codex) chat. No file download, no repo cloning — works identically on phone, tablet, or desktop. For something that persists across conversations, paste the same content into Claude's **Settings → Skills → Add → Create a skill**.
 
 **Claude Code / other Agent Skills clients**: copy `skills/anti-vibecoding-ui/` into your skills directory.
 
@@ -31,7 +31,7 @@ path: skills/anti-vibecoding-ui
 anti-vibecoding-ui/
 ├── README.md
 ├── LICENSE
-├── anti-vibecoding-ui.skill        # packaged download for Claude's Upload-skill flow
+├── PASTE-TO-INSTALL.md             # copy-paste install, no download needed
 └── skills/
     └── anti-vibecoding-ui/
         ├── SKILL.md               # triggering + how to apply the checklist
