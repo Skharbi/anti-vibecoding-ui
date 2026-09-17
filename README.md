@@ -15,9 +15,9 @@ Covers: visual style, typography, headings/copy, icons, cards/containers, naviga
 
 ## Install
 
-The runtime skill lives at `skills/anti-vibecoding-ui/`.
+**Claude (web/mobile app, claude.ai)**: download [`anti-vibecoding-ui.skill`](./anti-vibecoding-ui.skill) from this repo, then in Claude go to **Settings → Skills → Add → Upload skill** and select the file.
 
-**Claude Code / Agent Skills clients**: copy `skills/anti-vibecoding-ui/` into your skills directory.
+**Claude Code / other Agent Skills clients**: copy `skills/anti-vibecoding-ui/` into your skills directory.
 
 **OpenAI Codex** (via the stock GitHub skill installer):
 ```
@@ -31,6 +31,7 @@ path: skills/anti-vibecoding-ui
 anti-vibecoding-ui/
 ├── README.md
 ├── LICENSE
+├── anti-vibecoding-ui.skill        # packaged download for Claude's Upload-skill flow
 └── skills/
     └── anti-vibecoding-ui/
         ├── SKILL.md               # triggering + how to apply the checklist
