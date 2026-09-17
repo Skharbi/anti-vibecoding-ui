@@ -1,0 +1,4 @@
+interface:
+  display_name: "Anti-Vibecoding UI"
+  short_description: "Build and review UI without generic AI design patterns"
+  default_prompt: "Review this interface with the anti-vibecoding UI checklist and fix the issues you find."
