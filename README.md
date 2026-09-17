@@ -1,10 +1,10 @@
 # anti-vibecoding-ui
 
-A Claude Code / Claude skill that applies a 15-section anti-vibecoding UI/UX checklist to any interface work — building new UI or reviewing existing code.
+An Agent Skill for Claude Code, OpenAI Codex, and compatible Agent Skills clients. It applies a 15-section anti-vibecoding UI/UX checklist to any interface work — building new UI or reviewing existing code.
 
 ## Why
 
-Most AI-generated interfaces converge on the same look: purple-blue gradients, glassmorphism cards, pill-shaped everything, Lucide icons in threes, buzzword headlines, scroll-triggered fade-ins. That look now signals "AI built this" more than it signals quality. This skill packages a concrete checklist to actively catch and avoid those patterns, instead of relying on taste alone.
+Most AI-generated interfaces converge on the same look: purple-blue gradients, glassmorphism cards, pill-shaped everything, icon-box rows, buzzword headlines, scroll-triggered fade-ins. That look now signals "AI built this" more than it signals quality. This skill packages a concrete checklist to actively catch and avoid those patterns, instead of relying on taste alone.
 
 ## What it does
 
@@ -15,16 +15,34 @@ Covers: visual style, typography, headings/copy, icons, cards/containers, naviga
 
 ## Install
 
-Download `anti-vibecoding-ui.skill` and use the "Save skill" option in Claude, or drop the `anti-vibecoding-ui/` folder into your skills directory (`SKILL.md` + `references/checklist.md`).
+The runtime skill lives at `skills/anti-vibecoding-ui/`.
+
+**Claude Code / Agent Skills clients**: copy `skills/anti-vibecoding-ui/` into your skills directory.
+
+**OpenAI Codex** (via the stock GitHub skill installer):
+```
+repo: Skharbi/anti-vibecoding-ui
+path: skills/anti-vibecoding-ui
+```
 
 ## Structure
 
 ```
 anti-vibecoding-ui/
-├── SKILL.md                  # triggering + how to apply the checklist
-└── references/
-    └── checklist.md          # the full 15-section checklist
+├── README.md
+├── LICENSE
+└── skills/
+    └── anti-vibecoding-ui/
+        ├── SKILL.md               # triggering + how to apply the checklist
+        ├── agents/
+        │   └── openai.yaml        # optional Codex UI metadata
+        └── references/
+            └── checklist.md       # the full 15-section checklist
 ```
+
+## Status
+
+Packaging and format compatibility (Claude Agent Skills spec, Codex skill loader) are validated. Trigger reliability, generation-mode output quality, and false-positive behavior have not yet been verified against a live agent session — an evaluation pass is in progress.
 
 ## License
 
