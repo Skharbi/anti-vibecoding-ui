@@ -45,6 +45,14 @@ required = [
     ROOT / "evals" / "README.md",
     ROOT / "evals" / "cases.md",
     ROOT / "evals" / "EXECUTION-GATE.md",
+    ROOT / "evals" / "SECOND-AGENT-RUN.md",
+    ROOT / "evals" / "runtime-fixtures" / "README.md",
+    ROOT / "evals" / "runtime-fixtures" / "r3-responsive.html",
+    ROOT / "evals" / "runtime-fixtures" / "r9-rtl.html",
+    ROOT / "evals" / "runtime-fixtures" / "g1-dashboard.html",
+    ROOT / "evals" / "runtime-fixtures" / "g2-portfolio.html",
+    ROOT / "evals" / "runtime-fixtures" / "g3-mobile-form.html",
+    ROOT / "evals" / "runtime-fixtures" / "p1-browser-feature.html",
 ]
 
 for path in required:
@@ -232,6 +240,8 @@ docs_to_check = [
     ROOT / "HANDOVER.md",
     ROOT / "PASTE-TO-INSTALL.md",
     ROOT / "evals" / "README.md",
+    ROOT / "evals" / "SECOND-AGENT-RUN.md",
+    ROOT / "evals" / "runtime-fixtures" / "README.md",
 ]
 
 for md in docs_to_check:
