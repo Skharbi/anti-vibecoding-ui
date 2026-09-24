@@ -64,11 +64,10 @@ if "28 checklist sections" in protocol or "34 checklist sections" in protocol:
 handover = read(ROOT/"HANDOVER.md")
 if "Adding a JS/Python test harness" in handover:
     errors.append("handover contradicts current validator architecture")
-priority_lines = re.findall(r"^(\d+)\.\s+", paste, re.M)
-if priority_lines:
-    priority_nums = [int(x) for x in priority_lines[:10]]
-    if priority_nums != list(range(1, 11)):
-        errors.append("portable priority list numbering is invalid")
+priority_block = paste.split("PRIORITY ORDER", 1)[1].split("MANDATORY AREAS TO CONSIDER", 1)[0] if "PRIORITY ORDER" in paste and "MANDATORY AREAS TO CONSIDER" in paste else ""
+priority_nums = [int(x) for x in re.findall(r"^(\d+)\.\s+", priority_block, re.M)]
+if priority_nums != list(range(1, 11)):
+    errors.append("portable priority list numbering is invalid")
 
 if "condensed portable edition" not in paste.lower() or "canonical/full version" not in paste.lower():
     errors.append("portable edition disclosure missing")
