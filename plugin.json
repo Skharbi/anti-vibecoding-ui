@@ -1,0 +1,20 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "anti-vibecoding-ui",
+  "version": "0.2.0",
+  "description": "Review and generate production-quality UI with anti-vibecoding, accessibility, security, responsive, reliability, and verification guidance.",
+  "author": {
+    "name": "Skharbi"
+  },
+  "repository": "https://github.com/Skharbi/anti-vibecoding-ui",
+  "license": "MIT",
+  "keywords": [
+    "ui",
+    "ux",
+    "frontend",
+    "accessibility",
+    "security",
+    "design-review",
+    "agent-skill"
+  ]
+}

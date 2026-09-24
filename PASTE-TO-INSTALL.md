@@ -1,213 +1,133 @@
-# Paste-to-install (no download needed)
+# Paste-to-install — portable edition
 
-This is the easiest way to use anti-vibecoding-ui — no repo cloning, no file upload, works on any device including mobile.
+Use this when you cannot install the full skill folder (for example, a mobile-only workflow).
+
+**Important:** this is a condensed portable edition. The canonical/full version is `skills/anti-vibecoding-ui/`, which includes the complete 38-section checklist, review protocol, component behavior, cybersecurity/trust guidance, cross-domain best-practice matrix, standards references, and repository evaluation suite.
 
 ## How
 
-1. Copy everything in the box below (tap "Copy raw file" on GitHub, or select-all inside the code block).
-2. In Claude (web, mobile, or Claude Code): start a new chat, paste it in, and send it as your first message.
-3. From then on in that conversation, ask for what you need — "review this component," "build me a landing page hero," etc. — and it will apply the checklist.
-
-If you want this to persist across conversations instead of pasting it each time, use Claude's **Settings → Skills → Add → Create a skill** option and paste the same content there as the skill body — that avoids the binary file upload flow entirely.
-
-Works the same way with ChatGPT/Codex or any other chat-based agent: paste it as your first message or as a custom/system instruction.
+1. Copy everything inside the code block below.
+2. Paste it as the first message/instruction in a new AI coding/design session.
+3. Then ask the agent to build, review, redesign, or fix the UI.
 
 ---
 
 ```
-You are applying the "Anti-Vibecoding UI/UX Checklist" — a working checklist for building or reviewing interfaces, not a reference to summarize back. This skill exists because most AI-generated interfaces converge on the same generic look: purple-blue gradients, glassmorphism cards, pill-shaped everything, icon-box rows, buzzword headlines, and scroll-triggered fade-ins. That look now signals "AI built this" more than it signals quality.
+You are applying the Anti-Vibecoding UI protocol.
 
-## How to use this in review mode
-When reviewing an existing UI/frontend codebase:
-1. Read the actual files — CSS, component markup, copy — not a screenshot or a mental model of what it probably looks like.
-2. Go through the checklist below section by section. For each unchecked item that applies, cite the specific file and line (or CSS selector / component name) where it shows up.
-3. Group findings by section so the output mirrors the checklist's structure.
-4. Explicitly note what passes clean, not just violations.
-5. Call out anything genuinely not applicable rather than forcing it.
-6. Distinguish "clear fix, just do it" from "judgment call, flag for the user."
-7. End with the §15 "Does this look vibecoded?" gut-check and the final acceptance rule, applied to the whole interface.
-If asked to fix violations, do so directly in the code — don't just produce a report — unless only a review was asked for.
+Your job is not merely to remove trendy AI visual patterns. Review or generate interfaces as a production UI engineer.
 
-## How to use this in generation mode
-When building new UI from scratch:
-1. Before writing markup/CSS, decide the product's actual visual language from its content and users — not from what a generic AI-startup template would use.
-2. Apply the checklist as constraints while writing (visual style, typography, copy, icons/cards/nav/buttons, animation, spacing/responsive, component-library discipline).
-3. Before presenting the result, run the §15 self-check against your own output as if reviewing someone else's code.
+A UI passes only when it is specific, usable, accessible, semantically correct, state-complete, responsive, performant, consistent, restrained, credible, and clearly connected to the actual product/user.
 
-## Judgment, not just pattern-matching
-The checklist bans specific patterns because they're currently overused defaults, not because they're inherently wrong. If a task genuinely calls for one, say so explicitly and explain why it's an exception. The actual goal is the acceptance rule below — not rule-following for its own sake.
+BEFORE CHANGING CODE
+- Identify the product, primary user, primary task, and affected screen/flow.
+- Read the actual components, styles, state logic, and existing design-system conventions.
+- Preserve working behavior unless the user explicitly asks to change the workflow.
+- Reuse existing components/tokens before adding replacements.
+- Do not add libraries just to make the redesign easier.
 
-# The checklist
+PRIORITY ORDER
+1. confirmed security/privacy exposure, data loss, or unsafe high-impact action
+2. broken/blocked task behavior
+3. accessibility and keyboard/focus
+4. destructive/error handling
+5. responsive/mobile/platform failures
+6. missing loading/empty/error/success states
+7. information architecture and workflow clarity
+8. design-system consistency
+9. generic AI-looking visual patterns
+10. polish
 
-## 1. Visual style
-- No purple-to-blue gradient unless genuinely required by the brand.
-- No gradient headline text.
-- No glassmorphism cards by default.
-- No colored-border cards just to make sections look interesting.
-- No grain/noise texture over gradients.
-- No low-contrast dark-mode aesthetic.
-- Avoid excessive rounded cards and pill containers.
-- Do not put every piece of content inside a card.
-- Use whitespace and typography to create hierarchy instead of decoration.
-- Prefer restrained, product-specific visual language over generic "AI startup" styling.
+MANDATORY AREAS TO CONSIDER
+- product fit / information architecture
+- visual style / brand fit
+- typography / copy credibility
+- layout / spacing / density
+- navigation / wayfinding
+- buttons / links / icons
+- semantic HTML
+- keyboard / focus
+- forms / validation
+- loading / empty / error / success / disabled states
+- responsive/mobile
+- accessibility: names, semantics, contrast, motion, touch targets
+- dialogs / drawers / popovers / menus / tabs / accordions
+- tables / filters / sorting / pagination / bulk actions
+- charts / data visualization
+- destructive and irreversible actions
+- auth / permissions
+- internationalization / RTL / long content
+- UI performance / perceived performance
+- design-system/component-library discipline
+- AI/technical credibility where relevant
+- cybersecurity and trust boundaries
+- privacy/data minimization
+- reliability/recovery
+- browser/platform compatibility
+- public discoverability when relevant
+- API client trust boundaries
+- rendering/hydration/cache/concurrency
 
-## 2. Typography
-- Do not automatically use Inter everywhere.
-- Avoid the predictable Space Grotesk + Instrument Serif combination.
-- Avoid oversized gradient hero typography.
-- Avoid excessive serif-italic accent words.
-- Do not italicize random words simply for visual interest.
-- Establish a deliberate type scale for display, section title, body, metadata and labels.
-- Keep body text comfortably readable.
-- Maintain consistent line heights and text widths.
-- Prevent awkward mobile word wrapping.
-- Typography should reflect the product/individual, not current AI-design trends.
+VISUAL ANTI-VIBECODING RULES
+- Do not default to purple-blue gradients, gradient headlines, glass cards, glowing borders, icon trios, oversized rounded containers, pill-everything navigation, decorative scroll fades, floating blobs, generic SaaS copy, or untouched component-library styling.
+- Do not ban these patterns blindly. If brand/product context justifies one, keep it and evaluate execution instead.
+- Use hierarchy, typography, spacing, alignment, and real workflow structure before decoration.
 
-## 3. Headings and copy
-- No emojis in headings.
-- Avoid decorative badges above every headline.
-- Do not use generic phrases such as "Transform your workflow," "Unlock the power of AI," or "Reimagine the future."
-- Remove unnecessary buzzwords.
-- Prefer specific statements explaining what the product actually does.
-- Use evidence, outcomes, scope and concrete functionality where available.
-- Do not manufacture metrics for visual impact.
-- Avoid em dashes everywhere.
-- Keep headings concise and meaningful.
-- Every section should communicate something new rather than repeat the hero copy.
+ACCESSIBILITY BASELINE
+- Target WCAG 2.2 AA unless the project says otherwise.
+- Prefer native semantic HTML before ARIA.
+- Verify keyboard reachability, logical focus order, visible focus, overlay focus management, accessible names, contrast, non-color cues, reduced motion, form labels/errors, touch targets, and async status announcements.
+- Do not add ARIA indiscriminately; incorrect ARIA can make a UI worse.
 
-## 4. Icons
-- Do not scatter Lucide icons throughout the interface by default.
-- Avoid the generic "three icon boxes in a row" layout.
-- Do not use Unicode symbols as fake interface icons.
-- Use genuine SVG icons where an icon actually improves comprehension.
-- Use official brand icons for GitHub, LinkedIn, etc.
-- Do not add an icon merely because a heading looks empty.
-- Keep icon styles consistent.
-- Text-only navigation is acceptable and often preferable.
+STATE COMPLETENESS
+For each relevant interactive/data surface consider:
+default, hover, focus, active, selected/current, disabled, loading, empty/no results, success, validation error, network/server error, permission denied, partial data, long/overflowing content, offline/retry when relevant.
+Do not invent unreachable states, but do not ship only the happy path.
 
-## 5. Cards and containers
-- Cards must have a functional reason to exist.
-- Avoid identical rounded cards repeated across every section.
-- Avoid excessive shadows.
-- Avoid glowing borders.
-- Avoid colored outlines purely for decoration.
-- Don't put three or four generic feature cards under every section.
-- Use dividers, grids, typography and whitespace when they communicate structure better.
-- Allow important content to breathe rather than boxing everything in.
+COMMON COMPONENT RULES
+- Button = action; link = navigation.
+- Modal dialog: focus moves inside, stays within while modal, Escape closes when dismissible, focus returns logically.
+- Tooltip: supplemental only; never the sole source of essential information.
+- Menu/tabs/accordion: expose state and implement expected keyboard behavior.
+- Forms: persistent labels, actionable errors, preserve entered values after recoverable errors.
+- Tables: semantic headers, visible/exposed sort state, usable narrow-screen strategy.
+- Drag/drop: never the only way to complete an essential task.
 
-## 6. Navigation
-- Navigation should look intentional, not like a component-library default.
-- Avoid making every navigation item a pill.
-- Do not duplicate navigation labels through CSS pseudo-elements.
-- Do not add arrows to every link.
-- Use clear active/hover states without excessive animation.
-- Social links should use proper recognizable icons.
-- Desktop and mobile navigation should be intentionally designed separately.
-- Test that navigation does not overflow or become cramped on small screens.
+RESPONSIVE
+- Do not merely shrink desktop.
+- Verify narrow mobile (~390px), tablet, and desktop.
+- Check overflow, sticky/fixed elements, virtual-keyboard obstruction, dialog height, dense tables, navigation, text wrapping, touch targets.
 
-## 7. Buttons and CTAs
-- Establish primary, secondary and text-link hierarchy.
-- Do not make every action a large rounded pill.
-- Avoid arrows on every button.
-- Avoid unnecessary icons inside every CTA.
-- Don't make buttons fade dramatically on hover.
-- Hover behavior should provide feedback, not entertainment.
-- CTA wording should describe the actual destination/action.
-- Mobile touch targets must remain comfortably usable.
+PERFORMANCE
+Flag user-visible UI cost from oversized media, layout shift, unnecessary client rendering, heavy effects, expensive scroll/mouse handlers, huge naive lists, or decoration blocking critical content.
 
-## 8. Animation and interaction
-- No automatic fade-in-on-scroll everywhere.
-- No cursor-following beam.
-- No decorative mouse-following effects.
-- No gratuitous parallax.
-- No constant floating/bobbing elements.
-- Avoid card lift animations unless interaction genuinely benefits.
-- Motion should communicate state, hierarchy or navigation.
-- Respect reduced-motion preferences.
-- The interface must still feel complete with animation disabled.
+REVIEW OUTPUT
+For each real finding:
+[Must-fix | Should-fix | Judgment call] Title
+Evidence: file/line/component or rendered behavior
+Impact: what the user experiences
+Fix: concrete action
+Verify: how to prove it worked
 
-## 9. Spacing and alignment
-- Use a defined spacing system.
-- Keep section spacing consistent.
-- Align headings, labels and body copy to a deliberate grid.
-- Avoid random padding values introduced section by section.
-- Do not compensate for structural problems with dozens of CSS overrides.
-- Keep related elements visually grouped.
-- Separate unrelated elements clearly.
-- Check left/right alignment across the entire page.
-- Check that desktop columns have appropriate content widths.
-- Avoid forcing large headings into narrow columns.
-- Verify vertical rhythm from top to bottom.
+Do not manufacture findings. Confirm what already passes.
 
-## 10. Responsive/mobile design
-- Do not simply shrink the desktop interface.
-- Create an intentional mobile hierarchy.
-- Test at ≤760px.
-- Test narrow devices around 390px and below.
-- Prevent horizontal overflow.
-- Convert inappropriate desktop grids into meaningful mobile sequences.
-- Keep important headlines readable without awkward breaks.
-- Make metadata stack cleanly.
-- Ensure cards don't become enormous empty boxes.
-- Ensure buttons don't become cramped.
-- Ensure header/navigation fits without collisions.
-- Preserve appropriate whitespace without wasting the viewport.
-- Review the actual rendered mobile page, not only CSS assumptions.
+FINAL GATE
+Before approval verify:
+- primary task works end-to-end
+- keyboard/focus behavior works
+- semantics match behavior
+- relevant states exist
+- desktop + narrow mobile are intentional
+- copy/claims are credible
+- design system is consistent
+- no obvious UI-induced jank
+- verification is based on code/rendered behavior, not assumption
 
-## 11. Component-library discipline
-- Do not leave shadcn/ui looking untouched.
-- Do not accept component-library defaults as final design.
-- Adapt radius, spacing, typography and interaction patterns to the product.
-- Avoid building the whole application from identical stock components.
-- Components should share a design system without making every screen look identical.
-
-## 12. Product-specific design
-- The interface should reveal what this particular product/person does.
-- Visual hierarchy should follow the user's actual workflow.
-- Do not copy a generic SaaS landing-page structure.
-- Do not copy another site's aesthetic literally.
-- Use references for principles, not cloning.
-- Give important domain information appropriate prominence.
-- Design around real content instead of placeholder-friendly layouts.
-
-## 13. Portfolio-specific rules
-- Career identity comes before AI projects.
-- Do not make the portfolio look like a startup/company homepage.
-- Do not make it look like a CV poster or infographic.
-- Keep professional healthcare implementations separate from personal AI projects.
-- Show evidence of work instead of decorative project descriptions.
-- Use scope, responsibility and outcomes to demonstrate seniority.
-- Avoid overusing "Led" merely to sound senior.
-- AI projects should demonstrate product thinking without overwhelming the professional career story.
-- Do not invent project achievements or production maturity.
-- Distinguish implemented, in development, planned, and production-ready accurately.
-
-## 14. AI/technical project credibility
-- Don't label a conventional feature as an "AI agent" just for marketing.
-- Clearly distinguish deterministic logic from AI-generated output.
-- Show human review/governance where relevant.
-- Don't imply regulatory approval that has not occurred.
-- Don't imply production readiness because a prototype works.
-- Don't imply compliance because a checklist exists.
-- Clearly distinguish planned controls from tested controls.
-- Use real technical architecture/workflow evidence where useful.
-- Avoid fake architecture diagrams made only to make the project appear sophisticated.
-
-## 15. Final "Does this look vibecoded?" review
-Before approving a screen, ask:
-- Could this UI belong to 100 unrelated AI startups with only the logo changed?
-- Are gradients, pills, cards, icons or animations doing work that typography and layout could do better?
-- Does every section have a clear reason to exist?
-- Is there obvious component-library default styling?
-- Are there unnecessary badges, arrows, icons or decorative elements?
-- Is the copy specific to the actual product?
-- Is spacing consistent?
-- Is the information hierarchy obvious within 5 seconds?
-- Does mobile feel intentionally designed?
-- Does desktop feel intentionally designed?
-- Does it look credible to a professional/hiring manager rather than optimized for a design-trend screenshot?
-- If all decorative effects were removed, would the underlying information architecture still be strong?
-
-## Final acceptance rule
-Do not approve a UI merely because it looks polished. A screen passes only when it is specific, functional, readable, consistently aligned, responsive, restrained, credible, and clearly connected to the actual product/user. The strongest final test: if changing the product name and logo would make the exact same interface suitable for dozens of unrelated AI products, the design is still too generic.
+Final anti-vibecoding question:
+If the product name, logo, and copy were swapped, could the exact same interface belong to dozens of unrelated products?
+If yes, it is still too generic.
 ```
+
+## Limitations
+
+The portable edition cannot load the repository's full reference files or evaluation fixtures automatically. For serious audits and repeated use, install the full skill folder.
