@@ -14,6 +14,14 @@ Every finding must be grounded in at least one of:
 
 Do not report a violation because a pattern "might" exist.
 
+Use evidence states consistently:
+- **Confirmed** — directly evidenced in code or executed behavior.
+- **Likely** — strong indication exists, but a material fact remains unverified.
+- **Needs verification** — the relevant control or fact is outside available evidence.
+- **Not applicable** — genuinely irrelevant.
+
+Only **Confirmed** evidence may independently justify a must-fix finding or a Fail. Likely/Needs verification items can be important, but they must be reported as verification work unless another confirmed failure supports the severity.
+
 ## 2. Severity
 
 ### Must-fix
@@ -50,6 +58,8 @@ Use when:
 - changing it would alter product strategy rather than merely fix implementation.
 
 Never convert taste into a must-fix.
+
+Time-sensitive claims such as CVE applicability, package/framework support status, browser support, policy changes, and current standards must be checked against a current authoritative source before they are treated as confirmed. If they are recalled from memory or cannot be checked, say so explicitly and do not use them alone to fail the review.
 
 ## 3. Finding format
 
@@ -138,4 +148,4 @@ Return:
 - remaining judgment calls;
 - final pass state.
 
-If the user asks for a full audit, include section-by-section coverage and mark non-applicable areas explicitly.
+If the user asks for a full audit, include a compact section/domain coverage table (or equivalent explicit accounting) that marks every relevant domain as reviewed, not applicable, or requiring external verification. Do not omit the coverage accounting even when the narrative findings are short.
