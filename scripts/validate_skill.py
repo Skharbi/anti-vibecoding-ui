@@ -17,7 +17,7 @@ def read(path: Path) -> str:
 required = [
     ROOT/"README.md", ROOT/"LICENSE", ROOT/"HANDOVER.md", ROOT/"PASTE-TO-INSTALL.md",
     ROOT/"INSTALL.md", ROOT/"SECURITY.md", ROOT/"CONTRIBUTING.md", ROOT/"CHANGELOG.md",
-    ROOT/"RELEASE.md", ROOT/"AGENTS.md", ROOT/".github"/"PULL_REQUEST_TEMPLATE.md",
+    ROOT/"RELEASE.md", ROOT/"AGENTS.md", ROOT/"SUPPORT.md", ROOT/"CODE_OF_CONDUCT.md",\n    ROOT/".github"/"PULL_REQUEST_TEMPLATE.md", ROOT/".github"/"ISSUE_TEMPLATE"/"bug_report.md", ROOT/".github"/"ISSUE_TEMPLATE"/"skill_gap.md",
     ROOT/"plugin.json", ROOT/".codex-plugin"/"plugin.json",
     SKILL/"SKILL.md", SKILL/"agents"/"openai.yaml",
     SKILL/"references"/"checklist.md", SKILL/"references"/"review-protocol.md",
