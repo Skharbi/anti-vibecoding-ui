@@ -18,7 +18,6 @@ Use the supporting files:
 - `references/sources.md` — standards and primary references.
 - `references/security.md` — cybersecurity/trust-boundary review rules.
 - `references/best-practices-matrix.md` — cross-domain coverage and scope boundaries.
-- `evals/README.md` and `evals/cases.md` — behavioral evaluation suite.
 
 ## Operating rule
 
