@@ -1,61 +1,135 @@
 # Installation
 
-The repository supports four usage modes. Choose the one that matches your client.
+You only need to choose **one** installation path.
 
-## 1. OpenAI / Codex portable plugin package
+## Which one should I use?
 
-The repository root is a portable Agent Plugins package because it contains:
+| Your situation | Recommended path |
+|---|---|
+| You are on mobile, ChatGPT, Claude, or another normal chat and just want to try it | **Option A — Paste and use** |
+| Your coding client supports Agent Skills folders | **Option B — Install the full skill folder** |
+| You are building with the OpenAI Skills API | **Option C — Upload the skill bundle** |
+| You specifically want a Codex/OpenAI plugin package | **Option D — Use the repository root** |
 
+If you are unsure, use **Option A**.
+
+---
+
+## Option A — Paste and use
+
+This is the easiest path and works without a terminal.
+
+1. Open **[PASTE-TO-INSTALL.md](PASTE-TO-INSTALL.md)**.
+2. Copy the text inside the large code block.
+3. Paste it as the first instruction in a new coding/design conversation.
+4. Then ask the AI to review, build, redesign, or fix your UI.
+
+Example:
+
+```text
+Review this dashboard using the Anti-Vibecoding UI protocol.
 ```
+
+This is a **condensed portable edition**. It is useful for quick/mobile use, but it does not include every reference file and evaluation rule from the full installed skill.
+
+---
+
+## Option B — Install the full skill folder
+
+Use this when your coding client supports Agent Skills.
+
+The complete skill is this folder:
+
+```text
+skills/anti-vibecoding-ui/
+```
+
+That folder is self-contained. Keep the whole folder together because `SKILL.md` links to the files inside `references/`.
+
+The important structure is:
+
+```text
+anti-vibecoding-ui/
+├── SKILL.md
+├── agents/
+│   └── openai.yaml
+└── references/
+    ├── checklist.md
+    ├── review-protocol.md
+    ├── component-behavior.md
+    ├── security.md
+    ├── best-practices-matrix.md
+    └── sources.md
+```
+
+Install or copy that folder into the skills location supported by your client.
+
+Because different clients use different install locations and those UI paths can change, follow your client's current Agent Skills instructions for where to place the folder.
+
+After installation, start a **new session** so the client can rediscover the skill.
+
+---
+
+## Option C — OpenAI Skills API
+
+OpenAI Skills accept a skill directory or a ZIP containing one top-level skill folder. The canonical bundle in this repository is:
+
+```text
+skills/anti-vibecoding-ui/
+```
+
+If you are using the OpenAI Skills API, upload that folder or a ZIP made from that folder. OpenAI's current Skills documentation describes directory upload and ZIP upload workflows.
+
+This repository does **not** require any API key of its own and does not make network calls at runtime.
+
+Official OpenAI documentation:
+https://developers.openai.com/api/docs/guides/tools-skills
+
+---
+
+## Option D — Codex/OpenAI plugin package
+
+Use this only if you specifically want the project packaged as a plugin rather than as a standalone skill.
+
+Use the **repository root** because it contains:
+
+```text
 plugin.json
+.codex-plugin/plugin.json
 skills/
-  anti-vibecoding-ui/
-    SKILL.md
-    references/
-    agents/
 ```
 
-Use the repository root as the plugin package when testing or distributing through an OpenAI/Codex plugin workflow.
+The standalone skill itself still lives at:
 
-Current status: **packaged, not published**.
-
-The root `plugin.json` is the canonical plugin identity. Skills are discovered from the root `skills/` directory.
-
-## 2. OpenAI hosted/local Agent Skill bundle
-
-If you need the skill by itself rather than the whole plugin, package only:
-
-```
+```text
 skills/anti-vibecoding-ui/
 ```
 
-That folder is self-contained and includes one `SKILL.md` plus its references and OpenAI skill metadata.
+If all you want is the skill, use Option B instead.
 
-For OpenAI Skills APIs or sandbox capability directories, upload/mount this folder according to the current OpenAI Skills documentation.
+---
 
-Current status: **bundle-compatible; this repository does not claim it has been uploaded to your account**.
+## Quick smoke test
 
-## 3. Other Agent Skills-compatible clients
+After installation, try these prompts:
 
-Copy or install:
+1. `Review this dashboard. Something feels off about the spacing and hierarchy.`
+2. `My modal works with a mouse but keyboard users get stuck.`
+3. `Audit this frontend for security and privacy risks.`
+4. `Optimize this Postgres query.`
 
-```
-skills/anti-vibecoding-ui/
-```
+Expected behavior:
 
-into the client's supported skills location.
+- prompts 1–3 should activate the UI skill;
+- prompt 4 should **not** activate it unless the query has a real user-interface impact.
 
-Because client installation commands and UI paths can change, use that client's current documentation for the destination directory or marketplace flow.
+---
 
-## 4. No-install / mobile-friendly mode
+## For contributors only: validate the repository
 
-Open `PASTE-TO-INSTALL.md`, copy the instruction block, and paste it as the first instruction in a new coding/design conversation.
+You do **not** need this step just to use the skill.
 
-This is intentionally a **condensed portable edition**. It does not contain every reference or evaluation rule from the full installed skill.
-
-## Validate the repository before packaging
-
-From a repository checkout:
+If you cloned the repository and are modifying it, run:
 
 ```bash
 python scripts/validate_skill.py
@@ -63,43 +137,14 @@ python scripts/validate_skill.py
 
 Expected result:
 
-```
+```text
 VALIDATION PASSED
 ```
 
-## Smoke-test after installation
-
-Use these four prompts:
-
-1. `Review this dashboard. Something feels off about the spacing and hierarchy.`
-   - Expected: skill activates.
-
-2. `My modal works with a mouse but keyboard users get stuck.`
-   - Expected: accessibility/focus issues are prioritized.
-
-3. `Audit this frontend for security and privacy risks.`
-   - Expected: security/trust-boundary rules activate, without inventing backend failures.
-
-4. `Optimize this Postgres query.`
-   - Expected: this UI skill should **not** activate unless UI impact is part of the task.
-
-## Compatibility status
-
-| Surface | Status | Notes |
-|---|---|---|
-| Portable Agent Plugins package | Packaged | Root `plugin.json` + `skills/` |
-| OpenAI skill bundle | Package-compatible | Not claimed as uploaded/published |
-| Codex/OpenAI skill metadata | Included | `agents/openai.yaml` |
-| Generic Agent Skills clients | Structurally compatible | Client-specific install path may differ |
-| Single-paste chat usage | Available | Condensed edition only |
+---
 
 ## What installation does not prove
 
-Successful loading does not prove:
-- trigger reliability across all models;
-- rendered UI quality;
-- accessibility conformance;
-- security compliance;
-- browser compatibility.
+Installing the skill successfully does not prove accessibility conformance, security compliance, universal browser support, or production readiness.
 
-Those are covered by the evaluation and execution gates in `evals/`.
+Those claims require the evaluation and execution evidence documented under `evals/`.
