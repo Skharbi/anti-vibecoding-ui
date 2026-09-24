@@ -118,7 +118,7 @@ anti-vibecoding-ui/
 
 This project does not have a conventional build because it contains no runtime code.
 
-Validation is behavioral.
+Validation has two layers:\n\n1. deterministic repository/package validation with `python scripts/validate_skill.py`;\n2. behavioral evaluation through the scenario suite.
 
 The evaluation suite measures:
 - trigger reliability;
