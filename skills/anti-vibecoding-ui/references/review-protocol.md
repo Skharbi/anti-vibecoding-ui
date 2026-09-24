@@ -128,7 +128,7 @@ If not, do not log it.
 
 ## 9. Output discipline
 
-Do not dump all 28 checklist sections by default.
+Do not dump all 38 checklist sections by default.
 
 Return:
 - highest-impact findings first;
