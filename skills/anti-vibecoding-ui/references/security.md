@@ -231,6 +231,10 @@ Security findings must include:
 
 Never say "secure", "OWASP compliant", or "ASVS compliant" based on a frontend-only review.
 
+The same restraint applies in the negative direction: do not state that a product is legally/regulatorily non-compliant, in breach, violates a named requirement, or fails a certification as fact unless the applicable requirement, scope, and evidence have been verified. Frontend evidence may justify a concrete technical finding or a compliance risk, but legal/regulatory conclusions require authoritative scope-specific evidence.
+
+For dependency/advisory findings, verify CVE applicability, affected/fixed versions, and current support status against an authoritative current source before classifying the advisory itself as must-fix. A memory-based advisory can be flagged for urgent verification, but not presented as confirmed.
+
 ## Security acceptance rule
 
 A frontend security review passes only when:
