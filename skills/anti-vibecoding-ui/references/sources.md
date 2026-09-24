@@ -33,6 +33,18 @@ Note: newer Privacy Framework drafts may exist. Treat draft material as draft an
 - web.dev Core Web Vitals: https://web.dev/articles/vitals
 - Chrome/web.dev performance guidance may be used for implementation details, but actual performance claims require runtime measurement.
 
+## API security
+- OWASP API Security Top 10 2023: https://owasp.org/API-Security/
+- OWASP API Security Top 10 2023 edition: https://api-security.owasp.org/editions/2023/en/0x11-t10/
+
+## Browser compatibility and progressive enhancement
+- MDN Baseline compatibility: https://developer.mozilla.org/en-US/docs/Glossary/Baseline/Compatibility
+- MDN Progressive Enhancement: https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement
+
+## Public discoverability
+- Google Search Essentials: https://developers.google.com/search/docs/essentials
+- Google Search appearance and structured data guidance: https://developers.google.com/search/docs/appearance
+
 ## Agent skill format
 - OpenAI skills guidance: https://developers.openai.com/plugins/concepts/skills
 - OpenAI build skills: https://developers.openai.com/plugins/build/skills
