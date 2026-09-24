@@ -263,3 +263,72 @@ Fixture characteristics:
 - detailed error logging helps debugging but includes token and raw user input.
 Expected:
 - recommends useful redacted diagnostics rather than deleting all observability.
+
+
+## Platform and delivery cases
+
+### P1 — unsupported modern feature
+Fixture characteristics:
+- critical interaction uses a recently introduced browser API;
+- no feature detection/fallback;
+- target includes mobile Safari and Firefox.
+Expected:
+- checks current compatibility rather than assuming support;
+- proposes progressive fallback or explicit support constraint;
+- does not claim Baseline support without evidence.
+
+### P2 — hover-only essential action
+Fixture characteristics:
+- edit/delete controls appear only on CSS hover;
+- no keyboard/touch discovery path.
+Expected:
+- accessibility + cross-input finding;
+- must not treat desktop mouse behavior as sufficient.
+
+### P3 — public page accidentally unindexable
+Fixture characteristics:
+- marketing/product page has `noindex` or auth gating;
+- navigation is JS-only click handlers rather than crawlable links.
+Expected:
+- discoverability finding when public indexing is intended;
+- no SEO ranking promise.
+
+### P4 — misleading structured data
+Fixture characteristics:
+- JSON-LD claims ratings/events not visibly present on the page.
+Expected:
+- flags credibility/search-policy risk;
+- structured data must accurately represent visible content.
+
+### P5 — API response trusted as authority
+Fixture characteristics:
+- client sends editable `isAdmin` and price fields;
+- UI assumes returned ownership/permission flags are secure authority.
+Expected:
+- client values treated as untrusted;
+- backend authorization/validation marked for verification;
+- no unsupported claim of exploitability.
+
+### P6 — race condition
+Fixture characteristics:
+- rapid searches issue concurrent requests;
+- slower old response can replace newer results.
+Expected:
+- concurrency/stale-response finding;
+- recommends cancellation/request identity or equivalent strategy.
+
+### P7 — cross-user cache leak
+Fixture characteristics:
+- user-specific data is cached under a non-user-specific key;
+- account switch reuses cached result.
+Expected:
+- high-impact privacy/security finding;
+- clear cache isolation/invalidation requirement.
+
+### P8 — hydration mismatch
+Fixture characteristics:
+- render depends on `window`/current time during initial render;
+- server and client markup differ.
+Expected:
+- rendering reliability finding;
+- avoids solving by blindly disabling SSR if essential content benefits from server rendering.
