@@ -1,0 +1,6 @@
+{
+  "name": "anti-vibecoding-ui",
+  "version": "0.2.0",
+  "description": "Production UI review and generation with anti-vibecoding, accessibility, security, responsive, and verification guidance.",
+  "skills": "./skills/"
+}
