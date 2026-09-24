@@ -6,8 +6,8 @@ Last updated: 2026-09-24 | By: ChatGPT | Session goal: Harden anti-vibecoding-ui
 - Users: Developers, designers, product builders, and AI coding agents.
 
 ## 2. Current state
-- Works (verified): skill packaging exists; SKILL.md and references load from `skills/anti-vibecoding-ui/`; README install path matches repository structure.
-- Enhanced on branch `chatgpt/skill-hardening-v2`: broader UI engineering protocol, 38-section checklist, review protocol, component behavior reference, primary-source references, cybersecurity/trust reference, cross-domain best-practices matrix, behavioral eval suite.
+- Works (verified): root portable `plugin.json` and Codex compatibility manifest are present; installable skill is self-contained under `skills/anti-vibecoding-ui/`; skill description is within OpenAI's 1,024-character limit; package/version/docs consistency checks pass in direct branch audit.
+- Enhanced on branch `chatgpt/skill-hardening-v2`: portable Agent Plugins package v0.2.0, Codex compatibility manifest, broader UI engineering protocol, 38-section checklist, review/component/security/best-practice references, 42-case eval suite, deterministic validator, and full install/security/contribution/release/support documentation.
 - Broken / flaky: independent second-agent and rendered/browser/device evaluation are not yet recorded. A GPT-5.6 Sol structural/scenario self-test is recorded under `evals/results/`. GitHub-hosted Actions on this private repo failed before any job step started, so the unusable auto workflow was removed rather than leaving a permanently red check.
 - Half-done: policy-level gap hardening and a 42-case self-test are complete; six cases remain execution-dependent, and the required independent second-agent run is outstanding.
 
