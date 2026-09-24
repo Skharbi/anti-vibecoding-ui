@@ -8,6 +8,7 @@ The project follows semantic versioning for the portable plugin manifest.
 
 ### Added
 - portable root `plugin.json` packaging;
+- Codex compatibility manifest;
 - 38-area production UI review checklist;
 - cybersecurity and trust-boundary guidance;
 - privacy, reliability, observability, browser compatibility, API-boundary, SEO/discoverability, and rendering/cache/concurrency coverage;
@@ -16,7 +17,7 @@ The project follows semantic versioning for the portable plugin manifest.
 - 42 behavioral regression cases;
 - six execution-gated runtime/render cases;
 - deterministic repository validator;
-- installation, security, contribution, and handover documentation.
+- installation, security, contribution, release, support, conduct, AI-agent, PR, and issue-intake documentation.
 
 ### Changed
 - expanded the skill from visual anti-vibecoding review into a production UI engineering protocol;
