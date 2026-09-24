@@ -1,102 +1,96 @@
 # anti-vibecoding-ui
 
-An Agent Skill for reviewing and generating production-quality interfaces without generic AI-generated design patterns.
+A production UI engineering Agent Skill for reviewing and generating interfaces without generic AI-made patterns — while also checking accessibility, responsive behavior, interaction states, frontend security/privacy, reliability, performance-sensitive UI decisions, browser/platform behavior, and evidence quality.
 
-It started as an anti-"vibecoded" visual checklist. It now covers the broader reasons polished AI-built interfaces fail in real use: accessibility, keyboard/focus behavior, responsive design, forms, state completeness, data-heavy UI, destructive actions, RTL/localization, performance-sensitive UI decisions, design-system discipline, and evidence-based verification.
+**Current package version:** `0.2.0`  
+**Status:** packaged and under validation; not claimed as fully validated or publicly published.
 
-## What it does
+## Quick start
 
-### Review mode
-Reviews real frontend code and rendered behavior using an engineering-grade checklist. Findings are evidence-based, prioritized by impact, and separated into:
-- must-fix;
-- should-fix;
-- judgment calls.
-
-It explicitly checks what already passes and avoids blanket bans when a pattern is justified by brand or product context.
-
-### Generation mode
-Uses the same rules as design constraints before writing UI:
-- information hierarchy before decoration;
-- product-specific visual language;
-- semantic HTML;
-- accessible interaction behavior;
-- responsive/mobile strategy;
-- realistic loading/empty/error/success states;
-- design-system consistency;
-- final anti-vibecoding self-review.
-
-## Coverage
-
-The current checklist contains 38 review areas, including:
-
-- product fit and information architecture;
-- visual style and brand fit;
-- typography and copy credibility;
-- layout, spacing, density, and navigation;
-- buttons, links, icons, and imagery;
-- semantic HTML;
-- keyboard and focus;
-- forms and validation;
-- loading, empty, error, and async states;
-- responsive/mobile behavior;
-- WCAG-oriented accessibility;
-- dialogs, drawers, popovers, menus, tabs, and accordions;
-- tables, filters, bulk actions, pagination;
-- charts and data visualization;
-- destructive/high-impact actions;
-- authentication and permission UX;
-- internationalization, localization, and RTL;
-- performance/perceived performance;
-- component-library/design-system discipline;
-- motion restraint;
-- portfolio-specific credibility;
-- AI/technical product credibility;
-- cybersecurity and trust boundaries;
-- privacy and data minimization;
-- reliability/recovery and exceptional conditions;
-- testing/verification discipline;
-- observability and diagnosability;
-- cross-domain best-practice coverage boundaries;
-- browser compatibility and progressive enhancement;
-- public-site discoverability/metadata;
-- API consumption and frontend/backend contracts;
-- rendering, hydration, caching, and concurrency;
-- final "does this still look generic?" gate.
-
-## Install
-
-### Full skill — recommended
-
-Install or copy the folder:
+For the full skill, use the installable folder:
 
 ```
 skills/anti-vibecoding-ui/
 ```
 
-This is the canonical version. It includes the full protocol and supporting references.
+For an OpenAI/Codex portable plugin workflow, use the repository root. It now includes the current portable `plugin.json` plus a `.codex-plugin/plugin.json` compatibility manifest.
 
-**OpenAI/Codex skill path**
-```
-repo: Skharbi/anti-vibecoding-ui
-path: skills/anti-vibecoding-ui
-```
+For a no-install/mobile workflow, use `PASTE-TO-INSTALL.md`.
 
-For other Agent Skills-compatible clients, copy the same folder into the client's skills directory.
+See **[INSTALL.md](INSTALL.md)** for the full install matrix and smoke tests.
 
-### Portable single-paste edition
+## What it does
 
-`PASTE-TO-INSTALL.md` remains available for users who cannot install a skill folder, including mobile-only workflows.
+### Review mode
 
-It is a **portable condensed edition**, not byte-for-byte identical to the full skill. The installed skill is the source of truth because it can load the complete checklist and supporting references without forcing an enormous first-message prompt.
+Reviews real frontend code and rendered behavior using evidence-based findings:
 
-## Structure
+- **must-fix** — security/privacy exposure, blocked tasks, serious accessibility/responsive failures, data-loss or unsafe high-impact behavior;
+- **should-fix** — confusing hierarchy, weak states, design-system drift, generic visual patterns, non-critical usability issues;
+- **judgment call** — valid product/brand/design tradeoffs.
+
+### Generation mode
+
+Uses the same rules as design constraints before writing UI:
+
+- information hierarchy before decoration;
+- product-specific visual language;
+- semantic HTML and accessible interaction behavior;
+- realistic loading/empty/error/success states;
+- responsive/mobile strategy;
+- security/privacy and trust-boundary awareness;
+- design-system consistency;
+- restrained motion and credible copy;
+- final verification rather than “looks good” approval.
+
+## Coverage
+
+The current checklist contains **38 review areas**, covering:
+
+- product fit and information architecture;
+- visual style, typography, copy, layout and navigation;
+- buttons, links, icons, imagery and semantic HTML;
+- keyboard/focus, forms, validation and state completeness;
+- loading, empty, error and async feedback;
+- responsive/mobile behavior and accessibility;
+- dialogs, drawers, popovers, menus, tabs and accordions;
+- tables, filters, bulk actions and data visualization;
+- destructive actions, authentication and permissions;
+- internationalization, localization and RTL;
+- performance and perceived performance;
+- component-library/design-system discipline;
+- motion restraint;
+- portfolio and AI-product credibility;
+- cybersecurity and trust boundaries;
+- privacy and data minimization;
+- reliability, recovery and exceptional conditions;
+- testing/verification discipline;
+- observability and diagnosability;
+- browser compatibility and progressive enhancement;
+- public-site discoverability/metadata;
+- API consumption/frontend-backend contracts;
+- rendering, hydration, caching and concurrency;
+- final anti-vibecoding review.
+
+## Package structure
 
 ```
 anti-vibecoding-ui/
+├── plugin.json
+├── .codex-plugin/
+│   └── plugin.json
 ├── README.md
-├── LICENSE
+├── INSTALL.md
+├── SECURITY.md
+├── CONTRIBUTING.md
+├── CHANGELOG.md
+├── RELEASE.md
+├── AGENTS.md
 ├── HANDOVER.md
+├── LICENSE
 ├── PASTE-TO-INSTALL.md
+├── .github/
+│   └── PULL_REQUEST_TEMPLATE.md
 ├── evals/
 │   ├── README.md
 │   ├── cases.md
@@ -118,56 +112,70 @@ anti-vibecoding-ui/
             └── sources.md
 ```
 
-## Quality model
+## Validation
 
-This project does not have a conventional build because it contains no runtime code.
+Validation has three layers.
 
-Validation has two layers:
+### 1. Package/repository validation
 
-1. deterministic repository/package validation with `python scripts/validate_skill.py`;
-2. behavioral evaluation through the scenario suite.
+Run:
 
-The evaluation suite measures:
-- trigger reliability;
-- issue coverage;
-- evidence quality;
-- prioritization;
-- false-positive control;
-- fix quality;
-- generation quality;
-- verification discipline.
+```bash
+python scripts/validate_skill.py
+```
 
-See `evals/README.md` and `evals/cases.md`.
+The validator checks package structure, manifest/version consistency, OpenAI metadata constraints, skill-description length, self-contained references, evaluation counts, documentation consistency, relative links, and common secret patterns.
 
-## Standards
+### 2. Behavioral evaluation
 
-Accessibility and interaction guidance is grounded primarily in:
-- WCAG 2.2;
-- WAI-ARIA;
-- ARIA Authoring Practices Guide.
+`evals/cases.md` contains **42 regression scenarios** covering triggering, review quality, generation, false positives, security/trust, cross-domain best practices, and platform/delivery behavior.
 
-The skill prefers native HTML semantics before ARIA and treats established ARIA patterns as behavior guidance that still requires real browser/assistive-technology testing for production-critical use.
+### 3. Execution gates
 
-## Status
+`evals/EXECUTION-GATE.md` defines the cases that require real rendered/browser/device/native-language evidence rather than static inspection.
+
+## Standards and best-practice sources
+
+The skill's primary references include:
+
+- W3C WCAG 2.2 and WAI-ARIA/APG;
+- OWASP Top 10:2025, ASVS 5.0.0, WSTG 4.2, Cheat Sheet Series, and API Security Top 10 2023;
+- NIST SP 800-218 SSDF 1.1 and NIST Privacy Framework;
+- MDN Baseline/progressive enhancement;
+- Google Search Essentials;
+- current OpenAI Agent Skills / Agent Plugins packaging guidance.
+
+See `skills/anti-vibecoding-ui/references/sources.md`.
+
+## Current validation status
 
 **Implemented**
-- Agent Skill packaging
-- Full review/generation protocol
-- 38-section production UI checklist
-- Review severity/evidence protocol
-- Common component behavior reference
-- Primary standards references across accessibility, OWASP security, NIST secure development/privacy, and performance
-- Behavioral evaluation suite with 42 regression scenarios
-- Recorded self-test results and known verification limits
-- Handover discipline
+- portable Agent Plugins manifest;
+- Codex compatibility manifest;
+- self-contained Agent Skill bundle;
+- 38-area production UI checklist;
+- security/trust, component behavior, and best-practice references;
+- 42 regression scenarios;
+- deterministic validator;
+- installation/security/contribution/release documentation;
+- recorded same-model structural/scenario self-test.
 
-**Not yet proven**
-- multi-agent evaluation results;
-- quantified trigger reliability;
-- quantified false-positive rate;
-- generation quality across multiple model families.
+**Still required before a “fully validated” claim**
+- independent second-agent/model evaluation;
+- real rendered generation checks;
+- RTL/native-language rendering validation;
+- representative browser/device execution for execution-gated cases.
 
-Do not describe the skill as fully validated until the evaluation release bar in `evals/README.md` has been met.
+The repository deliberately does not turn unavailable evidence into a pass.
+
+## Repository policies
+
+- **[INSTALL.md](INSTALL.md)** — installation and smoke tests
+- **[SECURITY.md](SECURITY.md)** — vulnerability reporting and security rules
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** — contribution expectations
+- **[RELEASE.md](RELEASE.md)** — pre-release checklist
+- **[CHANGELOG.md](CHANGELOG.md)** — version history
+- **[HANDOVER.md](HANDOVER.md)** — current working state
 
 ## License
 
