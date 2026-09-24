@@ -12,6 +12,8 @@ This repository has no runtime code, so its quality must be tested behaviorally.
 6. **Fix quality** — do fixes preserve behavior and existing design-system conventions?
 7. **Generation quality** — does new UI avoid generic AI patterns while remaining usable?
 8. **Verification discipline** — does the agent verify changes instead of declaring success from code inspection alone?
+9. **Security/trust-boundary reasoning** — does it catch real client-side risks without inventing backend vulnerabilities?
+10. **Scope discipline** — does it mark external verification instead of silently passing unavailable controls?
 
 ## Scoring
 
@@ -28,15 +30,17 @@ Recommended dimensions:
 - false-positive control
 - fix quality
 - verification
+- security/trust-boundary reasoning
+- scope discipline
 
-Total per case: 14.
+Total per case: 18.
 
 ## Minimum release bar
 
 Before claiming the skill is validated:
 - run every case in `cases.md` on at least two compatible agents;
-- average score >= 11/14;
-- no case may score 0 on accessibility/blocked-task prioritization;
+- average score >= 14/18;
+- no case may score 0 on accessibility/blocked-task prioritization or security trust-boundary reasoning;
 - false-positive control must pass the intentional-brand exceptions;
 - generation cases must be inspected at desktop and narrow mobile widths.
 
