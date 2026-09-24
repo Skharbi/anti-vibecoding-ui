@@ -8,7 +8,7 @@ Last updated: 2026-09-24 | By: ChatGPT | Session goal: Harden anti-vibecoding-ui
 ## 2. Current state
 - Works (verified): skill packaging exists; SKILL.md and references load from `skills/anti-vibecoding-ui/`; README install path matches repository structure.
 - Enhanced on branch `chatgpt/skill-hardening-v2`: broader UI engineering protocol, 38-section checklist, review protocol, component behavior reference, primary-source references, cybersecurity/trust reference, cross-domain best-practices matrix, behavioral eval suite.
-- Broken / flaky: independent second-agent and rendered/browser/device evaluation are not yet recorded. A GPT-5.6 Sol structural/scenario self-test is recorded under `evals/results/`.
+- Broken / flaky: independent second-agent and rendered/browser/device evaluation are not yet recorded. A GPT-5.6 Sol structural/scenario self-test is recorded under `evals/results/`. GitHub-hosted Actions on this private repo failed before any job step started, so the unusable auto workflow was removed rather than leaving a permanently red check.
 - Half-done: policy-level gap hardening and a 42-case self-test are complete; six cases remain execution-dependent, and the required independent second-agent run is outstanding.
 
 ## 3. Architecture
@@ -43,11 +43,11 @@ Last updated: 2026-09-24 | By: ChatGPT | Session goal: Harden anti-vibecoding-ui
 - Do not claim OWASP/ASVS/security/privacy/accessibility/performance compliance from static inspection.
 
 ## 7. Next task
-- Task: Run the 42-case suite with a second compatible agent/model and execute the six render/browser/device-dependent cases.
+- Task: Run the 42-case suite with a second compatible agent/model and execute the six render/browser/device-dependent cases. Before any merge, run `python scripts/validate_skill.py` in a repository checkout.
 - Done when: eval results are recorded with agent/model/date; release bar in `evals/README.md` is met or failures are documented and fed back into the skill.
 - Files allowed to touch: `evals/*`, `skills/anti-vibecoding-ui/*` only when an evaluation exposes a concrete defect, and `HANDOVER.md`.
 
 ## 8. How to verify
-- Run: install/load the skill using supported client workflow.
+- Run: `python scripts/validate_skill.py`, then install/load the skill using a supported client workflow.
 - Test: execute all cases in `evals/cases.md`.
 - Expected output: prioritized evidence-based findings, correct exceptions, accessibility/blocked-task issues outrank cosmetic issues, and generation output is verified on desktop + narrow mobile.
