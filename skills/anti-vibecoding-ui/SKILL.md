@@ -16,6 +16,8 @@ Use the supporting files:
 - `references/review-protocol.md` — evidence, severity, output, and verification rules.
 - `references/component-behavior.md` — expected behavior for common interactive components.
 - `references/sources.md` — standards and primary references.
+- `references/security.md` — cybersecurity/trust-boundary review rules.
+- `references/best-practices-matrix.md` — cross-domain coverage and scope boundaries.
 - `evals/README.md` and `evals/cases.md` — behavioral evaluation suite.
 
 ## Operating rule
@@ -114,7 +116,33 @@ Always consider whether each area applies. Do not silently skip them:
 - consistency across screens, not just within one component;
 - product-specific workflow fit;
 - technical/AI credibility and claim accuracy;
+- cybersecurity and trust boundaries;
+- privacy and data minimization;
+- reliability, recovery, and exceptional conditions;
+- testing/verification discipline;
+- observability and diagnosability;
 - portfolio-specific rules when reviewing a personal portfolio.
+
+## Security baseline
+
+For production-facing UI, use `references/security.md` whenever the surface touches authentication, authorization, user-supplied content, sensitive data, uploads/downloads, external URLs, third-party scripts, privileged/admin actions, regulated workflows, or AI/tool execution.
+
+Security review must:
+- use OWASP Top 10:2025, ASVS 5.0.0, WSTG 4.2, OWASP Cheat Sheets, and NIST SSDF 1.1 as primary baselines;
+- distinguish confirmed client-side flaws from backend/runtime controls that require verification;
+- never treat hidden/disabled UI as authorization;
+- never treat client-side validation as a security boundary;
+- treat model output and retrieved/uploaded content as untrusted;
+- avoid claiming "secure", "OWASP compliant", or "ASVS compliant" from frontend-only inspection.
+
+## Best-practice coverage rule
+
+For full production reviews, use `references/best-practices-matrix.md` and classify each relevant domain as:
+- reviewed;
+- not applicable;
+- requires external verification.
+
+Broad coverage does not justify broad claims. If a control is outside available evidence, say so explicitly.
 
 ## Accessibility baseline
 
@@ -211,7 +239,10 @@ Before saying a UI is complete, verify:
 7. **Consistency** — tokens, spacing, typography, components, and interaction patterns align.
 8. **Restraint** — decoration does not compete with information or actions.
 9. **Performance** — no obvious UI implementation choices materially degrade the experience.
-10. **Evidence** — verification is based on inspected code/rendered behavior, not assumption.
+10. **Security/privacy** — no confirmed high-impact client-side security issue remains; trust boundaries and sensitive-data handling are explicit.
+11. **Reliability** — failure, retry, timeout, partial-data, and recovery behavior are safe where relevant.
+12. **Verification** — claims are based on executed evidence where required; controls outside available evidence are marked for verification.
+13. **Evidence** — findings distinguish confirmed, likely, and externally verifiable issues rather than assumptions.
 
 Then apply the final anti-vibecoding question:
 
