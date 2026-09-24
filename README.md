@@ -27,7 +27,7 @@ Uses the same rules as design constraints before writing UI:
 
 ## Coverage
 
-The current checklist contains 34 review areas, including:
+The current checklist contains 38 review areas, including:
 
 - product fit and information architecture;
 - visual style and brand fit;
@@ -57,6 +57,10 @@ The current checklist contains 34 review areas, including:
 - testing/verification discipline;
 - observability and diagnosability;
 - cross-domain best-practice coverage boundaries;
+- browser compatibility and progressive enhancement;
+- public-site discoverability/metadata;
+- API consumption and frontend/backend contracts;
+- rendering, hydration, caching, and concurrency;
 - final "does this still look generic?" gate.
 
 ## Install
@@ -142,11 +146,12 @@ The skill prefers native HTML semantics before ARIA and treats established ARIA 
 **Implemented**
 - Agent Skill packaging
 - Full review/generation protocol
-- 34-section production UI checklist
+- 38-section production UI checklist
 - Review severity/evidence protocol
 - Common component behavior reference
 - Primary standards references across accessibility, OWASP security, NIST secure development/privacy, and performance
-- Behavioral evaluation suite
+- Behavioral evaluation suite with 42 regression scenarios
+- Recorded self-test results and known verification limits
 - Handover discipline
 
 **Not yet proven**
