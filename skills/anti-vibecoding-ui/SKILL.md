@@ -1,6 +1,6 @@
 ---
 name: anti-vibecoding-ui
-description: Review, redesign, or generate production-quality frontend UI/UX while preventing generic AI-generated design patterns and enforcing engineering-grade interface quality. Use for landing pages, dashboards, portfolios, product screens, design systems, component libraries, responsive/mobile work, accessibility reviews, form UX, data-heavy UI, or requests to make an interface feel intentional, professional, less generic, less "AI-made", or more usable. Trigger on UI generation, redesign, frontend critique, design-system cleanup, spacing/layout complaints, accessibility/keyboard issues, responsive problems, loading/error/empty states, forms/tables/charts/navigation, and requests to fix existing UI code. Do not use for backend-only logic or infrastructure work unless the user-facing interface is part of the task.
+description: Review, redesign, or generate production-quality frontend UI/UX while preventing generic AI-generated design patterns and enforcing engineering-grade interface quality. Use for landing pages, dashboards, portfolios, product screens, design systems, component libraries, responsive/mobile work, accessibility reviews, frontend security/privacy reviews, production-readiness audits, form UX, data-heavy UI, public-site discoverability/SEO, browser compatibility, or requests to make an interface feel intentional, professional, less generic, less "AI-made", safer, or more usable. Trigger on UI generation, redesign, frontend critique, design-system cleanup, spacing/layout complaints, accessibility/keyboard issues, responsive problems, loading/error/empty states, forms/tables/charts/navigation, client-side security/trust concerns, sensitive-data exposure, public metadata/indexability, browser/platform compatibility, API-consumption behavior, rendering/cache/concurrency issues, and requests to fix existing UI code. Do not use for backend-only logic or infrastructure work unless the user-facing interface is part of the task.
 ---
 
 # Anti-Vibecoding UI
@@ -120,6 +120,10 @@ Always consider whether each area applies. Do not silently skip them:
 - reliability, recovery, and exceptional conditions;
 - testing/verification discipline;
 - observability and diagnosability;
+- browser compatibility and progressive enhancement;
+- public-site discoverability/metadata when applicable;
+- API consumption and frontend/backend contract assumptions;
+- rendering, hydration, caching, and concurrency;
 - portfolio-specific rules when reviewing a personal portfolio.
 
 ## Security baseline
@@ -241,7 +245,8 @@ Before saying a UI is complete, verify:
 10. **Security/privacy** — no confirmed high-impact client-side security issue remains; trust boundaries and sensitive-data handling are explicit.
 11. **Reliability** — failure, retry, timeout, partial-data, and recovery behavior are safe where relevant.
 12. **Verification** — claims are based on executed evidence where required; controls outside available evidence are marked for verification.
-13. **Evidence** — findings distinguish confirmed, likely, and externally verifiable issues rather than assumptions.
+13. **Compatibility/delivery** — supported browsers/input modes, public discoverability where relevant, API boundaries, and rendering/cache/concurrency behavior are intentional.
+14. **Evidence** — findings distinguish confirmed, likely, and externally verifiable issues rather than assumptions.
 
 Then apply the final anti-vibecoding question:
 
