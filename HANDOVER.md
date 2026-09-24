@@ -9,7 +9,7 @@ Last updated: 2026-09-24 | By: ChatGPT | Session goal: Harden anti-vibecoding-ui
 - Works (verified): skill packaging exists; SKILL.md and references load from `skills/anti-vibecoding-ui/`; README install path matches repository structure.
 - Enhanced on branch `chatgpt/skill-hardening-v2`: broader UI engineering protocol, 28-section checklist, review protocol, component behavior reference, primary-source references, behavioral eval suite.
 - Broken / flaky: no live multi-agent evaluation results recorded yet.
-- Half-done: README and packaging metadata still need final update/validation after branch changes.
+- Half-done: implementation hardening is complete on the branch; live multi-agent behavioral evaluation is still outstanding.
 
 ## 3. Architecture
 - Stack: Markdown-only Agent Skill; no runtime dependencies.
@@ -41,9 +41,9 @@ Last updated: 2026-09-24 | By: ChatGPT | Session goal: Harden anti-vibecoding-ui
 - "Anti-vibecoding" must not become "ban modern design patterns."
 
 ## 7. Next task
-- Task: Update README/openai metadata, then run the behavioral evaluation suite on at least two compatible agents.
-- Done when: install docs match current structure; eval results are recorded with agent/model/date; release bar in `evals/README.md` is met or failures are documented.
-- Files allowed to touch: `README.md`, `skills/anti-vibecoding-ui/agents/openai.yaml`, `evals/*`, `HANDOVER.md`.
+- Task: Run the behavioral evaluation suite on at least two compatible agents and record results.
+- Done when: eval results are recorded with agent/model/date; release bar in `evals/README.md` is met or failures are documented and fed back into the skill.
+- Files allowed to touch: `evals/*`, `skills/anti-vibecoding-ui/*` only when an evaluation exposes a concrete defect, and `HANDOVER.md`.
 
 ## 8. How to verify
 - Run: install/load the skill using supported client workflow.
