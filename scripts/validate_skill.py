@@ -17,7 +17,7 @@ required = [
     SKILL/"references"/"checklist.md", SKILL/"references"/"review-protocol.md",
     SKILL/"references"/"component-behavior.md", SKILL/"references"/"security.md",
     SKILL/"references"/"best-practices-matrix.md", SKILL/"references"/"sources.md",
-    ROOT/"evals"/"README.md", ROOT/"evals"/"cases.md"
+    ROOT/"evals"/"README.md", ROOT/"evals"/"cases.md", ROOT/"evals"/"EXECUTION-GATE.md"
 ]
 for p in required:
     read(p)
@@ -56,6 +56,19 @@ if len(ids) != len(set(ids)):
 
 if "38 review areas" not in readme or "42 regression scenarios" not in readme:
     errors.append("README counts are stale")
+if "\\n" in readme:
+    errors.append("README contains escaped newline text")
+protocol = read(SKILL/"references"/"review-protocol.md")
+if "28 checklist sections" in protocol or "34 checklist sections" in protocol:
+    errors.append("review protocol contains stale checklist count")
+handover = read(ROOT/"HANDOVER.md")
+if "Adding a JS/Python test harness" in handover:
+    errors.append("handover contradicts current validator architecture")
+priority_lines = re.findall(r"^(\d+)\.\s+", paste, re.M)
+if priority_lines:
+    priority_nums = [int(x) for x in priority_lines[:10]]
+    if priority_nums != list(range(1, 11)):
+        errors.append("portable priority list numbering is invalid")
 
 if "condensed portable edition" not in paste.lower() or "canonical/full version" not in paste.lower():
     errors.append("portable edition disclosure missing")
@@ -66,7 +79,7 @@ if "OWASP compliant" not in security or "ASVS compliant" not in security:
     errors.append("security anti-overclaim guard missing")
 if "requires external verification" not in (skill + matrix):
     errors.append("external-verification boundary missing")
-if "native semantic HTML before ARIA" not in skill:
+if "semantic HTML before ARIA" not in skill and "native HTML semantics before ARIA" not in skill:
     errors.append("native-semantics rule missing")
 
 secret_patterns = [
