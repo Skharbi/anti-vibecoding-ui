@@ -3,7 +3,7 @@
 A production UI engineering Agent Skill for reviewing and generating interfaces without generic AI-made patterns — while also checking accessibility, responsive behavior, interaction states, frontend security/privacy, reliability, performance-sensitive UI decisions, browser/platform behavior, and evidence quality.
 
 **Current package version:** `0.2.0`  
-**Status:** packaged and under validation; not claimed as fully validated or publicly published.
+**Status:** release candidate. Package/repository checks and all six Chromium execution gates pass. Independent second-agent validation remains the final release-evidence gate.
 
 ## Quick start
 
@@ -167,13 +167,17 @@ See `skills/anti-vibecoding-ui/references/sources.md`.
 - 42 regression scenarios;
 - deterministic validator;
 - installation/security/contribution/release documentation;
-- recorded same-model structural/scenario self-test.
+- recorded same-model structural/scenario self-test;
+- recorded Chromium runtime validation with **6/6 execution-gated cases passing**.
 
 **Still required before a “fully validated” claim**
-- independent second-agent/model evaluation;
-- real rendered generation checks;
-- RTL/native-language rendering validation;
-- representative browser/device execution for execution-gated cases.
+- independent second-agent/model evaluation.
+
+**Runtime evidence completed**
+- rendered desktop/mobile generation checks;
+- RTL/native-language rendering validation in Chromium with `ar-SA` locale;
+- representative Chromium browser execution for all six execution-gated cases;
+- reduced visual-viewport checks for keyboard occlusion behavior.
 
 The repository deliberately does not turn unavailable evidence into a pass.
 
