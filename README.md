@@ -171,14 +171,12 @@ See `skills/anti-vibecoding-ui/references/sources.md`.
 - recorded Chromium runtime validation with **6/6 execution-gated cases passing**.
 
 **Release validation completed**
-- GPT-5.6 Sol author-model scored run: **100%**;
-- independent Floot / Google Gemini 3.5 Flash scored run: **100%**;
-- combined two-agent aggregate: **100%**;
-- critical failures: **0**;
-- false-positive/security/scope-discipline gates: **PASS**;
-- Chromium execution gates: **6/6 PASS**.
+- author-model scored run: **100%**;
+- independent Claude full-suite run: **95.6%** with **0 critical failures**;
+- post-hardening targeted Claude regression run: **97.1%**, **0 critical failures**, **0 new false positives**;
+- Chromium execution evidence recorded for the documented execution gates.
 
-See `evals/results/v0.2.0-release-validation.md` for the release verdict and evidence links.
+See `evals/results/` for the recorded evaluation evidence and limitations.
 
 **Runtime evidence completed**
 - rendered desktop/mobile generation checks;
@@ -195,7 +193,6 @@ The validation claim is limited to the repository's documented release bar. It i
 - **[CONTRIBUTING.md](CONTRIBUTING.md)** — contribution expectations
 - **[RELEASE.md](RELEASE.md)** — pre-release checklist
 - **[CHANGELOG.md](CHANGELOG.md)** — version history
-- **[HANDOVER.md](HANDOVER.md)** — current working state
 - **[SUPPORT.md](SUPPORT.md)** — usage/support guidance
 - **[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)** — collaboration expectations
 
