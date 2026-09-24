@@ -176,6 +176,8 @@ The repository deliberately does not turn unavailable evidence into a pass.
 - **[RELEASE.md](RELEASE.md)** — pre-release checklist
 - **[CHANGELOG.md](CHANGELOG.md)** — version history
 - **[HANDOVER.md](HANDOVER.md)** — current working state
+- **[SUPPORT.md](SUPPORT.md)** — usage/support guidance
+- **[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)** — collaboration expectations
 
 ## License
 
