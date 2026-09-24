@@ -418,7 +418,50 @@ See `security.md`.
 - [ ] Security, privacy, accessibility, and compliance are not reduced to aesthetic checks.
 - [ ] Adjacent backend/infrastructure risks are handed off explicitly rather than ignored or invented.
 
-## 34. Final anti-vibecoding review
+## 34. Browser compatibility and progressive enhancement
+- [ ] Critical functionality does not depend on a web feature with limited browser availability unless a fallback/constraint is intentional.
+- [ ] Browser support assumptions are checked against current platform compatibility data when using newer APIs/CSS features.
+- [ ] Feature detection is preferred over brittle browser sniffing where practical.
+- [ ] The experience has a usable fallback when advanced browser capabilities are unavailable.
+- [ ] Touch, mouse, keyboard, and pointer assumptions do not exclude supported input methods.
+- [ ] The app does not rely on hover for essential functionality.
+- [ ] Mobile Safari/Chrome viewport and form-control behavior is considered for critical flows.
+- [ ] Hydration/client-only assumptions do not make essential content inaccessible when rendering is delayed or fails where SSR/SSG is expected.
+
+## 35. Public-site discoverability and metadata
+Apply when the surface is intended to be publicly discoverable/indexable.
+- [ ] Each important public page has a specific document title.
+- [ ] Meta description/content summary is useful where applicable.
+- [ ] Canonical URL handling is intentional for duplicate/parameterized public pages.
+- [ ] Public content is not accidentally blocked by authentication, `noindex`, robots rules, or client-only rendering.
+- [ ] Internal links are real crawlable links where navigation is intended.
+- [ ] Structured data is used only when it accurately represents visible content and is valid for the page type.
+- [ ] Social/share metadata is accurate where product requirements include sharing.
+- [ ] Sitemap/robots/canonical behavior is treated as deployment/site verification when not visible in component code.
+- [ ] SEO claims are not made from metadata presence alone; indexability and rendered output require verification.
+
+## 36. API consumption and frontend/backend contract
+- [ ] Client-provided object IDs, roles, prices, permissions, ownership flags, or calculated totals are never treated as trustworthy server authority.
+- [ ] API responses are treated as potentially partial, stale, malformed, unauthorized, or unexpectedly shaped.
+- [ ] Error handling distinguishes authentication, authorization, validation, conflict, rate-limit, and server/network failure where useful.
+- [ ] Client retries do not duplicate non-idempotent operations.
+- [ ] Third-party API data is treated as untrusted input before rendering or acting on it.
+- [ ] Deprecated/debug API endpoints are not embedded in production UI paths.
+- [ ] Rate-limit/resource-exhaustion behavior has a usable recovery path when relevant.
+- [ ] Backend authorization, validation, rate limiting, and object-level access controls are marked for external verification when unavailable.
+
+## 37. Rendering, hydration, caching, and concurrency
+- [ ] Server/client-rendered markup does not intentionally diverge in ways that cause hydration failure or UI flicker.
+- [ ] User-specific content is not cached/shared across users through an unsafe client or edge caching assumption.
+- [ ] Stale cached permissions/session/user state does not allow misleading or dangerous UI actions.
+- [ ] Race conditions between requests do not let older responses overwrite newer user intent.
+- [ ] Abort/cancel behavior is considered for searches, navigation, and rapid repeated requests where relevant.
+- [ ] Optimistic state reconciles with authoritative server state.
+- [ ] Duplicate submissions/actions are guarded.
+- [ ] Cache invalidation/revalidation strategy is explicit for data whose freshness affects decisions.
+- [ ] Service-worker/offline caches do not retain or replay sensitive/stale content unsafely where PWA behavior exists.
+
+## 38. Final anti-vibecoding review
 Before approval, ask:
 - [ ] Could this UI belong to 100 unrelated products with only the logo and copy changed?
 - [ ] Are gradients, pills, cards, icons, animation, and badges doing work that structure and typography could do better?
