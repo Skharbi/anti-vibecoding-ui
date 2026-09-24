@@ -8,8 +8,8 @@ Last updated: 2026-09-24 | By: ChatGPT | Session goal: Harden anti-vibecoding-ui
 ## 2. Current state
 - Works (verified): root portable `plugin.json` and Codex compatibility manifest are present; installable skill is self-contained under `skills/anti-vibecoding-ui/`; skill description is within OpenAI's 1,024-character limit; package/version/docs consistency checks pass in direct branch audit.
 - Enhanced on branch `chatgpt/skill-hardening-v2`: portable Agent Plugins package v0.2.0, Codex compatibility manifest, broader UI engineering protocol, 38-section checklist, review/component/security/best-practice references, 42-case eval suite, deterministic validator, and full install/security/contribution/release/support documentation.
-- Broken / flaky: independent second-agent evaluation is not yet recorded. Chromium runtime execution is now recorded under `evals/results/2026-09-24-chromium-runtime.md` with all six execution-gated cases passing.
-- Half-done: policy-level hardening, the 42-case same-model self-test, and all six Chromium execution gates are complete. The independent second-agent run is the only remaining release-evidence gate.
+- Broken / flaky: no known release-blocking repository defect. Chromium runtime evidence is recorded and the independent Floot/Gemini validation is complete.
+- Half-done: none for v0.2.0 release validation. Publication visibility/tagging are distribution actions, not validation gaps.
 
 ## 3. Architecture
 - Stack: Markdown-only installable Agent Skill with no runtime dependencies; repository QA includes one standard-library Python validator.
@@ -43,8 +43,8 @@ Last updated: 2026-09-24 | By: ChatGPT | Session goal: Harden anti-vibecoding-ui
 - Do not claim OWASP/ASVS/security/privacy/accessibility/performance compliance from static inspection.
 
 ## 7. Next task
-- Task: Use `evals/SECOND-AGENT-RUN.md` with a genuinely different model/agent. Chromium runtime gates are already complete. Before any merge, run `python scripts/validate_skill.py` in a repository checkout.
-- Done when: eval results are recorded with agent/model/date; release bar in `evals/README.md` is met or failures are documented and fed back into the skill.
+- Task: Publish/distribute v0.2.0 when desired. Keep future behavior changes behind the same validator, 42-case regression suite, independent-model gate, and execution gate.
+- Done when: repository visibility/release distribution matches the owner's publication choice. v0.2.0 validation itself is complete.
 - Files allowed to touch: `evals/*`, `skills/anti-vibecoding-ui/*` only when an evaluation exposes a concrete defect, and `HANDOVER.md`.
 
 ## 8. How to verify
