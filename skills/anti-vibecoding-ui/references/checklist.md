@@ -345,7 +345,80 @@ Do not invent unreachable states, but do not ship only the happy path.
 - [ ] Sensitive/regulated use cases do not imply approval or compliance without evidence.
 - [ ] Technical diagrams reflect real architecture rather than decorative complexity.
 
-## 28. Final anti-vibecoding review
+## 28. Cybersecurity and trust boundaries
+- [ ] Client-side visibility/disabled-state logic is not treated as authorization.
+- [ ] Sensitive actions clearly depend on server-side authorization.
+- [ ] No secrets, private credentials, or privileged tokens are exposed in client code/configuration.
+- [ ] Untrusted HTML/Markdown/content is rendered through safe framework patterns or sanitization.
+- [ ] Dangerous sinks such as `dangerouslySetInnerHTML`, `innerHTML`, `document.write`, or equivalent escape hatches are justified and protected.
+- [ ] Untrusted URLs/redirects are constrained against dangerous schemes and open redirects.
+- [ ] Client-side validation is not described as a security boundary.
+- [ ] Cookie-authenticated state-changing actions have an explicit CSRF strategy or are marked for backend verification.
+- [ ] Sensitive data is not unnecessarily stored in browser-readable persistent storage.
+- [ ] Sensitive values are not placed in URLs, analytics, logs, error reports, or copied into client-visible state without need.
+- [ ] File uploads do not rely on client MIME/extension checks as the only validation.
+- [ ] Third-party scripts/widgets/dependencies have a justified product need and understood data/security impact.
+- [ ] Security headers/browser policies are verified from deployment evidence when material rather than assumed from source.
+- [ ] High-risk actions fail closed and recover safely after timeout/partial failure.
+- [ ] Model/AI output is treated as untrusted content when rendered or used to trigger actions.
+- [ ] Security findings distinguish confirmed frontend evidence from backend/runtime assumptions.
+
+See `security.md`.
+
+## 29. Privacy and data minimization
+- [ ] The UI collects only data needed for the stated task.
+- [ ] Sensitive/personal fields are not displayed more broadly than necessary.
+- [ ] Telemetry/analytics does not capture raw sensitive form content.
+- [ ] Consent/notice is understandable where the product relies on it.
+- [ ] Optional data collection is distinguishable from required data where relevant.
+- [ ] User data is not leaked through query strings, URLs, referrers, client logs, or error reporting.
+- [ ] Logout/account switching clears sensitive client state where necessary.
+- [ ] Download/export actions communicate what data is included and who can access it.
+- [ ] Third-party embeds/widgets are considered part of the privacy surface.
+- [ ] Privacy/legal compliance claims are not made without jurisdiction-specific evidence.
+
+## 30. Reliability, recovery, and exceptional conditions
+- [ ] Partial failures do not leave the UI in a misleading success state.
+- [ ] Optimistic updates reconcile or roll back on server rejection.
+- [ ] Retry behavior avoids duplicate consequential actions.
+- [ ] Timeout/cancellation paths preserve understandable state.
+- [ ] Network reconnect/stale-data behavior is clear where relevant.
+- [ ] Multi-step workflows can recover from interruption where the product needs it.
+- [ ] Error boundaries/fallback UI prevent catastrophic blank-screen failure where applicable.
+- [ ] Permission/session changes while a page is open are handled safely.
+- [ ] Null, missing, malformed, and partial data do not break critical flows.
+- [ ] Exceptional states fail safely rather than fail open.
+
+## 31. Testing and verification discipline
+- [ ] Critical user flows have an executable verification path.
+- [ ] Error/empty/loading/permission states are represented in tests or fixtures where practical.
+- [ ] Keyboard interaction is tested for custom widgets.
+- [ ] Responsive behavior is executed at representative widths rather than inferred only from CSS.
+- [ ] Regression coverage exists for previously fixed production defects where practical.
+- [ ] Security-sensitive UI fixes include a concrete verification method.
+- [ ] Accessibility claims are not based solely on linting.
+- [ ] Performance claims are not based solely on code inspection.
+- [ ] "Production ready" is not claimed without executing relevant tests/build/runtime checks.
+- [ ] Test fixtures use realistic long/empty/edge-case content.
+
+## 32. Observability and diagnosability
+- [ ] User-visible errors provide enough context to recover without exposing sensitive internals.
+- [ ] Client diagnostics avoid passwords, tokens, personal/regulated data, and raw sensitive payloads.
+- [ ] Important failures can be correlated without exposing secrets.
+- [ ] Background failures are not silently swallowed when they affect user state.
+- [ ] User-facing retry/report-support paths are available when appropriate.
+- [ ] Monitoring/analytics instrumentation does not materially degrade UX.
+- [ ] Logging/alerting claims are marked for backend/operations verification when not visible.
+
+## 33. Best-practice coverage and scope boundaries
+- [ ] Every relevant domain in `best-practices-matrix.md` is marked reviewed, not applicable, or requiring external verification.
+- [ ] Controls outside frontend evidence are not silently marked as passing.
+- [ ] Confirmed findings are distinguished from likely risks and verification requests.
+- [ ] The review remains proportional to the product's actual risk and context.
+- [ ] Security, privacy, accessibility, and compliance are not reduced to aesthetic checks.
+- [ ] Adjacent backend/infrastructure risks are handed off explicitly rather than ignored or invented.
+
+## 34. Final anti-vibecoding review
 Before approval, ask:
 - [ ] Could this UI belong to 100 unrelated products with only the logo and copy changed?
 - [ ] Are gradients, pills, cards, icons, animation, and badges doing work that structure and typography could do better?
