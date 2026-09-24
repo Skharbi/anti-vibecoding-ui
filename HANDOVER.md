@@ -9,6 +9,7 @@ Last updated: 2026-09-24 | By: ChatGPT | Session goal: Harden anti-vibecoding-ui
 - Works (verified): root portable `plugin.json` and Codex compatibility manifest are present; installable skill is self-contained under `skills/anti-vibecoding-ui/`; skill description is within OpenAI's 1,024-character limit; package/version/docs consistency checks pass in direct branch audit.
 - Enhanced on branch `chatgpt/skill-hardening-v2`: portable Agent Plugins package v0.2.0, Codex compatibility manifest, broader UI engineering protocol, 38-section checklist, review/component/security/best-practice references, 42-case eval suite, deterministic validator, and full install/security/contribution/release/support documentation.
 - Broken / flaky: no known release-blocking repository defect. Chromium runtime evidence is recorded and the independent Floot/Gemini validation is complete.
+- Independent Claude run (2026-09-24, `evals/results/2026-09-24-claude-independent.md`): 95.6% aggregate, 0 critical failures, PASS. It lists non-blocking follow-ups: legal-conclusion overreach, memory-sourced advisory/compatibility claims, the full-audit coverage table not being enforced, likely-vs-must-fix severity, and corrections to the G1/G3 runtime fixture record.
 - Half-done: none for v0.2.0 release validation. Publication visibility/tagging are distribution actions, not validation gaps.
 
 ## 3. Architecture

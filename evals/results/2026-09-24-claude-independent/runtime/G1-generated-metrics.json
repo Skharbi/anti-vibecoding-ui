@@ -1,0 +1,948 @@
+{
+ "index": {
+  "390x844": {
+   "dir": "ltr",
+   "scrollW": 390,
+   "clientW": 390,
+   "hOverflow": false,
+   "fixed": [
+    {
+     "tag": "TH",
+     "cls": "",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    {
+     "tag": "TH",
+     "cls": "",
+     "top": 2035,
+     "bottom": 2076,
+     "left": 33,
+     "right": 203
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 2035,
+     "bottom": 2076,
+     "left": 203,
+     "right": 271
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 2035,
+     "bottom": 2076,
+     "left": 271,
+     "right": 372
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 2035,
+     "bottom": 2076,
+     "left": 372,
+     "right": 433
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 2035,
+     "bottom": 2076,
+     "left": 433,
+     "right": 547
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 2035,
+     "bottom": 2076,
+     "left": 547,
+     "right": 643
+    },
+    {
+     "tag": "TH",
+     "cls": "",
+     "top": 2076,
+     "bottom": 2129,
+     "left": 33,
+     "right": 203
+    },
+    {
+     "tag": "TH",
+     "cls": "",
+     "top": 2129,
+     "bottom": 2182,
+     "left": 33,
+     "right": 203
+    },
+    {
+     "tag": "TH",
+     "cls": "",
+     "top": 2182,
+     "bottom": 2236,
+     "left": 33,
+     "right": 203
+    },
+    {
+     "tag": "TH",
+     "cls": "",
+     "top": 2236,
+     "bottom": 2289,
+     "left": 33,
+     "right": 203
+    },
+    {
+     "tag": "TH",
+     "cls": "",
+     "top": 2289,
+     "bottom": 2342,
+     "left": 33,
+     "right": 203
+    },
+    {
+     "tag": "TD",
+     "cls": "",
+     "top": 2342,
+     "bottom": 2377,
+     "left": 33,
+     "right": 203
+    }
+   ],
+   "buttons": [
+    {
+     "text": "Skip to dashboard",
+     "top": -48,
+     "bottom": -10,
+     "left": 16,
+     "right": 169,
+     "w": 153,
+     "h": 38
+    },
+    {
+     "text": "Reset filters",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "text": "Try again",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "text": "Reset filters",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "text": "Show table",
+     "top": 988,
+     "bottom": 1024,
+     "left": 243,
+     "right": 357,
+     "w": 114,
+     "h": 36
+    },
+    {
+     "text": "Channel",
+     "top": 2043,
+     "bottom": 2067,
+     "left": 43,
+     "right": 110,
+     "w": 67,
+     "h": 24
+    },
+    {
+     "text": "Trials",
+     "top": 2043,
+     "bottom": 2067,
+     "left": 213,
+     "right": 261,
+     "w": 48,
+     "h": 24
+    },
+    {
+     "text": "Activation",
+     "top": 2043,
+     "bottom": 2067,
+     "left": 281,
+     "right": 362,
+     "w": 81,
+     "h": 24
+    },
+    {
+     "text": "Paid",
+     "top": 2043,
+     "bottom": 2067,
+     "left": 382,
+     "right": 423,
+     "w": 41,
+     "h": 24
+    },
+    {
+     "text": "Trial-to-paid",
+     "top": 2043,
+     "bottom": 2067,
+     "left": 443,
+     "right": 537,
+     "w": 94,
+     "h": 24
+    },
+    {
+     "text": "New MRR",
+     "top": 2043,
+     "bottom": 2067,
+     "left": 557,
+     "right": 633,
+     "w": 76,
+     "h": 24
+    }
+   ],
+   "inputs": [
+    {
+     "id": "range-7",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "range-30",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "range-90",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "f-plan",
+     "type": "select-one",
+     "labelled": true
+    },
+    {
+     "id": "f-region",
+     "type": "select-one",
+     "labelled": true
+    },
+    {
+     "id": "f-channel",
+     "type": "select-one",
+     "labelled": true
+    }
+   ],
+   "dataset": null,
+   "h1": "Trial funnel",
+   "errors": []
+  },
+  "768x1024": {
+   "dir": "ltr",
+   "scrollW": 768,
+   "clientW": 768,
+   "hOverflow": false,
+   "fixed": [
+    {
+     "tag": "TH",
+     "cls": "",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    {
+     "tag": "TH",
+     "cls": "",
+     "top": 1238,
+     "bottom": 1279,
+     "left": 45,
+     "right": 157
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 1238,
+     "bottom": 1279,
+     "left": 157,
+     "right": 244
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 1238,
+     "bottom": 1279,
+     "left": 244,
+     "right": 374
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 1238,
+     "bottom": 1279,
+     "left": 374,
+     "right": 453
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 1238,
+     "bottom": 1279,
+     "left": 453,
+     "right": 600
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 1238,
+     "bottom": 1279,
+     "left": 600,
+     "right": 723
+    }
+   ],
+   "buttons": [
+    {
+     "text": "Skip to dashboard",
+     "top": -48,
+     "bottom": -10,
+     "left": 16,
+     "right": 169,
+     "w": 153,
+     "h": 38
+    },
+    {
+     "text": "Reset filters",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "text": "Try again",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "text": "Reset filters",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "text": "Show table",
+     "top": 668,
+     "bottom": 704,
+     "left": 609,
+     "right": 723,
+     "w": 114,
+     "h": 36
+    },
+    {
+     "text": "Channel",
+     "top": 1246,
+     "bottom": 1270,
+     "left": 55,
+     "right": 122,
+     "w": 67,
+     "h": 24
+    },
+    {
+     "text": "Trials",
+     "top": 1246,
+     "bottom": 1270,
+     "left": 186,
+     "right": 234,
+     "w": 48,
+     "h": 24
+    },
+    {
+     "text": "Activation",
+     "top": 1246,
+     "bottom": 1270,
+     "left": 283,
+     "right": 364,
+     "w": 81,
+     "h": 24
+    },
+    {
+     "text": "Paid",
+     "top": 1246,
+     "bottom": 1270,
+     "left": 401,
+     "right": 443,
+     "w": 41,
+     "h": 24
+    },
+    {
+     "text": "Trial-to-paid",
+     "top": 1246,
+     "bottom": 1270,
+     "left": 495,
+     "right": 590,
+     "w": 94,
+     "h": 24
+    },
+    {
+     "text": "New MRR",
+     "top": 1246,
+     "bottom": 1270,
+     "left": 637,
+     "right": 713,
+     "w": 76,
+     "h": 24
+    }
+   ],
+   "inputs": [
+    {
+     "id": "range-7",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "range-30",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "range-90",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "f-plan",
+     "type": "select-one",
+     "labelled": true
+    },
+    {
+     "id": "f-region",
+     "type": "select-one",
+     "labelled": true
+    },
+    {
+     "id": "f-channel",
+     "type": "select-one",
+     "labelled": true
+    }
+   ],
+   "dataset": null,
+   "h1": "Trial funnel",
+   "errors": []
+  },
+  "1280x800": {
+   "dir": "ltr",
+   "scrollW": 1280,
+   "clientW": 1280,
+   "hOverflow": false,
+   "fixed": [
+    {
+     "tag": "TH",
+     "cls": "",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    {
+     "tag": "TH",
+     "cls": "",
+     "top": 919,
+     "bottom": 960,
+     "left": 45,
+     "right": 155
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 919,
+     "bottom": 960,
+     "left": 155,
+     "right": 242
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 919,
+     "bottom": 960,
+     "left": 242,
+     "right": 370
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 919,
+     "bottom": 960,
+     "left": 370,
+     "right": 448
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 919,
+     "bottom": 960,
+     "left": 448,
+     "right": 593
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 919,
+     "bottom": 960,
+     "left": 593,
+     "right": 715
+    }
+   ],
+   "buttons": [
+    {
+     "text": "Skip to dashboard",
+     "top": -48,
+     "bottom": -10,
+     "left": 16,
+     "right": 169,
+     "w": 153,
+     "h": 38
+    },
+    {
+     "text": "Reset filters",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "text": "Try again",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "text": "Reset filters",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "text": "Show table",
+     "top": 421,
+     "bottom": 457,
+     "left": 705,
+     "right": 819,
+     "w": 114,
+     "h": 36
+    },
+    {
+     "text": "Channel",
+     "top": 927,
+     "bottom": 951,
+     "left": 55,
+     "right": 122,
+     "w": 67,
+     "h": 24
+    },
+    {
+     "text": "Trials",
+     "top": 927,
+     "bottom": 951,
+     "left": 184,
+     "right": 232,
+     "w": 48,
+     "h": 24
+    },
+    {
+     "text": "Activation",
+     "top": 927,
+     "bottom": 951,
+     "left": 279,
+     "right": 360,
+     "w": 81,
+     "h": 24
+    },
+    {
+     "text": "Paid",
+     "top": 927,
+     "bottom": 951,
+     "left": 397,
+     "right": 438,
+     "w": 41,
+     "h": 24
+    },
+    {
+     "text": "Trial-to-paid",
+     "top": 927,
+     "bottom": 951,
+     "left": 489,
+     "right": 583,
+     "w": 94,
+     "h": 24
+    },
+    {
+     "text": "New MRR",
+     "top": 927,
+     "bottom": 951,
+     "left": 629,
+     "right": 705,
+     "w": 76,
+     "h": 24
+    }
+   ],
+   "inputs": [
+    {
+     "id": "range-7",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "range-30",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "range-90",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "f-plan",
+     "type": "select-one",
+     "labelled": true
+    },
+    {
+     "id": "f-region",
+     "type": "select-one",
+     "labelled": true
+    },
+    {
+     "id": "f-channel",
+     "type": "select-one",
+     "labelled": true
+    }
+   ],
+   "dataset": null,
+   "h1": "Trial funnel",
+   "errors": []
+  },
+  "390x400": {
+   "dir": "ltr",
+   "scrollW": 390,
+   "clientW": 390,
+   "hOverflow": false,
+   "fixed": [
+    {
+     "tag": "TH",
+     "cls": "",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    {
+     "tag": "TH",
+     "cls": "",
+     "top": 1456,
+     "bottom": 1496,
+     "left": 33,
+     "right": 120
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 1456,
+     "bottom": 1496,
+     "left": 120,
+     "right": 188
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 1456,
+     "bottom": 1496,
+     "left": 188,
+     "right": 289
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 1456,
+     "bottom": 1496,
+     "left": 289,
+     "right": 350
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 1456,
+     "bottom": 1496,
+     "left": 350,
+     "right": 465
+    },
+    {
+     "tag": "TH",
+     "cls": "num",
+     "top": 1456,
+     "bottom": 1496,
+     "left": 465,
+     "right": 560
+    }
+   ],
+   "buttons": [
+    {
+     "text": "Skip to dashboard",
+     "top": -48,
+     "bottom": -10,
+     "left": 16,
+     "right": 169,
+     "w": 153,
+     "h": 38
+    },
+    {
+     "text": "Reset filters",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "text": "Try again",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "text": "Reset filters",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "text": "Show table",
+     "top": 882,
+     "bottom": 918,
+     "left": 243,
+     "right": 357,
+     "w": 114,
+     "h": 36
+    },
+    {
+     "text": "Channel",
+     "top": 1464,
+     "bottom": 1488,
+     "left": 43,
+     "right": 110,
+     "w": 67,
+     "h": 24
+    },
+    {
+     "text": "Trials",
+     "top": 1464,
+     "bottom": 1488,
+     "left": 130,
+     "right": 178,
+     "w": 48,
+     "h": 24
+    },
+    {
+     "text": "Activation",
+     "top": 1464,
+     "bottom": 1488,
+     "left": 198,
+     "right": 279,
+     "w": 81,
+     "h": 24
+    },
+    {
+     "text": "Paid",
+     "top": 1464,
+     "bottom": 1488,
+     "left": 299,
+     "right": 340,
+     "w": 41,
+     "h": 24
+    },
+    {
+     "text": "Trial-to-paid",
+     "top": 1464,
+     "bottom": 1488,
+     "left": 360,
+     "right": 455,
+     "w": 94,
+     "h": 24
+    },
+    {
+     "text": "New MRR",
+     "top": 1464,
+     "bottom": 1488,
+     "left": 475,
+     "right": 550,
+     "w": 76,
+     "h": 24
+    }
+   ],
+   "inputs": [
+    {
+     "id": "range-7",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "range-30",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "range-90",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "f-plan",
+     "type": "select-one",
+     "labelled": true
+    },
+    {
+     "id": "f-region",
+     "type": "select-one",
+     "labelled": true
+    },
+    {
+     "id": "f-channel",
+     "type": "select-one",
+     "labelled": true
+    }
+   ],
+   "dataset": null,
+   "h1": "Trial funnel",
+   "errors": []
+  }
+ }
+}

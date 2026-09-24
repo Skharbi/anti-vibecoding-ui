@@ -1,0 +1,654 @@
+{
+ "g1-dashboard": {
+  "390x844": {
+   "dir": "ltr",
+   "scrollW": 390,
+   "clientW": 390,
+   "hOverflow": false,
+   "fixed": [],
+   "buttons": [
+    {
+     "text": "Review discrepancies",
+     "top": 842,
+     "bottom": 863,
+     "left": 31,
+     "right": 176,
+     "w": 145,
+     "h": 21
+    }
+   ],
+   "inputs": [],
+   "dataset": null,
+   "h1": "Medication safety operations",
+   "errors": []
+  },
+  "768x1024": {
+   "dir": "ltr",
+   "scrollW": 768,
+   "clientW": 768,
+   "hOverflow": false,
+   "fixed": [],
+   "buttons": [
+    {
+     "text": "Review discrepancies",
+     "top": 403,
+     "bottom": 424,
+     "left": 533,
+     "right": 678,
+     "w": 145,
+     "h": 21
+    }
+   ],
+   "inputs": [],
+   "dataset": null,
+   "h1": "Medication safety operations",
+   "errors": []
+  },
+  "1280x800": {
+   "dir": "ltr",
+   "scrollW": 1280,
+   "clientW": 1280,
+   "hOverflow": false,
+   "fixed": [],
+   "buttons": [
+    {
+     "text": "Review discrepancies",
+     "top": 377,
+     "bottom": 398,
+     "left": 874,
+     "right": 1019,
+     "w": 145,
+     "h": 21
+    }
+   ],
+   "inputs": [],
+   "dataset": null,
+   "h1": "Medication safety operations",
+   "errors": []
+  },
+  "390x400": {
+   "dir": "ltr",
+   "scrollW": 390,
+   "clientW": 390,
+   "hOverflow": false,
+   "fixed": [],
+   "buttons": [
+    {
+     "text": "Review discrepancies",
+     "top": 842,
+     "bottom": 863,
+     "left": 31,
+     "right": 176,
+     "w": 145,
+     "h": 21
+    }
+   ],
+   "inputs": [],
+   "dataset": null,
+   "h1": "Medication safety operations",
+   "errors": []
+  }
+ },
+ "g2-portfolio": {
+  "390x844": {
+   "dir": "ltr",
+   "scrollW": 390,
+   "clientW": 390,
+   "hOverflow": false,
+   "fixed": [],
+   "buttons": [],
+   "inputs": [],
+   "dataset": null,
+   "h1": "Healthcare technology, medication safety, and pharmacy automation",
+   "errors": []
+  },
+  "768x1024": {
+   "dir": "ltr",
+   "scrollW": 768,
+   "clientW": 768,
+   "hOverflow": false,
+   "fixed": [],
+   "buttons": [],
+   "inputs": [],
+   "dataset": null,
+   "h1": "Healthcare technology, medication safety, and pharmacy automation",
+   "errors": []
+  },
+  "1280x800": {
+   "dir": "ltr",
+   "scrollW": 1280,
+   "clientW": 1280,
+   "hOverflow": false,
+   "fixed": [],
+   "buttons": [],
+   "inputs": [],
+   "dataset": null,
+   "h1": "Healthcare technology, medication safety, and pharmacy automation",
+   "errors": []
+  },
+  "390x400": {
+   "dir": "ltr",
+   "scrollW": 390,
+   "clientW": 390,
+   "hOverflow": false,
+   "fixed": [],
+   "buttons": [],
+   "inputs": [],
+   "dataset": null,
+   "h1": "Healthcare technology, medication safety, and pharmacy automation",
+   "errors": []
+  }
+ },
+ "g3-mobile-form": {
+  "390x844": {
+   "dir": "ltr",
+   "scrollW": 390,
+   "clientW": 390,
+   "hOverflow": false,
+   "fixed": [
+    {
+     "tag": "DIV",
+     "cls": "actions",
+     "top": 771,
+     "bottom": 844,
+     "left": 0,
+     "right": 390
+    }
+   ],
+   "buttons": [
+    {
+     "text": "Submit authorization",
+     "top": 784,
+     "bottom": 832,
+     "left": 16,
+     "right": 374,
+     "w": 358,
+     "h": 48
+    }
+   ],
+   "inputs": [
+    {
+     "id": "member",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "reason",
+     "type": "textarea",
+     "labelled": true
+    },
+    {
+     "id": "urgency",
+     "type": "select-one",
+     "labelled": true
+    }
+   ],
+   "dataset": null,
+   "h1": "Insurance authorization",
+   "errors": []
+  },
+  "768x1024": {
+   "dir": "ltr",
+   "scrollW": 768,
+   "clientW": 768,
+   "hOverflow": false,
+   "fixed": [
+    {
+     "tag": "DIV",
+     "cls": "actions",
+     "top": 951,
+     "bottom": 1024,
+     "left": 0,
+     "right": 768
+    }
+   ],
+   "buttons": [
+    {
+     "text": "Submit authorization",
+     "top": 964,
+     "bottom": 1012,
+     "left": 120,
+     "right": 648,
+     "w": 528,
+     "h": 48
+    }
+   ],
+   "inputs": [
+    {
+     "id": "member",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "reason",
+     "type": "textarea",
+     "labelled": true
+    },
+    {
+     "id": "urgency",
+     "type": "select-one",
+     "labelled": true
+    }
+   ],
+   "dataset": null,
+   "h1": "Insurance authorization",
+   "errors": []
+  },
+  "1280x800": {
+   "dir": "ltr",
+   "scrollW": 1280,
+   "clientW": 1280,
+   "hOverflow": false,
+   "fixed": [
+    {
+     "tag": "DIV",
+     "cls": "actions",
+     "top": 727,
+     "bottom": 800,
+     "left": 0,
+     "right": 1280
+    }
+   ],
+   "buttons": [
+    {
+     "text": "Submit authorization",
+     "top": 740,
+     "bottom": 788,
+     "left": 376,
+     "right": 904,
+     "w": 528,
+     "h": 48
+    }
+   ],
+   "inputs": [
+    {
+     "id": "member",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "reason",
+     "type": "textarea",
+     "labelled": true
+    },
+    {
+     "id": "urgency",
+     "type": "select-one",
+     "labelled": true
+    }
+   ],
+   "dataset": null,
+   "h1": "Insurance authorization",
+   "errors": []
+  },
+  "390x400": {
+   "dir": "ltr",
+   "scrollW": 390,
+   "clientW": 390,
+   "hOverflow": false,
+   "fixed": [
+    {
+     "tag": "DIV",
+     "cls": "actions",
+     "top": 327,
+     "bottom": 400,
+     "left": 0,
+     "right": 390
+    }
+   ],
+   "buttons": [
+    {
+     "text": "Submit authorization",
+     "top": 340,
+     "bottom": 388,
+     "left": 16,
+     "right": 374,
+     "w": 358,
+     "h": 48
+    }
+   ],
+   "inputs": [
+    {
+     "id": "member",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "reason",
+     "type": "textarea",
+     "labelled": true
+    },
+    {
+     "id": "urgency",
+     "type": "select-one",
+     "labelled": true
+    }
+   ],
+   "dataset": null,
+   "h1": "Insurance authorization",
+   "errors": []
+  }
+ },
+ "p1-browser-feature": {
+  "390x844": {
+   "dir": "ltr",
+   "scrollW": 390,
+   "clientW": 390,
+   "hOverflow": false,
+   "fixed": [],
+   "buttons": [
+    {
+     "text": "Run transition",
+     "top": 100,
+     "bottom": 121,
+     "left": 28,
+     "right": 126,
+     "w": 98,
+     "h": 21
+    }
+   ],
+   "inputs": [],
+   "dataset": "{\"featureDetected\":true,\"fallbackPresent\":true,\"supported\":true}",
+   "errors": []
+  },
+  "768x1024": {
+   "dir": "ltr",
+   "scrollW": 768,
+   "clientW": 768,
+   "hOverflow": false,
+   "fixed": [],
+   "buttons": [
+    {
+     "text": "Run transition",
+     "top": 81,
+     "bottom": 102,
+     "left": 28,
+     "right": 126,
+     "w": 98,
+     "h": 21
+    }
+   ],
+   "inputs": [],
+   "dataset": "{\"featureDetected\":true,\"fallbackPresent\":true,\"supported\":true}",
+   "errors": []
+  },
+  "1280x800": {
+   "dir": "ltr",
+   "scrollW": 1280,
+   "clientW": 1280,
+   "hOverflow": false,
+   "fixed": [],
+   "buttons": [
+    {
+     "text": "Run transition",
+     "top": 81,
+     "bottom": 102,
+     "left": 28,
+     "right": 126,
+     "w": 98,
+     "h": 21
+    }
+   ],
+   "inputs": [],
+   "dataset": "{\"featureDetected\":true,\"fallbackPresent\":true,\"supported\":true}",
+   "errors": []
+  },
+  "390x400": {
+   "dir": "ltr",
+   "scrollW": 390,
+   "clientW": 390,
+   "hOverflow": false,
+   "fixed": [],
+   "buttons": [
+    {
+     "text": "Run transition",
+     "top": 100,
+     "bottom": 121,
+     "left": 28,
+     "right": 126,
+     "w": 98,
+     "h": 21
+    }
+   ],
+   "inputs": [],
+   "dataset": "{\"featureDetected\":true,\"fallbackPresent\":true,\"supported\":true}",
+   "errors": []
+  }
+ },
+ "r3-responsive": {
+  "390x844": {
+   "dir": "ltr",
+   "scrollW": 390,
+   "clientW": 390,
+   "hOverflow": false,
+   "fixed": [
+    {
+     "tag": "DIV",
+     "cls": "footer",
+     "top": 775,
+     "bottom": 844,
+     "left": 0,
+     "right": 390
+    }
+   ],
+   "buttons": [
+    {
+     "text": "Submit",
+     "top": 384,
+     "bottom": 428,
+     "left": 16,
+     "right": 73,
+     "w": 57,
+     "h": 44
+    },
+    {
+     "text": "Submit claim",
+     "top": 788,
+     "bottom": 832,
+     "left": 286,
+     "right": 378,
+     "w": 92,
+     "h": 44
+    }
+   ],
+   "inputs": [
+    {
+     "id": "",
+     "type": "textarea",
+     "labelled": true
+    }
+   ],
+   "dataset": null,
+   "h1": "Claims queue",
+   "errors": []
+  },
+  "768x1024": {
+   "dir": "ltr",
+   "scrollW": 768,
+   "clientW": 768,
+   "hOverflow": false,
+   "fixed": [
+    {
+     "tag": "DIV",
+     "cls": "footer",
+     "top": 955,
+     "bottom": 1024,
+     "left": 240,
+     "right": 768
+    }
+   ],
+   "buttons": [
+    {
+     "text": "Submit",
+     "top": 325,
+     "bottom": 369,
+     "left": 260,
+     "right": 317,
+     "w": 57,
+     "h": 44
+    },
+    {
+     "text": "Submit claim",
+     "top": 968,
+     "bottom": 1012,
+     "left": 664,
+     "right": 756,
+     "w": 92,
+     "h": 44
+    }
+   ],
+   "inputs": [
+    {
+     "id": "",
+     "type": "textarea",
+     "labelled": true
+    }
+   ],
+   "dataset": null,
+   "h1": "Claims queue",
+   "errors": []
+  },
+  "1280x800": {
+   "dir": "ltr",
+   "scrollW": 1280,
+   "clientW": 1280,
+   "hOverflow": false,
+   "fixed": [
+    {
+     "tag": "DIV",
+     "cls": "footer",
+     "top": 731,
+     "bottom": 800,
+     "left": 240,
+     "right": 1280
+    }
+   ],
+   "buttons": [
+    {
+     "text": "Submit",
+     "top": 325,
+     "bottom": 369,
+     "left": 260,
+     "right": 317,
+     "w": 57,
+     "h": 44
+    },
+    {
+     "text": "Submit claim",
+     "top": 744,
+     "bottom": 788,
+     "left": 1176,
+     "right": 1268,
+     "w": 92,
+     "h": 44
+    }
+   ],
+   "inputs": [
+    {
+     "id": "",
+     "type": "textarea",
+     "labelled": true
+    }
+   ],
+   "dataset": null,
+   "h1": "Claims queue",
+   "errors": []
+  },
+  "390x400": {
+   "dir": "ltr",
+   "scrollW": 390,
+   "clientW": 390,
+   "hOverflow": false,
+   "fixed": [
+    {
+     "tag": "DIV",
+     "cls": "footer",
+     "top": 331,
+     "bottom": 400,
+     "left": 0,
+     "right": 390
+    }
+   ],
+   "buttons": [
+    {
+     "text": "Submit",
+     "top": 384,
+     "bottom": 428,
+     "left": 16,
+     "right": 73,
+     "w": 57,
+     "h": 44
+    },
+    {
+     "text": "Submit claim",
+     "top": 344,
+     "bottom": 388,
+     "left": 286,
+     "right": 378,
+     "w": 92,
+     "h": 44
+    }
+   ],
+   "inputs": [
+    {
+     "id": "",
+     "type": "textarea",
+     "labelled": true
+    }
+   ],
+   "dataset": null,
+   "h1": "Claims queue",
+   "errors": []
+  }
+ },
+ "r9-rtl": {
+  "390x844": {
+   "dir": "rtl",
+   "scrollW": 390,
+   "clientW": 390,
+   "hOverflow": false,
+   "fixed": [],
+   "buttons": [],
+   "inputs": [],
+   "dataset": null,
+   "h1": "مراجعة الطلبات",
+   "errors": []
+  },
+  "768x1024": {
+   "dir": "rtl",
+   "scrollW": 768,
+   "clientW": 768,
+   "hOverflow": false,
+   "fixed": [],
+   "buttons": [],
+   "inputs": [],
+   "dataset": null,
+   "h1": "مراجعة الطلبات",
+   "errors": []
+  },
+  "1280x800": {
+   "dir": "rtl",
+   "scrollW": 1280,
+   "clientW": 1280,
+   "hOverflow": false,
+   "fixed": [],
+   "buttons": [],
+   "inputs": [],
+   "dataset": null,
+   "h1": "مراجعة الطلبات",
+   "errors": []
+  },
+  "390x400": {
+   "dir": "rtl",
+   "scrollW": 390,
+   "clientW": 390,
+   "hOverflow": false,
+   "fixed": [],
+   "buttons": [],
+   "inputs": [],
+   "dataset": null,
+   "h1": "مراجعة الطلبات",
+   "errors": []
+  }
+ }
+}

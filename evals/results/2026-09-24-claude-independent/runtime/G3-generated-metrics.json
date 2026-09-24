@@ -1,0 +1,724 @@
+{
+ "index": {
+  "390x844": {
+   "dir": "ltr",
+   "scrollW": 390,
+   "clientW": 390,
+   "hOverflow": false,
+   "fixed": [
+    {
+     "tag": "DIV",
+     "cls": "actions",
+     "top": 771,
+     "bottom": 844,
+     "left": 0,
+     "right": 390
+    }
+   ],
+   "buttons": [
+    {
+     "text": "Skip to form",
+     "top": -100,
+     "bottom": -60,
+     "left": 16,
+     "right": 138,
+     "w": 122,
+     "h": 40
+    },
+    {
+     "text": "Back",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "text": "Continue",
+     "top": 784,
+     "bottom": 832,
+     "left": 16,
+     "right": 374,
+     "w": 358,
+     "h": 48
+    }
+   ],
+   "inputs": [
+    {
+     "id": "patient_first",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "patient_last",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "dob_month",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "dob_day",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "dob_year",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "phone",
+     "type": "tel",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "ph_first",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "ph_last",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "ph_dob_month",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "ph_dob_day",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "ph_dob_year",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "carrier",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "member_id",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "group_number",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "checkbox",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "checkbox",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "checkbox",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "signer_authority",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "signer_name",
+     "type": "text",
+     "labelled": true
+    }
+   ],
+   "dataset": null,
+   "h1": "Insurance authorization",
+   "errors": []
+  },
+  "768x1024": {
+   "dir": "ltr",
+   "scrollW": 768,
+   "clientW": 768,
+   "hOverflow": false,
+   "fixed": [
+    {
+     "tag": "DIV",
+     "cls": "actions",
+     "top": 923,
+     "bottom": 996,
+     "left": 113,
+     "right": 655
+    }
+   ],
+   "buttons": [
+    {
+     "text": "Skip to form",
+     "top": -100,
+     "bottom": -60,
+     "left": 16,
+     "right": 138,
+     "w": 122,
+     "h": 40
+    },
+    {
+     "text": "Back",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "text": "Continue",
+     "top": 936,
+     "bottom": 984,
+     "left": 145,
+     "right": 623,
+     "w": 478,
+     "h": 48
+    }
+   ],
+   "inputs": [
+    {
+     "id": "patient_first",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "patient_last",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "dob_month",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "dob_day",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "dob_year",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "phone",
+     "type": "tel",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "ph_first",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "ph_last",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "ph_dob_month",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "ph_dob_day",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "ph_dob_year",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "carrier",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "member_id",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "group_number",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "checkbox",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "checkbox",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "checkbox",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "signer_authority",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "signer_name",
+     "type": "text",
+     "labelled": true
+    }
+   ],
+   "dataset": null,
+   "h1": "Insurance authorization",
+   "errors": []
+  },
+  "1280x800": {
+   "dir": "ltr",
+   "scrollW": 1280,
+   "clientW": 1280,
+   "hOverflow": false,
+   "fixed": [
+    {
+     "tag": "DIV",
+     "cls": "actions",
+     "top": 727,
+     "bottom": 800,
+     "left": 369,
+     "right": 911
+    }
+   ],
+   "buttons": [
+    {
+     "text": "Skip to form",
+     "top": -100,
+     "bottom": -60,
+     "left": 16,
+     "right": 138,
+     "w": 122,
+     "h": 40
+    },
+    {
+     "text": "Back",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "text": "Continue",
+     "top": 740,
+     "bottom": 788,
+     "left": 401,
+     "right": 879,
+     "w": 478,
+     "h": 48
+    }
+   ],
+   "inputs": [
+    {
+     "id": "patient_first",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "patient_last",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "dob_month",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "dob_day",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "dob_year",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "phone",
+     "type": "tel",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "ph_first",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "ph_last",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "ph_dob_month",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "ph_dob_day",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "ph_dob_year",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "carrier",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "member_id",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "group_number",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "checkbox",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "checkbox",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "checkbox",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "signer_authority",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "signer_name",
+     "type": "text",
+     "labelled": true
+    }
+   ],
+   "dataset": null,
+   "h1": "Insurance authorization",
+   "errors": []
+  },
+  "390x400": {
+   "dir": "ltr",
+   "scrollW": 390,
+   "clientW": 390,
+   "hOverflow": false,
+   "fixed": [
+    {
+     "tag": "DIV",
+     "cls": "actions",
+     "top": 327,
+     "bottom": 400,
+     "left": 0,
+     "right": 390
+    }
+   ],
+   "buttons": [
+    {
+     "text": "Skip to form",
+     "top": -100,
+     "bottom": -60,
+     "left": 16,
+     "right": 138,
+     "w": 122,
+     "h": 40
+    },
+    {
+     "text": "Back",
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "text": "Continue",
+     "top": 340,
+     "bottom": 388,
+     "left": 16,
+     "right": 374,
+     "w": 358,
+     "h": 48
+    }
+   ],
+   "inputs": [
+    {
+     "id": "patient_first",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "patient_last",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "dob_month",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "dob_day",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "dob_year",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "phone",
+     "type": "tel",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "ph_first",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "ph_last",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "ph_dob_month",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "ph_dob_day",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "ph_dob_year",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "carrier",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "member_id",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "group_number",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "checkbox",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "checkbox",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "checkbox",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "",
+     "type": "radio",
+     "labelled": true
+    },
+    {
+     "id": "signer_authority",
+     "type": "text",
+     "labelled": true
+    },
+    {
+     "id": "signer_name",
+     "type": "text",
+     "labelled": true
+    }
+   ],
+   "dataset": null,
+   "h1": "Insurance authorization",
+   "errors": []
+  }
+ }
+}
