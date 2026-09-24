@@ -1,0 +1,96 @@
+# Runtime Execution Results — Chromium
+
+Date: 2026-09-24
+Evaluator: GPT-5.6 Sol
+Browser: Chromium 144.0.7559.96 (Debian build)
+Harness: Playwright controlling the system Chromium binary directly
+Environment: isolated local browser sandbox
+Commit basis: main after PR #2 merge
+
+## Summary
+
+Execution-gated cases: **6/6 PASS**
+
+| Case | Result | Evidence |
+|---|---|---|
+| R3 responsive/mobile | PASS | 390px layout had no page overflow; mobile nav visible; desktop sidebar hidden; fixed primary action remained inside a reduced 390×520 visual viewport after textarea focus |
+| R9 RTL/localization | PASS | `dir=rtl`; Arabic heading rendered; mixed Arabic/English identifier retained; no horizontal overflow; Arabic date and number localization rendered |
+| G1 analytics dashboard | PASS | desktop + 390px render without overflow; product-specific heading; loaded, empty, and error states represented |
+| G2 healthcare portfolio | PASS | desktop + mobile render without overflow; career identity leads; professional work precedes AI projects; project status explicitly qualified |
+| G3 mobile authorization form | PASS | persistent labels; validation appears; entered data preserved; primary action remains in reduced viewport; logical focus order |
+| P1 browser compatibility | PASS | feature-detection path rendered; normal action completed; forced fallback announced unsupported feature and completed action without the feature |
+
+## Detailed checks
+
+### R3
+- document scroll width: 390px at 390px viewport
+- mobile navigation visible
+- sidebar hidden on narrow viewport
+- fixed submit action visible
+- after focus + viewport reduction to 390×520, action bottom remained within visual viewport
+
+**Note:** visual viewport reduction was used as a deterministic approximation of software-keyboard occlusion. This validates the layout response to reduced visible height, not a specific mobile OS keyboard implementation.
+
+### R9
+- HTML direction: RTL
+- Arabic heading visible
+- mixed bidi text retained: `ABC-123` with Arabic content
+- document scroll width: 390px at 390px viewport
+- localized date rendered: `٢٤/٠٩/٢٠٢٦`
+- localized number rendered: `١٢٣٬٤٥٦٫٧٨`
+
+### G1
+Desktop and 390px mobile:
+- no page-level horizontal overflow
+- meaningful product-specific heading
+
+State coverage:
+- loaded: `3 discrepancies require review.`
+- empty: `No discrepancies match the current filters.`
+- error: `Could not load discrepancies. Retry.`
+
+### G2
+Desktop and mobile:
+- no page-level horizontal overflow
+- `Informatics Pharmacist` identity leads
+- `Professional work` appears before `AI side projects`
+- AI project carries explicit `In development` status
+
+### G3
+- labels persist for member ID, clinical reason, urgency
+- empty member ID produces visible validation
+- previously entered clinical reason is preserved after validation
+- submit action remains in reduced 390×520 visual viewport
+- DOM focus order: member → reason → urgency → submit
+
+### P1
+A fixture defect was discovered during the first run:
+- the fixture referenced `status` and `go` through implicit element globals;
+- `status` conflicts with `window.status`, so the script did not complete reliably.
+
+Fix:
+- replaced implicit globals with explicit `getElementById` references.
+
+Retest:
+- supported path explicitly reports enhancement availability
+- transition action completes asynchronously
+- forced unsupported path reports fallback availability
+- fallback action completes successfully
+
+## Evidence limits
+
+This run provides real Chromium rendering/layout/focus/interaction evidence.
+
+It does **not** claim:
+- Safari/WebKit-specific behavior;
+- Firefox-specific behavior;
+- a physical iOS/Android software keyboard;
+- full WCAG conformance.
+
+Those are broader compatibility/conformance claims and remain outside this specific six-case execution gate.
+
+## Outcome
+
+The six cases previously marked PARTIAL-EXEC can now be treated as **PASS for the documented Chromium execution gate**.
+
+The remaining release blocker is the independent second-agent/model evaluation defined in `evals/SECOND-AGENT-RUN.md`.
