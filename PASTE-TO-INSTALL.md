@@ -1,14 +1,22 @@
-# Paste-to-install — portable edition
+# Paste and use — no installation required
 
-Use this when you cannot install the full skill folder (for example, a mobile-only workflow).
+This is the easiest way to try the skill, especially on mobile.
 
-**Important:** this is a condensed portable edition. The canonical/full version is `skills/anti-vibecoding-ui/`, which includes the complete 38-section checklist, review protocol, component behavior, cybersecurity/trust guidance, cross-domain best-practice matrix, standards references, and repository evaluation suite.
+You do **not** need a terminal, GitHub setup, or plugin installation.
 
 ## How
 
 1. Copy everything inside the code block below.
-2. Paste it as the first message/instruction in a new AI coding/design session.
-3. Then ask the agent to build, review, redesign, or fix the UI.
+2. Paste it as the first instruction in a new AI coding/design conversation.
+3. In the next message, ask the AI to review, build, redesign, or fix your UI.
+
+Example:
+
+```text
+Review this dashboard using the Anti-Vibecoding UI protocol.
+```
+
+**Note:** this is the condensed portable edition. For repeated or serious use, install the full folder at `skills/anti-vibecoding-ui/`, which includes the complete references and evaluation rules.
 
 ---
 

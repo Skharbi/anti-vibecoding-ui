@@ -7,17 +7,17 @@ A production UI engineering Agent Skill for reviewing and generating interfaces 
 
 ## Quick start
 
-For the full skill, use the installable folder:
+Choose **one** path. You do not need to understand the packaging first.
 
-```
-skills/anti-vibecoding-ui/
-```
+| I want to... | Use this |
+|---|---|
+| Try the skill now from a phone or normal AI chat | Open **[PASTE-TO-INSTALL.md](PASTE-TO-INSTALL.md)** and copy the instruction block |
+| Install the full reusable skill in a client that supports Agent Skills | Use the folder **`skills/anti-vibecoding-ui/`** |
+| Package it as a Codex/OpenAI plugin | Use the **repository root** |
 
-For an OpenAI/Codex portable plugin workflow, use the repository root. It now includes the current portable `plugin.json` plus a `.codex-plugin/plugin.json` compatibility manifest.
+If you are unsure, start with **PASTE-TO-INSTALL.md**. It requires no terminal and no setup.
 
-For a no-install/mobile workflow, use `PASTE-TO-INSTALL.md`.
-
-See **[INSTALL.md](INSTALL.md)** for the full install matrix and smoke tests.
+See **[INSTALL.md](INSTALL.md)** for step-by-step instructions.
 
 ## What it does
 
