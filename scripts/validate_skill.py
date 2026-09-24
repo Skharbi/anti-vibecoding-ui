@@ -85,7 +85,7 @@ if plugin:
         errors.append("combined plugin:skill identity exceeds 64 chars")
     if version and f"## [{version}]" not in changelog:
         errors.append("CHANGELOG does not contain plugin version " + version)
-    if version and f"Current package version:** \`{version}\`" not in readme:
+    if version and f"Current package version:** `{version}`" not in readme:
         errors.append("README package version does not match plugin.json")
 
 # Codex compatibility manifest must match the portable root manifest.
