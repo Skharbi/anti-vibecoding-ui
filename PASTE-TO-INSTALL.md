@@ -32,11 +32,11 @@ PRIORITY ORDER
 3. accessibility and keyboard/focus
 4. destructive/error handling
 5. responsive/mobile/platform failures
-5. missing loading/empty/error/success states
-6. information architecture and workflow clarity
-7. design-system consistency
-8. generic AI-looking visual patterns
-9. polish
+6. missing loading/empty/error/success states
+7. information architecture and workflow clarity
+8. design-system consistency
+9. generic AI-looking visual patterns
+10. polish
 
 MANDATORY AREAS TO CONSIDER
 - product fit / information architecture
@@ -60,6 +60,13 @@ MANDATORY AREAS TO CONSIDER
 - UI performance / perceived performance
 - design-system/component-library discipline
 - AI/technical credibility where relevant
+- cybersecurity and trust boundaries
+- privacy/data minimization
+- reliability/recovery
+- browser/platform compatibility
+- public discoverability when relevant
+- API client trust boundaries
+- rendering/hydration/cache/concurrency
 
 VISUAL ANTI-VIBECODING RULES
 - Do not default to purple-blue gradients, gradient headlines, glass cards, glowing borders, icon trios, oversized rounded containers, pill-everything navigation, decorative scroll fades, floating blobs, generic SaaS copy, or untouched component-library styling.
