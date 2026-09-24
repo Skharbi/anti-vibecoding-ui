@@ -99,7 +99,11 @@ anti-vibecoding-ui/
 ├── PASTE-TO-INSTALL.md
 ├── evals/
 │   ├── README.md
-│   └── cases.md
+│   ├── cases.md
+│   ├── EXECUTION-GATE.md
+│   └── results/
+├── scripts/
+│   └── validate_skill.py
 └── skills/
     └── anti-vibecoding-ui/
         ├── SKILL.md
