@@ -1,0 +1,51 @@
+# HANDOVER.md
+Last updated: 2026-09-24 | By: ChatGPT | Session goal: Harden anti-vibecoding-ui into an engineering-grade UI/UX skill
+
+## 1. What this is
+- Purpose: Reusable agent skill for generating/reviewing UI while avoiding generic AI design patterns and enforcing production UI quality.
+- Users: Developers, designers, product builders, and AI coding agents.
+
+## 2. Current state
+- Works (verified): skill packaging exists; SKILL.md and references load from `skills/anti-vibecoding-ui/`; README install path matches repository structure.
+- Enhanced on branch `chatgpt/skill-hardening-v2`: broader UI engineering protocol, 28-section checklist, review protocol, component behavior reference, primary-source references, behavioral eval suite.
+- Broken / flaky: no live multi-agent evaluation results recorded yet.
+- Half-done: README and packaging metadata still need final update/validation after branch changes.
+
+## 3. Architecture
+- Stack: Markdown-only Agent Skill; no runtime dependencies.
+- Entry point: `skills/anti-vibecoding-ui/SKILL.md`
+- Data flow: user UI request → skill trigger → checklist/protocol references → review/generation → verification output.
+- External deps / APIs / keys: none.
+
+## 4. Decisions & why
+| Decision | Reason | Rejected alternative |
+|---|---|---|
+| Keep skill dependency-free | Portability and low install friction | Adding a JS/Python test harness |
+| Use WCAG 2.2 AA as default accessibility target | Current broadly applicable baseline | Visual-only review |
+| Separate checklist from protocol | Avoid bloated execution instructions | One monolithic SKILL.md |
+| Add behavioral eval fixtures | Skills must be validated by behavior, not build success | Claiming validation from syntax/package checks |
+| Preserve justified exceptions | Prevent dogmatic anti-pattern matching | Blanket bans on gradients/cards/animation |
+
+## 5. Hard rules
+- No new runtime libraries without a demonstrated need.
+- No unrelated repository rewrites.
+- Do not turn aesthetic preferences into accessibility/engineering claims.
+- Prefer primary standards for interaction/accessibility guidance.
+- No fabricated validation claims.
+- Update evaluation fixtures when a real failure mode is discovered.
+
+## 6. Known traps
+- The skill can over-trigger on backend-only tasks if the description becomes too broad.
+- A very long checklist can produce noisy output; the review protocol requires prioritization.
+- ARIA should not be added when native semantics already solve the problem.
+- "Anti-vibecoding" must not become "ban modern design patterns."
+
+## 7. Next task
+- Task: Update README/openai metadata, then run the behavioral evaluation suite on at least two compatible agents.
+- Done when: install docs match current structure; eval results are recorded with agent/model/date; release bar in `evals/README.md` is met or failures are documented.
+- Files allowed to touch: `README.md`, `skills/anti-vibecoding-ui/agents/openai.yaml`, `evals/*`, `HANDOVER.md`.
+
+## 8. How to verify
+- Run: install/load the skill using supported client workflow.
+- Test: execute all cases in `evals/cases.md`.
+- Expected output: prioritized evidence-based findings, correct exceptions, accessibility/blocked-task issues outrank cosmetic issues, and generation output is verified on desktop + narrow mobile.
