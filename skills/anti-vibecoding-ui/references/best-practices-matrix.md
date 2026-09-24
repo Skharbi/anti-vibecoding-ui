@@ -29,9 +29,10 @@ Use this matrix to prevent blind spots and scope confusion. The skill is UI/fron
 For a "full production review":
 1. scan every domain;
 2. mark it **reviewed**, **not applicable**, or **requires external verification**;
-3. never silently convert "not visible in frontend code" into "pass";
-4. prioritize confirmed user/security failures over speculative architecture concerns;
-5. record external-verification items in the final report.
+3. include the resulting compact domain-coverage table (or equivalent explicit accounting) in the final output;
+4. never silently convert "not visible in frontend code" into "pass";
+5. prioritize confirmed user/security failures over speculative architecture concerns;
+6. record external-verification items in the final report.
 
 ## Evidence levels
 
@@ -46,3 +47,8 @@ Use these labels where helpful:
 This skill should be broad in **coverage**, not careless in **claims**.
 
 It may identify that CSP, server authorization, rate limiting, secure cookie flags, dependency provenance, logging alerts, or backend validation need verification. It must not claim those controls are absent merely because they are not visible in a frontend file.
+
+
+## Current-claim verification rule
+
+Some review facts expire quickly. CVEs/advisories, framework support windows, browser feature support, policy requirements, and current standards/version claims must be checked against a current authoritative source before they are labeled **Confirmed** or used as the sole basis for a must-fix/Fail. If source checking is unavailable, label the claim **Likely** or **Needs verification** and state that it came from memory or incomplete evidence.
