@@ -63,9 +63,10 @@ For existing code:
 3. For every finding, provide evidence: file + line, component/selector, or observable rendered behavior.
 4. Classify findings using `references/review-protocol.md`.
 5. Distinguish:
-   - **must-fix** — broken behavior, accessibility failure, blocked task, misleading feedback, serious responsive issue;
-   - **should-fix** — inconsistency, confusing hierarchy, poor state handling, generic pattern, maintainability/design-system drift;
+   - **must-fix** — confirmed or directly observed broken behavior, accessibility failure, blocked task, misleading feedback, serious responsive issue, or confirmed high-impact security/privacy issue;
+   - **should-fix** — inconsistency, confusing hierarchy, poor state handling, generic pattern, maintainability/design-system drift, or a plausible risk that is not yet confirmed;
    - **judgment call** — aesthetic or product tradeoff that needs user context.
+   - A "likely" or memory-based claim must not by itself produce a must-fix or Fail; first verify the underlying fact or downgrade it to a verification request.
 6. Confirm what already passes. Do not manufacture problems to make the review look thorough.
 7. If asked to fix, implement the clear fixes directly and preserve unrelated working code.
 8. Re-run verification after changes.
@@ -109,7 +110,7 @@ Always consider whether each area applies. Do not silently skip them:
 - charts/data visualization and non-color cues;
 - destructive and irreversible actions;
 - auth/account/permission UX where present;
-- internationalization, long text, RTL, locale-sensitive content;
+- internationalization, long text, RTL, locale-sensitive content; when date/calendar semantics matter, set the intended calendar, timezone, and numbering system explicitly rather than assuming locale defaults;
 - performance-sensitive UI behavior;
 - component-library and design-system discipline;
 - consistency across screens, not just within one component;
@@ -136,16 +137,18 @@ Security review must:
 - never treat hidden/disabled UI as authorization;
 - never treat client-side validation as a security boundary;
 - treat model output and retrieved/uploaded content as untrusted;
-- avoid claiming "secure", "OWASP compliant", or "ASVS compliant" from frontend-only inspection.
+- avoid claiming "secure", "OWASP compliant", or "ASVS compliant" from frontend-only inspection;
+- avoid claiming a legal/regulatory breach, violation, non-compliance, or certification failure as fact unless the governing requirement and applicable evidence have been verified; otherwise label it as a risk or verification need;
+- verify time-sensitive security advisories, CVEs, framework support status, and browser-compatibility claims against a current authoritative source before using them as the basis for a must-fix finding; if not checked, label the claim as unverified/from memory.
 
 ## Best-practice coverage rule
 
-For full production reviews, use `references/best-practices-matrix.md` and classify each relevant domain as:
+For full production reviews, use `references/best-practices-matrix.md` and classify **every domain** as:
 - reviewed;
 - not applicable;
 - requires external verification.
 
-Broad coverage does not justify broad claims. If a control is outside available evidence, say so explicitly.
+Include a compact coverage table or equivalent accounting in the final full-audit output so no domain is silently skipped. Broad coverage does not justify broad claims. If a control is outside available evidence, say so explicitly.
 
 ## Accessibility baseline
 
@@ -163,7 +166,8 @@ At minimum verify:
 - reduced-motion behavior;
 - form labels, errors, instructions, and required states;
 - correct live-region use for asynchronous status;
-- custom widget behavior consistent with established ARIA patterns.
+- custom widget behavior consistent with established ARIA patterns;
+- disabled-control semantics: use native `disabled` when a control truly should be unavailable and removed from interaction; use `aria-disabled` only when keeping it discoverable/focusable is intentional, while also preventing activation in code and explaining why it is unavailable.
 
 Do not "fix accessibility" by adding ARIA indiscriminately. Incorrect ARIA can make an otherwise usable control worse.
 
