@@ -1,29 +1,83 @@
 # anti-vibecoding-ui
 
-An Agent Skill for Claude Code, OpenAI Codex, and compatible Agent Skills clients. It applies a 15-section anti-vibecoding UI/UX checklist to any interface work — building new UI or reviewing existing code.
+An Agent Skill for reviewing and generating production-quality interfaces without generic AI-generated design patterns.
 
-## Why
-
-Most AI-generated interfaces converge on the same look: purple-blue gradients, glassmorphism cards, pill-shaped everything, icon-box rows, buzzword headlines, scroll-triggered fade-ins. That look now signals "AI built this" more than it signals quality. This skill packages a concrete checklist to actively catch and avoid those patterns, instead of relying on taste alone.
+It started as an anti-"vibecoded" visual checklist. It now covers the broader reasons polished AI-built interfaces fail in real use: accessibility, keyboard/focus behavior, responsive design, forms, state completeness, data-heavy UI, destructive actions, RTL/localization, performance-sensitive UI decisions, design-system discipline, and evidence-based verification.
 
 ## What it does
 
-- **Review mode**: point it at a UI codebase and it flags checklist violations with file/line references, section by section, and confirms what already passes.
-- **Generation mode**: when building new UI, it applies the checklist as constraints up front — deliberate typography and palette, specific copy, restrained icon/card/nav use, real spacing and mobile hierarchy — then self-checks the output before presenting it.
+### Review mode
+Reviews real frontend code and rendered behavior using an engineering-grade checklist. Findings are evidence-based, prioritized by impact, and separated into:
+- must-fix;
+- should-fix;
+- judgment calls.
 
-Covers: visual style, typography, headings/copy, icons, cards/containers, navigation, buttons/CTAs, animation, spacing/alignment, responsive design, component-library discipline (shadcn/ui, MUI, etc.), product-specific design, portfolio-specific pitfalls, AI/technical credibility claims, and a final "does this look vibecoded?" gut-check with an acceptance rule.
+It explicitly checks what already passes and avoids blanket bans when a pattern is justified by brand or product context.
+
+### Generation mode
+Uses the same rules as design constraints before writing UI:
+- information hierarchy before decoration;
+- product-specific visual language;
+- semantic HTML;
+- accessible interaction behavior;
+- responsive/mobile strategy;
+- realistic loading/empty/error/success states;
+- design-system consistency;
+- final anti-vibecoding self-review.
+
+## Coverage
+
+The current checklist contains 28 review areas, including:
+
+- product fit and information architecture;
+- visual style and brand fit;
+- typography and copy credibility;
+- layout, spacing, density, and navigation;
+- buttons, links, icons, and imagery;
+- semantic HTML;
+- keyboard and focus;
+- forms and validation;
+- loading, empty, error, and async states;
+- responsive/mobile behavior;
+- WCAG-oriented accessibility;
+- dialogs, drawers, popovers, menus, tabs, and accordions;
+- tables, filters, bulk actions, pagination;
+- charts and data visualization;
+- destructive/high-impact actions;
+- authentication and permission UX;
+- internationalization, localization, and RTL;
+- performance/perceived performance;
+- component-library/design-system discipline;
+- motion restraint;
+- portfolio-specific credibility;
+- AI/technical product credibility;
+- final "does this still look generic?" gate.
 
 ## Install
 
-**Easiest, works on any device (recommended)**: open [`PASTE-TO-INSTALL.md`](./PASTE-TO-INSTALL.md), copy the code block, and paste it as your first message in a new Claude (or ChatGPT/Codex) chat. No file download, no repo cloning — works identically on phone, tablet, or desktop. For something that persists across conversations, paste the same content into Claude's **Settings → Skills → Add → Create a skill**.
+### Full skill — recommended
 
-**Claude Code / other Agent Skills clients**: copy `skills/anti-vibecoding-ui/` into your skills directory.
+Install or copy the folder:
 
-**OpenAI Codex** (via the stock GitHub skill installer):
+```
+skills/anti-vibecoding-ui/
+```
+
+This is the canonical version. It includes the full protocol and supporting references.
+
+**OpenAI/Codex skill path**
 ```
 repo: Skharbi/anti-vibecoding-ui
 path: skills/anti-vibecoding-ui
 ```
+
+For other Agent Skills-compatible clients, copy the same folder into the client's skills directory.
+
+### Portable single-paste edition
+
+`PASTE-TO-INSTALL.md` remains available for users who cannot install a skill folder, including mobile-only workflows.
+
+It is a **portable condensed edition**, not byte-for-byte identical to the full skill. The installed skill is the source of truth because it can load the complete checklist and supporting references without forcing an enormous first-message prompt.
 
 ## Structure
 
@@ -31,20 +85,70 @@ path: skills/anti-vibecoding-ui
 anti-vibecoding-ui/
 ├── README.md
 ├── LICENSE
-├── PASTE-TO-INSTALL.md             # copy-paste install, no download needed
+├── HANDOVER.md
+├── PASTE-TO-INSTALL.md
+├── evals/
+│   ├── README.md
+│   └── cases.md
 └── skills/
     └── anti-vibecoding-ui/
-        ├── SKILL.md               # triggering + how to apply the checklist
+        ├── SKILL.md
         ├── agents/
-        │   └── openai.yaml        # optional Codex UI metadata
+        │   └── openai.yaml
         └── references/
-            └── checklist.md       # the full 15-section checklist
+            ├── checklist.md
+            ├── review-protocol.md
+            ├── component-behavior.md
+            └── sources.md
 ```
+
+## Quality model
+
+This project does not have a conventional build because it contains no runtime code.
+
+Validation is behavioral.
+
+The evaluation suite measures:
+- trigger reliability;
+- issue coverage;
+- evidence quality;
+- prioritization;
+- false-positive control;
+- fix quality;
+- generation quality;
+- verification discipline.
+
+See `evals/README.md` and `evals/cases.md`.
+
+## Standards
+
+Accessibility and interaction guidance is grounded primarily in:
+- WCAG 2.2;
+- WAI-ARIA;
+- ARIA Authoring Practices Guide.
+
+The skill prefers native HTML semantics before ARIA and treats established ARIA patterns as behavior guidance that still requires real browser/assistive-technology testing for production-critical use.
 
 ## Status
 
-Packaging and format compatibility (Claude Agent Skills spec, Codex skill loader) are validated. Trigger reliability, generation-mode output quality, and false-positive behavior have not yet been verified against a live agent session — an evaluation pass is in progress.
+**Implemented**
+- Agent Skill packaging
+- Full review/generation protocol
+- 28-section production UI checklist
+- Review severity/evidence protocol
+- Common component behavior reference
+- Primary standards references
+- Behavioral evaluation suite
+- Handover discipline
+
+**Not yet proven**
+- multi-agent evaluation results;
+- quantified trigger reliability;
+- quantified false-positive rate;
+- generation quality across multiple model families.
+
+Do not describe the skill as fully validated until the evaluation release bar in `evals/README.md` has been met.
 
 ## License
 
-MIT — use, adapt, redistribute freely.
+MIT — use, adapt, and redistribute freely.
