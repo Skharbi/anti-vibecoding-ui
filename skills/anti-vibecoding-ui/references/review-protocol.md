@@ -25,6 +25,9 @@ Use when the issue causes:
 - serious responsive breakage;
 - destructive-action risk;
 - user data loss;
+- confirmed high-impact client-side security flaw or sensitive-data exposure;
+- fail-open authorization/permission behavior;
+- unsafe untrusted-content execution/rendering;
 - semantic mismatch that materially harms assistive technology;
 - critical content hidden or unreadable.
 
@@ -61,15 +64,16 @@ Verify: how to prove the fix worked.
 ## 4. Review order
 
 Prioritize:
-1. blocked task / broken interaction;
-2. accessibility and focus;
-3. destructive/error handling;
-4. mobile/responsive failures;
-5. state completeness;
-6. information architecture;
-7. design-system consistency;
-8. visual anti-vibecoding issues;
-9. polish.
+1. confirmed security/privacy exposure, data loss, or unsafe high-impact action;
+2. blocked task / broken interaction;
+3. accessibility and focus;
+4. destructive/error handling;
+5. mobile/responsive/platform failures;
+6. state completeness and reliability;
+7. information architecture;
+8. design-system consistency;
+9. visual anti-vibecoding issues;
+10. polish.
 
 Do not lead with border radius while a keyboard trap exists.
 
