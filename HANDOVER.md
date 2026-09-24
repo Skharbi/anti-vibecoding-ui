@@ -7,7 +7,7 @@ Last updated: 2026-09-24 | By: ChatGPT | Session goal: Harden anti-vibecoding-ui
 
 ## 2. Current state
 - Works (verified): skill packaging exists; SKILL.md and references load from `skills/anti-vibecoding-ui/`; README install path matches repository structure.
-- Enhanced on branch `chatgpt/skill-hardening-v2`: broader UI engineering protocol, 28-section checklist, review protocol, component behavior reference, primary-source references, behavioral eval suite.
+- Enhanced on branch `chatgpt/skill-hardening-v2`: broader UI engineering protocol, 34-section checklist, review protocol, component behavior reference, primary-source references, cybersecurity/trust reference, cross-domain best-practices matrix, behavioral eval suite.
 - Broken / flaky: no live multi-agent evaluation results recorded yet.
 - Half-done: implementation hardening is complete on the branch; live multi-agent behavioral evaluation is still outstanding.
 
@@ -30,7 +30,7 @@ Last updated: 2026-09-24 | By: ChatGPT | Session goal: Harden anti-vibecoding-ui
 - No new runtime libraries without a demonstrated need.
 - No unrelated repository rewrites.
 - Do not turn aesthetic preferences into accessibility/engineering claims.
-- Prefer primary standards for interaction/accessibility guidance.
+- Prefer primary standards for accessibility, cybersecurity, privacy, secure development, and performance guidance.
 - No fabricated validation claims.
 - Update evaluation fixtures when a real failure mode is discovered.
 
@@ -39,6 +39,8 @@ Last updated: 2026-09-24 | By: ChatGPT | Session goal: Harden anti-vibecoding-ui
 - A very long checklist can produce noisy output; the review protocol requires prioritization.
 - ARIA should not be added when native semantics already solve the problem.
 - "Anti-vibecoding" must not become "ban modern design patterns."
+- Do not claim backend/runtime security controls fail merely because frontend evidence is unavailable.
+- Do not claim OWASP/ASVS/security/privacy/accessibility/performance compliance from static inspection.
 
 ## 7. Next task
 - Task: Run the behavioral evaluation suite on at least two compatible agents and record results.
