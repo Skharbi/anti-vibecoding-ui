@@ -1,6 +1,6 @@
 ---
 name: anti-vibecoding-ui
-description: Review, redesign, or generate production-quality frontend UI/UX while preventing generic AI-generated design patterns and enforcing engineering-grade interface quality. Use for landing pages, dashboards, portfolios, product screens, design systems, component libraries, responsive/mobile work, accessibility reviews, frontend security/privacy reviews, production-readiness audits, form UX, data-heavy UI, public-site discoverability/SEO, browser compatibility, or requests to make an interface feel intentional, professional, less generic, less "AI-made", safer, or more usable. Trigger on UI generation, redesign, frontend critique, design-system cleanup, spacing/layout complaints, accessibility/keyboard issues, responsive problems, loading/error/empty states, forms/tables/charts/navigation, client-side security/trust concerns, sensitive-data exposure, public metadata/indexability, browser/platform compatibility, API-consumption behavior, rendering/cache/concurrency issues, and requests to fix existing UI code. Do not use for backend-only logic or infrastructure work unless the user-facing interface is part of the task.
+description: Review, redesign, or generate production-quality frontend UI/UX while preventing generic AI-generated patterns. Use for landing pages, dashboards, portfolios, product screens, design systems, accessibility, responsive/mobile, forms, tables, charts, frontend security/privacy, browser compatibility, public-page discoverability, API-client behavior, rendering/cache/concurrency, or production-readiness audits. Trigger on requests to build, improve, review, audit, or fix user-facing interfaces, including vague complaints about spacing, hierarchy, polish, accessibility, security, or usability. Do not use for backend-only logic, databases, infrastructure, or non-visual debugging unless user-facing behavior is part of the task.
 ---
 
 # Anti-Vibecoding UI
@@ -11,13 +11,13 @@ The goal is to prevent two failure modes at once:
 1. generic, trend-driven "AI-looking" interfaces;
 2. interfaces that look polished but fail in accessibility, states, responsive behavior, interaction semantics, performance, or real-world usability.
 
-Use the supporting files:
-- `references/checklist.md` — full review/generation checklist.
-- `references/review-protocol.md` — evidence, severity, output, and verification rules.
-- `references/component-behavior.md` — expected behavior for common interactive components.
-- `references/sources.md` — standards and primary references.
-- `references/security.md` — cybersecurity/trust-boundary review rules.
-- `references/best-practices-matrix.md` — cross-domain coverage and scope boundaries.
+Use supporting files selectively:
+- Load `references/checklist.md` for full reviews or when multiple UI domains apply.
+- Load `references/review-protocol.md` when reporting findings, severity, pass/fail, or verification.
+- Load `references/component-behavior.md` for custom interactive components.
+- Load `references/security.md` for auth, permissions, sensitive data, uploads, external content, third-party scripts, AI/tool actions, or other trust-boundary concerns.
+- Load `references/best-practices-matrix.md` for broad production-readiness audits.
+- Load `references/sources.md` when a standards/version claim needs verification.
 
 ## Operating rule
 
