@@ -28,7 +28,7 @@ The project follows semantic versioning for the portable plugin manifest.
 ### Validation status
 - repository structural gate: passing;
 - same-model scenario walkthrough: 36 pass, 6 execution-gated, 0 policy-level fail;
-- independent second-model and runtime/browser/device validation: still required before a fully validated claim.
+- Chromium runtime/browser validation: complete (6/6 execution-gated cases pass); independent second-model validation remains required before a fully validated claim.
 
 ## [0.1.0] - 2026-09-17
 

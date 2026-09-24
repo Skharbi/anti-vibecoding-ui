@@ -8,8 +8,8 @@ Last updated: 2026-09-24 | By: ChatGPT | Session goal: Harden anti-vibecoding-ui
 ## 2. Current state
 - Works (verified): root portable `plugin.json` and Codex compatibility manifest are present; installable skill is self-contained under `skills/anti-vibecoding-ui/`; skill description is within OpenAI's 1,024-character limit; package/version/docs consistency checks pass in direct branch audit.
 - Enhanced on branch `chatgpt/skill-hardening-v2`: portable Agent Plugins package v0.2.0, Codex compatibility manifest, broader UI engineering protocol, 38-section checklist, review/component/security/best-practice references, 42-case eval suite, deterministic validator, and full install/security/contribution/release/support documentation.
-- Broken / flaky: independent second-agent and rendered/browser/device evaluation are not yet recorded. The local Chromium binary in the authoring environment hangs even on trivial HTML, and the external Chromium renderer was blocked by zero available rendering credits. These environment failures are documented; no runtime PASS has been fabricated. A GPT-5.6 Sol structural/scenario self-test is recorded under `evals/results/`.
-- Half-done: policy-level hardening and a 42-case self-test are complete. Six runtime fixtures and an independent second-agent validation packet are committed. Actual browser execution and the independent second-agent run remain outstanding.
+- Broken / flaky: independent second-agent evaluation is not yet recorded. Chromium runtime execution is now recorded under `evals/results/2026-09-24-chromium-runtime.md` with all six execution-gated cases passing.
+- Half-done: policy-level hardening, the 42-case same-model self-test, and all six Chromium execution gates are complete. The independent second-agent run is the only remaining release-evidence gate.
 
 ## 3. Architecture
 - Stack: Markdown-only installable Agent Skill with no runtime dependencies; repository QA includes one standard-library Python validator.
@@ -43,7 +43,7 @@ Last updated: 2026-09-24 | By: ChatGPT | Session goal: Harden anti-vibecoding-ui
 - Do not claim OWASP/ASVS/security/privacy/accessibility/performance compliance from static inspection.
 
 ## 7. Next task
-- Task: Use `evals/SECOND-AGENT-RUN.md` with a genuinely different model/agent and execute `evals/runtime-fixtures/` against `evals/EXECUTION-GATE.md`. Before any merge, run `python scripts/validate_skill.py` in a repository checkout.
+- Task: Use `evals/SECOND-AGENT-RUN.md` with a genuinely different model/agent. Chromium runtime gates are already complete. Before any merge, run `python scripts/validate_skill.py` in a repository checkout.
 - Done when: eval results are recorded with agent/model/date; release bar in `evals/README.md` is met or failures are documented and fed back into the skill.
 - Files allowed to touch: `evals/*`, `skills/anti-vibecoding-ui/*` only when an evaluation exposes a concrete defect, and `HANDOVER.md`.
 
