@@ -12,7 +12,7 @@ Last updated: 2026-09-24 | By: ChatGPT | Session goal: Harden anti-vibecoding-ui
 - Half-done: policy-level gap hardening and a 42-case self-test are complete; six cases remain execution-dependent, and the required independent second-agent run is outstanding.
 
 ## 3. Architecture
-- Stack: Markdown-only Agent Skill; no runtime dependencies.
+- Stack: Markdown-only installable Agent Skill with no runtime dependencies; repository QA includes one standard-library Python validator.
 - Entry point: `skills/anti-vibecoding-ui/SKILL.md`
 - Data flow: user UI request → skill trigger → checklist/protocol references → review/generation → verification output.
 - External deps / APIs / keys: none.
@@ -20,7 +20,7 @@ Last updated: 2026-09-24 | By: ChatGPT | Session goal: Harden anti-vibecoding-ui
 ## 4. Decisions & why
 | Decision | Reason | Rejected alternative |
 |---|---|---|
-| Keep skill dependency-free | Portability and low install friction | Adding a JS/Python test harness |
+| Keep installed skill runtime dependency-free | Portability and low install friction | Adding runtime dependencies to the skill package |
 | Use WCAG 2.2 AA as default accessibility target | Current broadly applicable baseline | Visual-only review |
 | Separate checklist from protocol | Avoid bloated execution instructions | One monolithic SKILL.md |
 | Add behavioral eval fixtures | Skills must be validated by behavior, not build success | Claiming validation from syntax/package checks |
