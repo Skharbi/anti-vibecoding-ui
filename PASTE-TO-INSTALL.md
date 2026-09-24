@@ -2,7 +2,7 @@
 
 Use this when you cannot install the full skill folder (for example, a mobile-only workflow).
 
-**Important:** this is a condensed portable edition. The canonical/full version is `skills/anti-vibecoding-ui/`, which includes the complete 28-section checklist, review protocol, component behavior reference, standards references, and behavioral eval suite.
+**Important:** this is a condensed portable edition. The canonical/full version is `skills/anti-vibecoding-ui/`, which includes the complete 38-section checklist, review protocol, component behavior, cybersecurity/trust guidance, cross-domain best-practice matrix, standards references, and repository evaluation suite.
 
 ## How
 
@@ -27,10 +27,11 @@ BEFORE CHANGING CODE
 - Do not add libraries just to make the redesign easier.
 
 PRIORITY ORDER
-1. broken/blocked task behavior
-2. accessibility and keyboard/focus
-3. destructive/error handling
-4. responsive/mobile failures
+1. confirmed security/privacy exposure, data loss, or unsafe high-impact action
+2. broken/blocked task behavior
+3. accessibility and keyboard/focus
+4. destructive/error handling
+5. responsive/mobile/platform failures
 5. missing loading/empty/error/success states
 6. information architecture and workflow clarity
 7. design-system consistency
