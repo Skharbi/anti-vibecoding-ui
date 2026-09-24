@@ -203,3 +203,14 @@ Remaining mandatory evidence:
 ## Conclusion
 
 The self-test found and fixed eight concrete gaps. No known policy-level gap remains in the 42-case suite after retest, but independent-agent and runtime verification are still outstanding.
+
+
+## Post-run repository hardening
+
+Additional changes after the scenario walkthrough:
+- added deterministic repository/package validator at `scripts/validate_skill.py`;
+- validated current branch invariants directly against GitHub: 17 required files present, 38 consecutive checklist sections, 42 unique eval cases, package-local references valid, anti-overclaim guards present;
+- added `evals/EXECUTION-GATE.md` for the six cases that require real render/browser/device evidence;
+- attempted GitHub-hosted CI, but the private-repo workflow failed before any step started; the unusable automatic workflow was removed to avoid a false red quality signal.
+
+Current structural validation result: **PASS**.
