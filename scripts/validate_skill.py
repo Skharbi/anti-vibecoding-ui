@@ -17,7 +17,8 @@ def read(path: Path) -> str:
 required = [
     ROOT/"README.md", ROOT/"LICENSE", ROOT/"HANDOVER.md", ROOT/"PASTE-TO-INSTALL.md",
     ROOT/"INSTALL.md", ROOT/"SECURITY.md", ROOT/"CONTRIBUTING.md", ROOT/"CHANGELOG.md",
-    ROOT/"plugin.json",
+    ROOT/"RELEASE.md", ROOT/"AGENTS.md", ROOT/".github"/"PULL_REQUEST_TEMPLATE.md",
+    ROOT/"plugin.json", ROOT/".codex-plugin"/"plugin.json",
     SKILL/"SKILL.md", SKILL/"agents"/"openai.yaml",
     SKILL/"references"/"checklist.md", SKILL/"references"/"review-protocol.md",
     SKILL/"references"/"component-behavior.md", SKILL/"references"/"security.md",
@@ -84,6 +85,23 @@ if plugin:
         errors.append("combined plugin:skill identity exceeds 64 chars")
     if version and f"## [{version}]" not in changelog:
         errors.append("CHANGELOG does not contain plugin version " + version)
+    if version and f"Current package version:** \`{version}\`" not in readme:
+        errors.append("README package version does not match plugin.json")
+
+# Codex compatibility manifest must match the portable root manifest.
+try:
+    codex_plugin = json.loads(read(ROOT/".codex-plugin"/"plugin.json"))
+except Exception as exc:
+    codex_plugin = {}
+    errors.append(".codex-plugin/plugin.json invalid JSON: " + str(exc))
+
+if plugin and codex_plugin:
+    if codex_plugin.get("name") != plugin.get("name"):
+        errors.append("Codex compatibility plugin name does not match root plugin.json")
+    if codex_plugin.get("version") != plugin.get("version"):
+        errors.append("Codex compatibility plugin version does not match root plugin.json")
+    if codex_plugin.get("skills") != "./skills/":
+        errors.append("Codex compatibility manifest must point skills to ./skills/")
 
 # Installable skill must be self-contained.
 if "evals/" in skill:
@@ -160,7 +178,8 @@ for path in ROOT.rglob("*"):
 # Relative markdown links in repository docs must resolve.
 for md in [
     ROOT/"README.md", ROOT/"INSTALL.md", ROOT/"SECURITY.md",
-    ROOT/"CONTRIBUTING.md", ROOT/"CHANGELOG.md", ROOT/"HANDOVER.md",
+    ROOT/"CONTRIBUTING.md", ROOT/"CHANGELOG.md", ROOT/"RELEASE.md",
+    ROOT/"AGENTS.md", ROOT/"HANDOVER.md",
     ROOT/"PASTE-TO-INSTALL.md", ROOT/"evals"/"README.md"
 ]:
     body = read(md)
