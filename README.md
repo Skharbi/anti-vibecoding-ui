@@ -3,7 +3,7 @@
 A production UI engineering Agent Skill for reviewing and generating interfaces without generic AI-made patterns — while also checking accessibility, responsive behavior, interaction states, frontend security/privacy, reliability, performance-sensitive UI decisions, browser/platform behavior, and evidence quality.
 
 **Current package version:** `0.2.0`  
-**Status:** release candidate. Package/repository checks and all six Chromium execution gates pass. Independent second-agent validation remains the final release-evidence gate.
+**Status:** v0.2.0 release validation complete under the repository's documented package, two-agent behavioral, and Chromium execution gates.
 
 ## Quick start
 
@@ -170,8 +170,15 @@ See `skills/anti-vibecoding-ui/references/sources.md`.
 - recorded same-model structural/scenario self-test;
 - recorded Chromium runtime validation with **6/6 execution-gated cases passing**.
 
-**Still required before a “fully validated” claim**
-- independent second-agent/model evaluation.
+**Release validation completed**
+- GPT-5.6 Sol author-model scored run: **100%**;
+- independent Floot / Google Gemini 3.5 Flash scored run: **100%**;
+- combined two-agent aggregate: **100%**;
+- critical failures: **0**;
+- false-positive/security/scope-discipline gates: **PASS**;
+- Chromium execution gates: **6/6 PASS**.
+
+See `evals/results/v0.2.0-release-validation.md` for the release verdict and evidence links.
 
 **Runtime evidence completed**
 - rendered desktop/mobile generation checks;
@@ -179,7 +186,7 @@ See `skills/anti-vibecoding-ui/references/sources.md`.
 - representative Chromium browser execution for all six execution-gated cases;
 - reduced visual-viewport checks for keyboard occlusion behavior.
 
-The repository deliberately does not turn unavailable evidence into a pass.
+The validation claim is limited to the repository's documented release bar. It is not a claim of universal browser compatibility, WCAG conformance, OWASP/ASVS compliance, legal/privacy compliance, or security certification.
 
 ## Repository policies
 
