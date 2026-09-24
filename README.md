@@ -95,6 +95,15 @@ anti-vibecoding-ui/
 │   ├── README.md
 │   ├── cases.md
 │   ├── EXECUTION-GATE.md
+│   ├── SECOND-AGENT-RUN.md
+│   ├── runtime-fixtures/
+│   │   ├── README.md
+│   │   ├── r3-responsive.html
+│   │   ├── r9-rtl.html
+│   │   ├── g1-dashboard.html
+│   │   ├── g2-portfolio.html
+│   │   ├── g3-mobile-form.html
+│   │   └── p1-browser-feature.html
 │   └── results/
 ├── scripts/
 │   └── validate_skill.py
@@ -132,7 +141,7 @@ The validator checks package structure, manifest/version consistency, OpenAI met
 
 ### 3. Execution gates
 
-`evals/EXECUTION-GATE.md` defines the cases that require real rendered/browser/device/native-language evidence rather than static inspection.
+`evals/EXECUTION-GATE.md` defines the cases that require real rendered/browser/device/native-language evidence rather than static inspection. `evals/runtime-fixtures/` provides reproducible HTML inputs, and `evals/SECOND-AGENT-RUN.md` defines the independent-model protocol.
 
 ## Standards and best-practice sources
 
