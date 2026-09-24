@@ -7,9 +7,9 @@ Last updated: 2026-09-24 | By: ChatGPT | Session goal: Harden anti-vibecoding-ui
 
 ## 2. Current state
 - Works (verified): skill packaging exists; SKILL.md and references load from `skills/anti-vibecoding-ui/`; README install path matches repository structure.
-- Enhanced on branch `chatgpt/skill-hardening-v2`: broader UI engineering protocol, 34-section checklist, review protocol, component behavior reference, primary-source references, cybersecurity/trust reference, cross-domain best-practices matrix, behavioral eval suite.
-- Broken / flaky: no live multi-agent evaluation results recorded yet.
-- Half-done: implementation hardening is complete on the branch; live multi-agent behavioral evaluation is still outstanding.
+- Enhanced on branch `chatgpt/skill-hardening-v2`: broader UI engineering protocol, 38-section checklist, review protocol, component behavior reference, primary-source references, cybersecurity/trust reference, cross-domain best-practices matrix, behavioral eval suite.
+- Broken / flaky: independent second-agent and rendered/browser/device evaluation are not yet recorded. A GPT-5.6 Sol structural/scenario self-test is recorded under `evals/results/`.
+- Half-done: policy-level gap hardening and a 42-case self-test are complete; six cases remain execution-dependent, and the required independent second-agent run is outstanding.
 
 ## 3. Architecture
 - Stack: Markdown-only Agent Skill; no runtime dependencies.
@@ -43,7 +43,7 @@ Last updated: 2026-09-24 | By: ChatGPT | Session goal: Harden anti-vibecoding-ui
 - Do not claim OWASP/ASVS/security/privacy/accessibility/performance compliance from static inspection.
 
 ## 7. Next task
-- Task: Run the behavioral evaluation suite on at least two compatible agents and record results.
+- Task: Run the 42-case suite with a second compatible agent/model and execute the six render/browser/device-dependent cases.
 - Done when: eval results are recorded with agent/model/date; release bar in `evals/README.md` is met or failures are documented and fed back into the skill.
 - Files allowed to touch: `evals/*`, `skills/anti-vibecoding-ui/*` only when an evaluation exposes a concrete defect, and `HANDOVER.md`.
 
