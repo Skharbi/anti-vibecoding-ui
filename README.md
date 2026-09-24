@@ -27,7 +27,7 @@ Uses the same rules as design constraints before writing UI:
 
 ## Coverage
 
-The current checklist contains 28 review areas, including:
+The current checklist contains 34 review areas, including:
 
 - product fit and information architecture;
 - visual style and brand fit;
@@ -51,6 +51,12 @@ The current checklist contains 28 review areas, including:
 - motion restraint;
 - portfolio-specific credibility;
 - AI/technical product credibility;
+- cybersecurity and trust boundaries;
+- privacy and data minimization;
+- reliability/recovery and exceptional conditions;
+- testing/verification discipline;
+- observability and diagnosability;
+- cross-domain best-practice coverage boundaries;
 - final "does this still look generic?" gate.
 
 ## Install
@@ -99,6 +105,8 @@ anti-vibecoding-ui/
             ├── checklist.md
             ├── review-protocol.md
             ├── component-behavior.md
+            ├── security.md
+            ├── best-practices-matrix.md
             └── sources.md
 ```
 
@@ -134,10 +142,10 @@ The skill prefers native HTML semantics before ARIA and treats established ARIA 
 **Implemented**
 - Agent Skill packaging
 - Full review/generation protocol
-- 28-section production UI checklist
+- 34-section production UI checklist
 - Review severity/evidence protocol
 - Common component behavior reference
-- Primary standards references
+- Primary standards references across accessibility, OWASP security, NIST secure development/privacy, and performance
 - Behavioral evaluation suite
 - Handover discipline
 
