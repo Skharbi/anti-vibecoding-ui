@@ -19,6 +19,10 @@ Use this matrix to prevent blind spots and scope confusion. The skill is UI/fron
 | Content/credibility | source evidence + product truth | no fabricated metrics, capabilities, compliance, AI claims | factual claims may require domain/source verification |
 | AI interfaces | secure action boundaries + human factors | untrusted model output, confirmation, provenance, uncertainty, failure/partial-action states | model evals, prompt security, tool authorization require AI/backend review |
 | Regulated workflows | applicable domain rules | conservative UX, data minimization, clear responsibility/decision boundaries | legal, clinical, financial, regulatory sign-off is out of scope |
+| Browser/platform compatibility | MDN Baseline + progressive enhancement | feature support, fallbacks, input modality assumptions, client-only failure modes | full browser/device matrix requires executed testing |
+| Public discoverability | Google Search Essentials + page metadata/indexability | titles, canonical intent, crawlable links, accidental noindex/auth blocking, truthful structured data | search ranking/index status requires deployment/Search Console evidence |
+| API client boundary | OWASP API Security Top 10 2023 + app contract | untrusted API data, object IDs/roles as untrusted client input, retry/rate-limit/error behavior | server authorization, validation, inventory and rate limiting require API/backend review |
+| Rendering/cache/concurrency | framework/runtime contracts | hydration, stale user state, race conditions, duplicate actions, sensitive caching, optimistic reconciliation | CDN/edge/server cache behavior requires deployment/runtime evidence |
 
 ## How to use the matrix
 
