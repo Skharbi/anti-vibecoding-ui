@@ -1,0 +1,560 @@
+{
+ "index": {
+  "390x844": {
+   "dir": "ltr",
+   "scrollW": 390,
+   "clientW": 390,
+   "hOverflow": false,
+   "fixed": [],
+   "buttons": [
+    {
+     "text": "Skip to content",
+     "top": -48,
+     "bottom": -5,
+     "left": 16,
+     "right": 177,
+     "w": 161,
+     "h": 43
+    },
+    {
+     "text": "[Your Name]",
+     "top": 12,
+     "bottom": 41,
+     "left": 16,
+     "right": 115,
+     "w": 99,
+     "h": 29
+    },
+    {
+     "text": "Work",
+     "top": 49,
+     "bottom": 93,
+     "left": 4,
+     "right": 66,
+     "w": 62,
+     "h": 44
+    },
+    {
+     "text": "Experience",
+     "top": 49,
+     "bottom": 93,
+     "left": 70,
+     "right": 178,
+     "w": 108,
+     "h": 44
+    },
+    {
+     "text": "Side projects",
+     "top": 49,
+     "bottom": 93,
+     "left": 182,
+     "right": 303,
+     "w": 121,
+     "h": 44
+    },
+    {
+     "text": "Contact",
+     "top": 93,
+     "bottom": 137,
+     "left": 4,
+     "right": 86,
+     "w": 82,
+     "h": 44
+    },
+    {
+     "text": "Email me",
+     "top": 1049,
+     "bottom": 1094,
+     "left": 16,
+     "right": 154,
+     "w": 138,
+     "h": 45
+    },
+    {
+     "text": "Download CV\n(PDF)",
+     "top": 1106,
+     "bottom": 1152,
+     "left": 16,
+     "right": 245,
+     "w": 229,
+     "h": 45
+    },
+    {
+     "text": "Source code\nfor plain-language discharge",
+     "top": 5668,
+     "bottom": 5708,
+     "left": 41,
+     "right": 133,
+     "w": 92,
+     "h": 40
+    },
+    {
+     "text": "Write-up\nfor plain-language discharge in",
+     "top": 5668,
+     "bottom": 5708,
+     "left": 148,
+     "right": 212,
+     "w": 64,
+     "h": 40
+    },
+    {
+     "text": "Source code\nfor ICD-10-CM suggestion eva",
+     "top": 6341,
+     "bottom": 6381,
+     "left": 41,
+     "right": 133,
+     "w": 92,
+     "h": 40
+    },
+    {
+     "text": "[you@example.com]",
+     "top": 7263,
+     "bottom": 7291,
+     "left": 128,
+     "right": 374,
+     "w": 246,
+     "h": 27
+    },
+    {
+     "text": "[linkedin.com/in/you]",
+     "top": 7316,
+     "bottom": 7343,
+     "left": 128,
+     "right": 374,
+     "w": 246,
+     "h": 27
+    },
+    {
+     "text": "[github.com/you]",
+     "top": 7368,
+     "bottom": 7395,
+     "left": 128,
+     "right": 374,
+     "w": 246,
+     "h": 27
+    }
+   ],
+   "inputs": [],
+   "dataset": null,
+   "h1": "I turn EHR data into reports and interfaces that clinical teams can check and trust.",
+   "errors": []
+  },
+  "768x1024": {
+   "dir": "ltr",
+   "scrollW": 768,
+   "clientW": 768,
+   "hOverflow": false,
+   "fixed": [],
+   "buttons": [
+    {
+     "text": "Skip to content",
+     "top": -48,
+     "bottom": -5,
+     "left": 16,
+     "right": 177,
+     "w": 161,
+     "h": 43
+    },
+    {
+     "text": "[Your Name]",
+     "top": 20,
+     "bottom": 48,
+     "left": 32,
+     "right": 131,
+     "w": 99,
+     "h": 29
+    },
+    {
+     "text": "Work",
+     "top": 12,
+     "bottom": 56,
+     "left": 363,
+     "right": 425,
+     "w": 62,
+     "h": 44
+    },
+    {
+     "text": "Experience",
+     "top": 12,
+     "bottom": 56,
+     "left": 429,
+     "right": 537,
+     "w": 108,
+     "h": 44
+    },
+    {
+     "text": "Side projects",
+     "top": 12,
+     "bottom": 56,
+     "left": 541,
+     "right": 662,
+     "w": 121,
+     "h": 44
+    },
+    {
+     "text": "Contact",
+     "top": 12,
+     "bottom": 56,
+     "left": 666,
+     "right": 748,
+     "w": 82,
+     "h": 44
+    },
+    {
+     "text": "Email me",
+     "top": 664,
+     "bottom": 710,
+     "left": 32,
+     "right": 170,
+     "w": 138,
+     "h": 45
+    },
+    {
+     "text": "Download CV\n(PDF)",
+     "top": 664,
+     "bottom": 710,
+     "left": 182,
+     "right": 410,
+     "w": 229,
+     "h": 45
+    },
+    {
+     "text": "Source code\nfor plain-language discharge",
+     "top": 4056,
+     "bottom": 4096,
+     "left": 57,
+     "right": 149,
+     "w": 92,
+     "h": 40
+    },
+    {
+     "text": "Write-up\nfor plain-language discharge in",
+     "top": 4056,
+     "bottom": 4096,
+     "left": 164,
+     "right": 228,
+     "w": 64,
+     "h": 40
+    },
+    {
+     "text": "Source code\nfor ICD-10-CM suggestion eva",
+     "top": 4507,
+     "bottom": 4547,
+     "left": 57,
+     "right": 149,
+     "w": 92,
+     "h": 40
+    },
+    {
+     "text": "[you@example.com]",
+     "top": 5178,
+     "bottom": 5205,
+     "left": 144,
+     "right": 644,
+     "w": 500,
+     "h": 27
+    },
+    {
+     "text": "[linkedin.com/in/you]",
+     "top": 5230,
+     "bottom": 5257,
+     "left": 144,
+     "right": 644,
+     "w": 500,
+     "h": 27
+    },
+    {
+     "text": "[github.com/you]",
+     "top": 5282,
+     "bottom": 5310,
+     "left": 144,
+     "right": 644,
+     "w": 500,
+     "h": 27
+    }
+   ],
+   "inputs": [],
+   "dataset": null,
+   "h1": "I turn EHR data into reports and interfaces that clinical teams can check and trust.",
+   "errors": []
+  },
+  "1280x800": {
+   "dir": "ltr",
+   "scrollW": 1280,
+   "clientW": 1280,
+   "hOverflow": false,
+   "fixed": [],
+   "buttons": [
+    {
+     "text": "Skip to content",
+     "top": -48,
+     "bottom": -5,
+     "left": 16,
+     "right": 177,
+     "w": 161,
+     "h": 43
+    },
+    {
+     "text": "[Your Name]",
+     "top": 20,
+     "bottom": 48,
+     "left": 128,
+     "right": 227,
+     "w": 99,
+     "h": 29
+    },
+    {
+     "text": "Work",
+     "top": 12,
+     "bottom": 56,
+     "left": 779,
+     "right": 841,
+     "w": 62,
+     "h": 44
+    },
+    {
+     "text": "Experience",
+     "top": 12,
+     "bottom": 56,
+     "left": 845,
+     "right": 953,
+     "w": 108,
+     "h": 44
+    },
+    {
+     "text": "Side projects",
+     "top": 12,
+     "bottom": 56,
+     "left": 957,
+     "right": 1078,
+     "w": 121,
+     "h": 44
+    },
+    {
+     "text": "Contact",
+     "top": 12,
+     "bottom": 56,
+     "left": 1082,
+     "right": 1164,
+     "w": 82,
+     "h": 44
+    },
+    {
+     "text": "Email me",
+     "top": 625,
+     "bottom": 671,
+     "left": 128,
+     "right": 266,
+     "w": 138,
+     "h": 45
+    },
+    {
+     "text": "Download CV\n(PDF)",
+     "top": 625,
+     "bottom": 671,
+     "left": 278,
+     "right": 506,
+     "w": 229,
+     "h": 45
+    },
+    {
+     "text": "Source code\nfor plain-language discharge",
+     "top": 3747,
+     "bottom": 3787,
+     "left": 153,
+     "right": 245,
+     "w": 92,
+     "h": 40
+    },
+    {
+     "text": "Write-up\nfor plain-language discharge in",
+     "top": 3747,
+     "bottom": 3787,
+     "left": 260,
+     "right": 324,
+     "w": 64,
+     "h": 40
+    },
+    {
+     "text": "Source code\nfor ICD-10-CM suggestion eva",
+     "top": 3747,
+     "bottom": 3787,
+     "left": 502,
+     "right": 595,
+     "w": 92,
+     "h": 40
+    },
+    {
+     "text": "[you@example.com]",
+     "top": 4059,
+     "bottom": 4086,
+     "left": 240,
+     "right": 740,
+     "w": 500,
+     "h": 27
+    },
+    {
+     "text": "[linkedin.com/in/you]",
+     "top": 4111,
+     "bottom": 4138,
+     "left": 240,
+     "right": 740,
+     "w": 500,
+     "h": 27
+    },
+    {
+     "text": "[github.com/you]",
+     "top": 4163,
+     "bottom": 4190,
+     "left": 240,
+     "right": 740,
+     "w": 500,
+     "h": 27
+    }
+   ],
+   "inputs": [],
+   "dataset": null,
+   "h1": "I turn EHR data into reports and interfaces that clinical teams can check and trust.",
+   "errors": []
+  },
+  "390x400": {
+   "dir": "ltr",
+   "scrollW": 390,
+   "clientW": 390,
+   "hOverflow": false,
+   "fixed": [],
+   "buttons": [
+    {
+     "text": "Skip to content",
+     "top": -48,
+     "bottom": -5,
+     "left": 16,
+     "right": 177,
+     "w": 161,
+     "h": 43
+    },
+    {
+     "text": "[Your Name]",
+     "top": 12,
+     "bottom": 41,
+     "left": 16,
+     "right": 115,
+     "w": 99,
+     "h": 29
+    },
+    {
+     "text": "Work",
+     "top": 49,
+     "bottom": 93,
+     "left": 4,
+     "right": 66,
+     "w": 62,
+     "h": 44
+    },
+    {
+     "text": "Experience",
+     "top": 49,
+     "bottom": 93,
+     "left": 70,
+     "right": 178,
+     "w": 108,
+     "h": 44
+    },
+    {
+     "text": "Side projects",
+     "top": 49,
+     "bottom": 93,
+     "left": 182,
+     "right": 303,
+     "w": 121,
+     "h": 44
+    },
+    {
+     "text": "Contact",
+     "top": 93,
+     "bottom": 137,
+     "left": 4,
+     "right": 86,
+     "w": 82,
+     "h": 44
+    },
+    {
+     "text": "Email me",
+     "top": 1049,
+     "bottom": 1094,
+     "left": 16,
+     "right": 154,
+     "w": 138,
+     "h": 45
+    },
+    {
+     "text": "Download CV\n(PDF)",
+     "top": 1106,
+     "bottom": 1152,
+     "left": 16,
+     "right": 245,
+     "w": 229,
+     "h": 45
+    },
+    {
+     "text": "Source code\nfor plain-language discharge",
+     "top": 5668,
+     "bottom": 5708,
+     "left": 41,
+     "right": 133,
+     "w": 92,
+     "h": 40
+    },
+    {
+     "text": "Write-up\nfor plain-language discharge in",
+     "top": 5668,
+     "bottom": 5708,
+     "left": 148,
+     "right": 212,
+     "w": 64,
+     "h": 40
+    },
+    {
+     "text": "Source code\nfor ICD-10-CM suggestion eva",
+     "top": 6341,
+     "bottom": 6381,
+     "left": 41,
+     "right": 133,
+     "w": 92,
+     "h": 40
+    },
+    {
+     "text": "[you@example.com]",
+     "top": 7263,
+     "bottom": 7291,
+     "left": 128,
+     "right": 374,
+     "w": 246,
+     "h": 27
+    },
+    {
+     "text": "[linkedin.com/in/you]",
+     "top": 7316,
+     "bottom": 7343,
+     "left": 128,
+     "right": 374,
+     "w": 246,
+     "h": 27
+    },
+    {
+     "text": "[github.com/you]",
+     "top": 7368,
+     "bottom": 7395,
+     "left": 128,
+     "right": 374,
+     "w": 246,
+     "h": 27
+    }
+   ],
+   "inputs": [],
+   "dataset": null,
+   "h1": "I turn EHR data into reports and interfaces that clinical teams can check and trust.",
+   "errors": []
+  }
+ }
+}
