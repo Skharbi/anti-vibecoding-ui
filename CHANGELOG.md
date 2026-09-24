@@ -27,11 +27,10 @@ The project follows semantic versioning for the portable plugin manifest.
 
 ### Validation status
 - repository structural gate: passing;
-- final GPT-5.6 Sol scored run: **100%**;
-- independent Floot / Google Gemini 3.5 Flash scored run: **100%**;
-- combined two-agent aggregate: **100%**;
-- Chromium runtime/browser validation: **6/6 PASS**;
-- critical-case failures: **0**;
+- author-model scored run: **100%**;
+- independent Claude full-suite run: **95.6%**, with **0 critical failures**;
+- post-hardening targeted Claude regression run: **97.1%**, with **0 critical failures** and **0 new false positives**;
+- Chromium runtime evidence recorded with documented limitations;
 - v0.2.0 satisfies the repository's documented release-validation bar.
 
 ## [0.1.0] - 2026-09-17
