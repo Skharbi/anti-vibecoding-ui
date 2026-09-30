@@ -114,6 +114,51 @@ class ValidatorTests(unittest.TestCase):
         self.edit("INSTALL.md", lambda s: s.replace("python -m pip install -r requirements-dev.txt", ""))
         self.rejected("INSTALL contributor QA dependency setup missing")
 
+    def test_external_installed_symlink(self):
+        path = self.repo / "skills/anti-vibecoding-ui/references/checklist.md"
+        outside = Path(self.tmp.name) / "outside.md"
+        outside.write_text(path.read_text())
+        path.unlink()
+        path.symlink_to(outside)
+        self.rejected("escapes skill bundle")
+
+    def test_internal_installed_symlink(self):
+        refs = self.repo / "skills/anti-vibecoding-ui/references"
+        (refs / "local-link.md").symlink_to("checklist.md")
+        r = self.run_gate()
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+
+    def test_unresolvable_installed_symlinks(self):
+        path = self.repo / "skills/anti-vibecoding-ui/references/broken.md"
+        for destination in ["missing.md", "broken.md"]:
+            with self.subTest(destination=destination):
+                path.symlink_to(destination)
+                self.rejected("unresolvable installed symlink")
+                path.unlink()
+
+    def test_every_portable_domain_deletion(self):
+        path = self.repo / "PASTE-TO-INSTALL.md"
+        original = path.read_text()
+        line = next(l for l in original.splitlines() if l.startswith("For a full audit"))
+        domain_text = line.split("one coverage row per domain: ")[1].split(". Mark each")[0]
+        domains = domain_text.split("; ")
+        self.assertEqual(len(domains), 19)
+        for domain in domains:
+            with self.subTest(domain=domain):
+                reduced = "; ".join(d for d in domains if d != domain)
+                path.write_text(original.replace(domain_text, reduced))
+                self.rejected("portable coverage must contain each")
+        path.write_text(original)
+
+    def test_duplicate_portable_domain(self):
+        self.edit("PASTE-TO-INSTALL.md", lambda s:s.replace("Privacy;", "Privacy; Privacy;", 1))
+        self.rejected("portable coverage must contain each")
+
+    def test_malformed_markdown_url(self):
+        self.edit("skills/anti-vibecoding-ui/references/review-protocol.md",
+                  lambda s:s + "\n[broken](http://[)\n")
+        self.rejected("malformed markdown URL")
+
     def test_invalid_skill_yaml(self):
         self.edit("skills/anti-vibecoding-ui/SKILL.md", lambda s: s.replace(
             "description: Review,", "description: invalid: Review,", 1))

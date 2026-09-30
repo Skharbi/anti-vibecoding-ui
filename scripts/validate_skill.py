@@ -48,6 +48,14 @@ def yaml_mapping(body, label):
 
 
 def read(path: Path) -> str:
+    if path.is_relative_to(SKILL):
+        try:
+            if not path.resolve().is_relative_to(SKILL.resolve()):
+                errors.append("installed path escapes skill bundle: " + str(path.relative_to(ROOT)))
+                return ""
+        except (OSError, RuntimeError):
+            errors.append("unresolvable installed path: " + str(path.relative_to(ROOT)))
+            return ""
     if not path.is_file():
         errors.append("missing: " + str(path.relative_to(ROOT)))
         return ""
@@ -245,6 +253,15 @@ if plugin and codex_plugin:
 
 
 # Installable skill must stay self-contained.
+for path in SKILL.rglob("*"):
+    if path.is_symlink():
+        try:
+            resolved = path.resolve(strict=True)
+            if not resolved.is_relative_to(SKILL.resolve()):
+                errors.append("installed symlink escapes skill bundle: " + str(path.relative_to(ROOT)))
+        except (OSError, RuntimeError):
+            errors.append("unresolvable installed symlink: " + str(path.relative_to(ROOT)))
+
 if "evals/" in skill:
     errors.append("installable SKILL.md must not reference repo-root evals")
 
@@ -343,6 +360,22 @@ if priority_nums != list(range(1, 11)):
 # Guardrails that must not regress.
 security = read(SKILL / "references" / "security.md")
 matrix = read(SKILL / "references" / "best-practices-matrix.md")
+expected_domains = [
+    "Product/UX", "Accessibility", "Cybersecurity", "Secure SDLC", "Privacy",
+    "Performance", "Responsive", "Internationalization", "Design systems",
+    "Reliability", "Testing", "Observability", "Content/credibility", "AI interfaces",
+    "Regulated workflows", "Browser/platform compatibility", "Public discoverability",
+    "API client boundary", "Rendering/cache/concurrency",
+]
+domain_match = re.search(r"one coverage row per domain:\s*([^\n]+?)\.\s*Mark each", output_block, re.I)
+portable_domains = [s.strip().casefold() for s in domain_match.group(1).split(";")] if domain_match else []
+matrix_domains = [s.strip().casefold() for s in re.findall(r"^\| ([^|]+) \|", matrix, re.M)
+                  if s.strip() != "Domain"]
+expected = sorted(s.casefold() for s in expected_domains)
+if sorted(portable_domains) != expected:
+    errors.append("portable coverage must contain each of the 19 domains exactly once")
+if sorted(matrix_domains) != expected:
+    errors.append("coverage matrix must contain each of the 19 domains exactly once")
 if "OWASP compliant" not in security or "ASVS compliant" not in security:
     errors.append("security anti-overclaim guard missing")
 if "requires external verification" not in (skill + matrix):
@@ -391,11 +424,19 @@ for md in docs_to_check:
     body = re.sub(r"```.*?```", "", body, flags=re.S)
     for target in re.findall(r"\[[^\]]+\]\(([^)]+)\)", body):
         target = target.strip().split(' "', 1)[0].strip("<>")
-        parts = urlsplit(target)
+        try:
+            parts = urlsplit(target)
+        except ValueError:
+            errors.append("malformed markdown URL in " + str(md.relative_to(ROOT)))
+            continue
         if parts.scheme or parts.netloc:
             continue
         clean = unquote(parts.path)
-        resolved = (md.parent / clean).resolve() if clean else md.resolve()
+        try:
+            resolved = (md.parent / clean).resolve() if clean else md.resolve()
+        except (OSError, RuntimeError, ValueError):
+            errors.append("unresolvable markdown link in " + str(md.relative_to(ROOT)))
+            continue
         if md.is_relative_to(SKILL) and not resolved.is_relative_to(SKILL.resolve()):
             errors.append("reference escapes installed skill: " + str(md.relative_to(ROOT)))
             continue

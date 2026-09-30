@@ -9,7 +9,8 @@ The project follows semantic versioning for the portable plugin manifest.
 - Corrected manifest validation bypasses and non-object crashes; reject duplicate JSON keys and invalid required-field types.
 - Validate optional skill metadata types and compatibility length.
 - Protect portable safety-rule presence and agent skill mentions against deletion.
-- Document contributor QA dependencies and expand deterministic regressions to 27 test methods.
+- Document contributor QA dependencies and expand deterministic regressions to 33 test methods.
+- Reject escaping/unresolvable installed symlinks, enforce every coverage domain exactly once, and handle malformed Markdown URLs without tracebacks.
 - Release behavioral/client/runtime gates remain pending; no new model score or version bump.
 
 ## [0.2.0] - 2026-09-24
