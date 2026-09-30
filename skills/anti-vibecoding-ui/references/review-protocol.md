@@ -120,8 +120,14 @@ After changes, verify all relevant dimensions:
 
 A review can end in:
 - **Pass** — no must-fix issues; relevant verification completed.
-- **Pass with issues** — no must-fix issues, but should-fix items remain.
-- **Fail** — one or more must-fix issues remain or verification could not be completed.
+- **Pass with issues** — no must-fix issues, relevant verification completed, but should-fix items remain.
+- **Fail** — one or more confirmed must-fix issues remain.
+- **Not verified** — no confirmed must-fix establishes a Fail, but required verification is incomplete.
+- **Blocked** — required verification cannot proceed because access, tooling, or a dependency is unavailable; name the blocker.
+
+Missing evidence is not proof of a defect. Report confirmed failures alongside unverified domains. Do not issue an overall Pass when required domains remain unverified.
+
+Keep legal and server-side conclusions separate from client evidence. A missing consent interface alone does not prove a legal violation. A request's Content-Type can be confirmed in code; rejection, parsing failure, or exploitation requires the server contract or executed response. Apply this restraint to finding titles as well as supporting text.
 
 Never claim "production-ready" from static inspection alone when interactive behavior was not executed.
 
@@ -148,4 +154,4 @@ Return:
 - remaining judgment calls;
 - final pass state.
 
-If the user asks for a full audit, include a compact section/domain coverage table (or equivalent explicit accounting) that marks every relevant domain as reviewed, not applicable, or requiring external verification. Do not omit the coverage accounting even when the narrative findings are short.
+If the user asks for a full audit, include one row for each of the 19 domains in `best-practices-matrix.md`, including not-applicable domains with a reason. Mark each reviewed, not applicable, or requiring external verification. Do not merge rows in a way that hides omissions.

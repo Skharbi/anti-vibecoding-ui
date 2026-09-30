@@ -3,7 +3,7 @@
 A production UI engineering Agent Skill for reviewing and generating interfaces without generic AI-made patterns — while also checking accessibility, responsive behavior, interaction states, frontend security/privacy, reliability, performance-sensitive UI decisions, browser/platform behavior, and evidence quality.
 
 **Current package version:** `0.2.0`  
-**Status:** v0.2.0 release validation complete under the repository's documented package, two-agent behavioral, and Chromium execution gates.
+**Status:** October hardening is unreleased. Structural regression checks pass; updated behavioral and execution release gates remain pending. Historical v0.2.0 scores are not validation of this revision.
 
 ## Quick start
 
@@ -130,14 +130,16 @@ Validation has three layers.
 Run:
 
 ```bash
+python -m pip install -r requirements-dev.txt
 python scripts/validate_skill.py
+python scripts/test_validator.py
 ```
 
 The validator checks package structure, manifest/version consistency, OpenAI metadata constraints, skill-description length, self-contained references, evaluation counts, documentation consistency, relative links, and common secret patterns.
 
 ### 2. Behavioral evaluation
 
-`evals/cases.md` contains **42 regression scenarios** covering triggering, review quality, generation, false positives, security/trust, cross-domain best practices, and platform/delivery behavior.
+`evals/cases.md` contains **46 regression scenarios** covering triggering, review quality, generation, false positives, security/trust, cross-domain best practices, platform/delivery behavior, and evidence-boundary regressions.
 
 ### 3. Execution gates
 
@@ -164,13 +166,13 @@ See `skills/anti-vibecoding-ui/references/sources.md`.
 - self-contained Agent Skill bundle;
 - 38-area production UI checklist;
 - security/trust, component behavior, and best-practice references;
-- 42 regression scenarios;
+- 46 regression scenarios;
 - deterministic validator;
 - installation/security/contribution/release documentation;
 - recorded same-model structural/scenario self-test;
 - recorded Chromium runtime validation with **6/6 execution-gated cases passing**.
 
-**Release validation completed**
+**Historical v0.2.0 records — not current-revision validation**
 - author-model scored run: **100%**;
 - independent Claude full-suite run: **95.6%** with **0 critical failures**;
 - post-hardening targeted Claude regression run: **97.1%**, **0 critical failures**, **0 new false positives**;
@@ -178,11 +180,13 @@ See `skills/anti-vibecoding-ui/references/sources.md`.
 
 See `evals/results/` for the recorded evaluation evidence and limitations.
 
-**Runtime evidence completed**
+**Historical runtime scope**
 - rendered desktop/mobile generation checks;
-- RTL/native-language rendering validation in Chromium with `ar-SA` locale;
+- RTL rendering in Chromium with `ar-SA` locale; native-language human review not established;
 - representative Chromium browser execution for all six execution-gated cases;
-- reduced visual-viewport checks for keyboard occlusion behavior.
+- reduced visual-viewport checks for keyboard occlusion behavior, not physical mobile-keyboard evidence.
+
+The October revision still requires fresh behavioral runs, actual target-browser checks, mobile input evidence, and client discovery smoke tests. See [current evidence](evals/results/CURRENT.md). Chromium feature fallback is not evidence from Safari or Firefox.
 
 The validation claim is limited to the repository's documented release bar. It is not a claim of universal browser compatibility, WCAG conformance, OWASP/ASVS compliance, legal/privacy compliance, or security certification.
 

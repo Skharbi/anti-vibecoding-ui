@@ -2,21 +2,66 @@
 import json
 import re
 import sys
+import subprocess
 from pathlib import Path
+from urllib.parse import unquote, urlsplit
+
+try:
+    import yaml
+except ImportError:
+    print("VALIDATION FAILED\n- QA dependency missing: run python -m pip install -r requirements-dev.txt")
+    sys.exit(1)
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / "skills" / "anti-vibecoding-ui"
 errors = []
 
 
+class UniqueSafeLoader(yaml.SafeLoader):
+    """Reject duplicate keys rather than silently overwriting them."""
+
+
+def unique_mapping(loader, node, deep=False):
+    mapping = {}
+    for key_node, value_node in node.value:
+        key = loader.construct_object(key_node, deep=deep)
+        if not isinstance(key, str) or key in mapping:
+            raise yaml.constructor.ConstructorError(None, None, "duplicate/non-string key", key_node.start_mark)
+        mapping[key] = loader.construct_object(value_node, deep=deep)
+    return mapping
+
+
+UniqueSafeLoader.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, unique_mapping)
+
+
+def yaml_mapping(body, label):
+    try:
+        value = yaml.load(body, Loader=UniqueSafeLoader)
+        if not isinstance(value, dict):
+            errors.append(label + " must be a YAML mapping")
+            return {}
+        return value
+    except yaml.YAMLError:
+        # Do not print parser excerpts: malformed YAML may contain credentials.
+        errors.append(label + " invalid YAML (including duplicate keys)")
+        return {}
+
+
 def read(path: Path) -> str:
-    if not path.exists():
+    if not path.is_file():
         errors.append("missing: " + str(path.relative_to(ROOT)))
         return ""
-    return path.read_text(encoding="utf-8")
+    try:
+        return path.read_text(encoding="utf-8")
+    except (OSError, UnicodeError):
+        errors.append("unreadable UTF-8 file: " + str(path.relative_to(ROOT)))
+        return ""
 
 
 required = [
+    ROOT / "requirements-dev.txt",
+    ROOT / "scripts" / "test_validator.py",
+    ROOT / "evals" / "case-manifest.json",
     ROOT / "README.md",
     ROOT / "LICENSE",
     ROOT / "HANDOVER.md",
@@ -80,10 +125,21 @@ if not fm:
 else:
     frontmatter = fm.group(1)
 
-name_match = re.search(r"^name:\s*([^\n]+)$", frontmatter, re.M)
-desc_match = re.search(r"^description:\s*(.+)$", frontmatter, re.M)
-skill_name = name_match.group(1).strip() if name_match else ""
-skill_desc = desc_match.group(1).strip() if desc_match else ""
+metadata = yaml_mapping(frontmatter, "SKILL.md frontmatter") if fm else {}
+skill_name = metadata.get("name", "")
+skill_desc = metadata.get("description", "")
+if not isinstance(skill_name, str):
+    errors.append("skill name must be a string")
+    skill_name = ""
+if not isinstance(skill_desc, str) or not skill_desc.strip():
+    errors.append("skill description must be a non-empty string")
+    skill_desc = ""
+if set(metadata) - {"name", "description", "license", "compatibility", "metadata", "allowed-tools"}:
+    errors.append("unsupported skill frontmatter field")
+if skill_name != SKILL.name or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", skill_name):
+    errors.append("skill name must match folder and naming specification")
+if len(skill_name) > 64:
+    errors.append("skill name exceeds 64 chars")
 
 if skill_name != "anti-vibecoding-ui":
     errors.append("invalid skill name")
@@ -170,15 +226,28 @@ for ref in re.findall(r"references/([A-Za-z0-9_-]+\.md)", skill):
 
 
 # OpenAI skill metadata.
-if "interface:" not in openai_yaml:
-    errors.append("agents/openai.yaml missing interface")
-for key in ["display_name:", "short_description:"]:
-    if key not in openai_yaml:
-        errors.append("agents/openai.yaml missing " + key.rstrip(":"))
-if "products:" not in openai_yaml or "CHAT" not in openai_yaml or "CODEX" not in openai_yaml:
-    errors.append("agents/openai.yaml must declare CHAT and CODEX products")
-if "allow_implicit_invocation: true" not in openai_yaml:
-    errors.append("agents/openai.yaml should allow implicit invocation")
+agent = yaml_mapping(openai_yaml, "agents/openai.yaml")
+interface = agent.get("interface", {})
+policy = agent.get("policy", {})
+if not isinstance(interface, dict):
+    errors.append("agent interface must be a mapping")
+    interface = {}
+if not isinstance(policy, dict):
+    errors.append("agent policy must be a mapping")
+    policy = {}
+for key in ["display_name", "short_description", "default_prompt"]:
+    if not isinstance(interface.get(key), str) or not interface[key].strip():
+        errors.append("agent interface missing/non-string " + key)
+short = interface.get("short_description", "")
+if isinstance(short, str) and not 25 <= len(short) <= 64:
+    errors.append("agent short_description must be 25..64 chars")
+if policy.get("allow_implicit_invocation") is not True:
+    errors.append("agent allow_implicit_invocation must be true (boolean)")
+products = policy.get("products")
+if products is not None and (not isinstance(products, list) or
+                             not all(isinstance(item, str) for item in products) or
+                             set(products) != {"CHAT", "CODEX"}):
+    errors.append("agent products, when present, must be CHAT and CODEX")
 
 
 # Checklist and eval contracts.
@@ -187,14 +256,19 @@ if nums != list(range(1, 39)):
     errors.append("checklist numbering is not consecutive 1..38")
 
 ids = re.findall(r"^###\s+([A-Z]+\d+)\s+—", cases, re.M)
-if len(ids) != 42:
-    errors.append("expected 42 eval cases, found " + str(len(ids)))
+try:
+    manifest = json.loads(read(ROOT / "evals" / "case-manifest.json"))
+except (ValueError, OSError):
+    manifest = {}
+    errors.append("invalid case manifest JSON")
+if not isinstance(manifest, dict) or manifest.get("case_ids") != ids or manifest.get("schema_version") != 1:
+    errors.append("case manifest does not match versioned case list")
 if len(ids) != len(set(ids)):
     errors.append("duplicate eval case IDs")
 
 
 # Documentation consistency.
-if "38 review areas" not in readme or "42 regression scenarios" not in readme:
+if "38 review areas" not in readme or f"{len(ids)} regression scenarios" not in readme:
     errors.append("README counts are stale")
 if "\\n" in readme:
     errors.append("README contains escaped newline text")
@@ -202,7 +276,7 @@ if "28 checklist sections" in protocol or "34 checklist sections" in protocol:
     errors.append("review protocol contains stale checklist count")
 if "Adding a JS/Python test harness" in handover:
     errors.append("handover contradicts current validator architecture")
-if "condensed portable edition" not in paste.lower() or "canonical/full version" not in paste.lower():
+if "condensed portable edition" not in paste.lower() or "skills/anti-vibecoding-ui/" not in paste:
     errors.append("portable edition disclosure missing")
 
 priority_block = (
@@ -244,12 +318,40 @@ docs_to_check = [
     ROOT / "evals" / "runtime-fixtures" / "README.md",
 ]
 
+docs_to_check += list(SKILL.rglob("*.md"))
+
+
+def heading_ids(body):
+    slugs = set()
+    counts = {}
+    body = re.sub(r"```.*?```", "", body, flags=re.S)
+    for heading in re.findall(r"^#{1,6}\s+(.+)$", body, re.M):
+        slug = re.sub(r"[^\w\- ]", "", heading.strip().lower()).replace(" ", "-")
+        count = counts.get(slug, 0)
+        counts[slug] = count + 1
+        slugs.add(slug + (f"-{count}" if count else ""))
+    slugs.update(re.findall(r'(?:id|name)=[\"\']([^\"\']+)', body))
+    return slugs
+
+
 for md in docs_to_check:
     body = read(md)
-    for target in re.findall(r"\[[^\]]+\]\((?!https?://|#)([^)]+)\)", body):
-        clean = target.split("#", 1)[0]
-        if clean and not (md.parent / clean).resolve().exists():
+    # Code samples are not live Markdown dependencies.
+    body = re.sub(r"```.*?```", "", body, flags=re.S)
+    for target in re.findall(r"\[[^\]]+\]\(([^)]+)\)", body):
+        target = target.strip().split(' "', 1)[0].strip("<>")
+        parts = urlsplit(target)
+        if parts.scheme or parts.netloc:
+            continue
+        clean = unquote(parts.path)
+        resolved = (md.parent / clean).resolve() if clean else md.resolve()
+        if md.is_relative_to(SKILL) and not resolved.is_relative_to(SKILL.resolve()):
+            errors.append("reference escapes installed skill: " + str(md.relative_to(ROOT)))
+            continue
+        if not resolved.is_file():
             errors.append(f"broken relative markdown link in {md.relative_to(ROOT)}: {target}")
+        elif parts.fragment and resolved.suffix == ".md" and unquote(parts.fragment) not in heading_ids(read(resolved)):
+            errors.append(f"broken markdown anchor in {md.relative_to(ROOT)}: {target}")
 
 
 # Common accidental-secret patterns.
@@ -257,14 +359,29 @@ secret_patterns = [
     r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----",
     r"\bsk-proj-[A-Za-z0-9_-]{20,}\b",
     r"\bghp_[A-Za-z0-9]{20,}\b",
+    r"\bgithub_pat_[A-Za-z0-9_]{30,}\b",
+    r"\b(?:AKIA|ASIA)[A-Z0-9]{16}\b",
+    r"\bxox[baprs]-[A-Za-z0-9-]{20,}\b",
 ]
 
-for path in ROOT.rglob("*"):
-    if not path.is_file() or ".git" in path.parts:
+# Scan versioned + candidate source, not extension-limited files. In test copies
+# without .git, scan the copy itself. This does not scan historical commits.
+tracked = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "--show-toplevel"], capture_output=True, text=True)
+if tracked.returncode == 0 and Path(tracked.stdout.strip()).resolve() == ROOT.resolve():
+    listed = subprocess.run(["git", "-C", str(ROOT), "ls-files", "-co", "--exclude-standard", "-z"], capture_output=True, check=True)
+    candidates = [ROOT / p.decode("utf-8") for p in listed.stdout.split(b"\0") if p]
+else:
+    candidates = list(ROOT.rglob("*"))
+for path in set(candidates):
+    if not path.is_file() or path.is_symlink() or any(p in {".git", ".venv", "__pycache__", "node_modules"} for p in path.parts):
         continue
-    if path.suffix.lower() not in {".md", ".yaml", ".yml", ".py", ".txt", ".json"}:
+    raw = path.read_bytes()
+    if b"\0" in raw:
         continue
-    body = path.read_text(encoding="utf-8", errors="ignore")
+    try:
+        body = raw.decode("utf-8")
+    except UnicodeDecodeError:
+        continue
     for pattern in secret_patterns:
         if re.search(pattern, body):
             errors.append("possible secret in " + str(path.relative_to(ROOT)))

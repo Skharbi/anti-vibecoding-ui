@@ -1,7 +1,7 @@
 interface:
   display_name: "Anti-Vibecoding UI"
   short_description: "Production UI/UX, accessibility, security and quality review"
-  default_prompt: "Audit this interface for product fit, UX, accessibility, frontend security/privacy, responsive and browser behavior, state completeness, API/rendering reliability, design-system consistency, performance, and generic AI design patterns. Prioritize evidence-based must-fix issues, distinguish runtime/backend verification needs, then fix clear issues and verify the result."
+  default_prompt: "Use $anti-vibecoding-ui to review this interface for product fit, accessibility, security/privacy, states, responsive behavior, and production quality. Prioritize confirmed defects and explicitly report verification gaps. Only change code when requested; then verify the changes."
 
 policy:
   products:

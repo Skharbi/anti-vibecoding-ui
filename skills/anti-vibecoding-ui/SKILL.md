@@ -23,6 +23,8 @@ Use supporting files selectively:
 
 Never approve an interface from appearance alone.
 
+Use Confirmed, Likely, Needs verification, and Not applicable evidence labels. Only confirmed defects justify must-fix or Fail. Incomplete required checks produce Not verified (or Blocked when access/tooling prevents them), never an overall Pass. Finding titles must not assert unverified legal violations or server-dependent effects. For full audits, account for all 19 best-practice domains individually, including justified not-applicable rows.
+
 A UI passes only when it is:
 **specific, usable, accessible, semantically correct, state-complete, responsive, performant, consistent, credible, and clearly connected to the real product and user workflow.**
 

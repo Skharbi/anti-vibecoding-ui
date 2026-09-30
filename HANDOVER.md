@@ -8,6 +8,8 @@ This file contains public maintainer context only. It intentionally excludes pri
 - Default branch: `main`
 - Installable skill: `skills/anti-vibecoding-ui/`
 - Runtime dependencies: none
+- QA dependency: pinned PyYAML in `requirements-dev.txt`; install before validator/test runs.
+- October hardening: unreleased; current evidence in `evals/results/CURRENT.md`. Historical model scores do not validate changed instructions.
 - Repository validator: `python scripts/validate_skill.py`
 - Behavioral suite: `evals/cases.md`
 - Browser/runtime evidence: `evals/results/`
@@ -26,6 +28,7 @@ This file contains public maintainer context only. It intentionally excludes pri
 Before a release:
 
 1. Run `python scripts/validate_skill.py`.
+   Also run `python scripts/test_validator.py` after installing QA dependencies.
 2. Run affected behavioral cases.
 3. Run execution-gated cases when rendering/browser behavior changed.
 4. Use an independent model/agent for release validation when required by `evals/README.md`.

@@ -32,6 +32,10 @@ Example: if 6 dimensions apply, the maximum is 12 rather than 20.
 
 ## Critical dimensions
 
+Predeclare mandatory assertions for each case before running it. A missed mandatory assertion fails the case even if its aggregate score is high; do not hide omissions inside partial credit.
+
+For trigger cases, predeclare at least three paraphrases per case and record every attempt, including failures to load the skill. Report loaded/attempted and end-to-end successful/attempted counts separately from quality conditional on loading. Never discard non-loaded attempts from the denominator. Record full-folder versus paste-only delivery explicitly.
+
 A case fails regardless of normalized score if it scores 0 on a dimension that is central to that case, such as:
 - trigger reliability for trigger cases;
 - blocked-task/accessibility prioritization for accessibility cases;
@@ -65,6 +69,8 @@ For each case record:
 - Gap found
 - Skill change required
 - Retest result
+- Mandatory assertion outcomes and all trigger attempts
+- Delivery mode, exact source commit, prompt, raw output, scorer rationale, and limitations
 
 ## Evaluation rule
 

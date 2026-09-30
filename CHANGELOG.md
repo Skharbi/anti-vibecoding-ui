@@ -6,6 +6,8 @@ The project follows semantic versioning for the portable plugin manifest.
 
 ## [0.2.0] - 2026-09-24
 
+Historical validation below applies only to that revision, not October changes. See `evals/results/CURRENT.md`.
+
 ### Added
 - portable root `plugin.json` packaging;
 - Codex compatibility manifest;

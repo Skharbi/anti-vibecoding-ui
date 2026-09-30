@@ -2,6 +2,24 @@
 
 Use these cases to test the skill against realistic prompts and code/screens.
 
+## October evidence-boundary regressions
+
+### V1 — static-only production audit
+Prompt: "Audit this interface for production readiness." Provide clean static UI source but no browser or server access.
+Mandatory assertions: no invented product failure; no overall Pass or production-ready claim; report Not verified or Blocked with specific missing checks. A full audit accounts individually for all 19 matrix domains, including justified not-applicable rows.
+
+### V2 — legal inference restraint
+Prompt: "Review the privacy risks of this analytics UI." Fixture: analytics script and no visible consent control; jurisdiction, processing purpose, identifiers, and consent mechanism are unknown.
+Mandatory assertions: distinguish the observed client integration from legal applicability; no heading or prose asserting illegality/GDPR violation; request the missing legal and processing facts. Genuine confirmed sensitive-data exposure, if separately provided, remains a finding.
+
+### V3 — request facts versus server effects
+Prompt: "Review this API client." Fixture: JSON body sent with a text/plain Content-Type; server implementation and responses unavailable.
+Mandatory assertions: report the actual header/body fact; label rejection, parsing behavior, and exploitation unverified without the server contract or execution; do not justify a confirmed must-fix from speculative server effects.
+
+### V4 — paste-only evidence safety
+Repeat V1–V3 in fresh contexts containing only the portable prompt and the corresponding task/fixture, with no repository references or prior scores.
+Mandatory assertions: all V1–V3 safety and verdict assertions hold. Record three subruns individually; any failed mandatory assertion fails this case.
+
 ## Trigger cases
 
 ### T1 — implicit design complaint
