@@ -35,6 +35,85 @@ class ValidatorTests(unittest.TestCase):
         r = self.run_gate()
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
 
+    def test_manifest_containers(self):
+        for path in ["plugin.json", ".codex-plugin/plugin.json"]:
+            target = self.repo / path
+            original = target.read_text()
+            for invalid in ["{}", "[]", "[1]", "null", '"text"', "42"]:
+                with self.subTest(path=path, invalid=invalid):
+                    target.write_text(invalid)
+                    self.rejected("non-empty JSON object")
+            target.write_text(original)
+
+    def test_plugin_required_fields(self):
+        target = self.repo / "plugin.json"
+        original = target.read_text()
+        for key in ["$schema", "name", "version", "description"]:
+            with self.subTest(key=key):
+                value = json.loads(original)
+                value.pop(key)
+                target.write_text(json.dumps(value))
+                r = self.run_gate()
+                self.assertEqual(r.returncode, 1, r.stdout + r.stderr)
+                self.assertNotIn("Traceback", r.stderr)
+        target.write_text(original)
+
+    def test_plugin_field_types(self):
+        target = self.repo / "plugin.json"
+        original = target.read_text()
+        for key in ["name", "version", "description"]:
+            with self.subTest(key=key):
+                value = json.loads(original)
+                value[key] = {"invalid": True}
+                target.write_text(json.dumps(value))
+                r = self.run_gate()
+                self.assertEqual(r.returncode, 1, r.stdout + r.stderr)
+                self.assertNotIn("Traceback", r.stderr)
+        target.write_text(original)
+
+    def test_duplicate_manifest_key(self):
+        self.edit("plugin.json", lambda s: s.replace('"name":', '"name": "duplicate", "name":', 1))
+        self.rejected("invalid JSON")
+
+    def test_optional_skill_types(self):
+        target = self.repo / "skills/anti-vibecoding-ui/SKILL.md"
+        original = target.read_text()
+        for field in ["compatibility: {invalid: true}", "compatibility: " + "x" * 501,
+                      "license: [MIT]", "allowed-tools: [Bash]", "metadata: text",
+                      "metadata: {version: 1}"]:
+            with self.subTest(field=field.split(":")[0]):
+                target.write_text(original.replace("name: anti-vibecoding-ui",
+                    "name: anti-vibecoding-ui\n" + field, 1))
+                r = self.run_gate()
+                self.assertEqual(r.returncode, 1, r.stdout + r.stderr)
+                self.assertNotIn("Traceback", r.stderr)
+        target.write_text(original)
+
+    def test_valid_optional_skill_metadata(self):
+        self.edit("skills/anti-vibecoding-ui/SKILL.md", lambda s: s.replace(
+            "name: anti-vibecoding-ui", 'name: anti-vibecoding-ui\nlicense: MIT\ncompatibility: Coding client\nallowed-tools: Read Bash\nmetadata: {version: "1"}', 1))
+        r = self.run_gate()
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+
+    def test_default_prompt_skill_mention(self):
+        self.edit("skills/anti-vibecoding-ui/agents/openai.yaml", lambda s: s.replace(
+            "$anti-vibecoding-ui", "this protocol"))
+        self.rejected("default_prompt must mention")
+
+    def test_portable_safety_deletions(self):
+        target = self.repo / "PASTE-TO-INSTALL.md"
+        original = target.read_text()
+        for prefix in ["Label evidence", "Use Pass or Pass with issues", "Never assert a legal violation",
+                       "Confirm request headers", "For a full audit"]:
+            with self.subTest(prefix=prefix):
+                target.write_text("\n".join(l for l in original.splitlines() if not l.startswith(prefix)))
+                self.rejected("portable safety contract missing")
+        target.write_text(original)
+
+    def test_install_dependency_setup(self):
+        self.edit("INSTALL.md", lambda s: s.replace("python -m pip install -r requirements-dev.txt", ""))
+        self.rejected("INSTALL contributor QA dependency setup missing")
+
     def test_invalid_skill_yaml(self):
         self.edit("skills/anti-vibecoding-ui/SKILL.md", lambda s: s.replace(
             "description: Review,", "description: invalid: Review,", 1))

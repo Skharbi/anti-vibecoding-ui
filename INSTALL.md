@@ -132,8 +132,12 @@ You do **not** need this step just to use the skill.
 If you cloned the repository and are modifying it, run:
 
 ```bash
+python -m pip install -r requirements-dev.txt
 python scripts/validate_skill.py
+python scripts/test_validator.py
 ```
+
+These are maintainer QA dependencies only; the installed skill has no runtime dependencies.
 
 Expected result:
 

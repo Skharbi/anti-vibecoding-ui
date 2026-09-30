@@ -11,6 +11,7 @@ This file contains public maintainer context only. It intentionally excludes pri
 - QA dependency: pinned PyYAML in `requirements-dev.txt`; install before validator/test runs.
 - October hardening: unreleased; current evidence in `evals/results/CURRENT.md`. Historical model scores do not validate changed instructions.
 - Repository validator: `python scripts/validate_skill.py`
+- Follow-up fixes: manifest container/type and duplicate-key checks, optional skill schema checks, portable-safety deletion probes, and contributor dependency setup. Deterministic suite: 27 test methods.
 - Behavioral suite: `evals/cases.md`
 - Browser/runtime evidence: `evals/results/`
 

@@ -4,6 +4,14 @@ All notable repository changes are documented here.
 
 The project follows semantic versioning for the portable plugin manifest.
 
+## [Unreleased]
+
+- Corrected manifest validation bypasses and non-object crashes; reject duplicate JSON keys and invalid required-field types.
+- Validate optional skill metadata types and compatibility length.
+- Protect portable safety-rule presence and agent skill mentions against deletion.
+- Document contributor QA dependencies and expand deterministic regressions to 27 test methods.
+- Release behavioral/client/runtime gates remain pending; no new model score or version bump.
+
 ## [0.2.0] - 2026-09-24
 
 Historical validation below applies only to that revision, not October changes. See `evals/results/CURRENT.md`.

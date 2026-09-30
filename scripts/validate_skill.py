@@ -58,6 +58,28 @@ def read(path: Path) -> str:
         return ""
 
 
+def json_mapping(path):
+    """Validate the container before consumers access required properties."""
+    def unique_object(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError("duplicate key")
+            result[key] = value
+        return result
+
+    label = str(path.relative_to(ROOT))
+    try:
+        value = json.loads(read(path), object_pairs_hook=unique_object)
+    except (ValueError, TypeError):
+        errors.append(label + " invalid JSON (including duplicate keys)")
+        return {}
+    if not isinstance(value, dict) or not value:
+        errors.append(label + " must be a non-empty JSON object")
+        return {}
+    return value
+
+
 required = [
     ROOT / "requirements-dev.txt",
     ROOT / "scripts" / "test_validator.py",
@@ -136,6 +158,16 @@ if not isinstance(skill_desc, str) or not skill_desc.strip():
     skill_desc = ""
 if set(metadata) - {"name", "description", "license", "compatibility", "metadata", "allowed-tools"}:
     errors.append("unsupported skill frontmatter field")
+for key in ["license", "allowed-tools", "compatibility"]:
+    if key in metadata and (not isinstance(metadata[key], str) or not metadata[key].strip()):
+        errors.append("skill " + key + " must be a non-empty string")
+compatibility = metadata.get("compatibility")
+if isinstance(compatibility, str) and len(compatibility) > 500:
+    errors.append("skill compatibility exceeds 500 chars")
+extra_metadata = metadata.get("metadata")
+if "metadata" in metadata and (not isinstance(extra_metadata, dict) or
+        not all(isinstance(k, str) and isinstance(v, str) for k, v in extra_metadata.items())):
+    errors.append("skill metadata must map strings to strings")
 if skill_name != SKILL.name or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", skill_name):
     errors.append("skill name must match folder and naming specification")
 if len(skill_name) > 64:
@@ -152,11 +184,7 @@ if fm and not skill[fm.end():].strip():
 
 
 # Portable Agent Plugins manifest.
-try:
-    plugin = json.loads(read(ROOT / "plugin.json"))
-except Exception as exc:
-    plugin = {}
-    errors.append("plugin.json invalid JSON: " + str(exc))
+plugin = json_mapping(ROOT / "plugin.json")
 
 if plugin:
     expected_schema = "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json"
@@ -191,21 +219,21 @@ if plugin:
     if not isinstance(description, str) or not description.strip():
         errors.append("plugin description missing")
 
-    if len((plugin_name or "") + ":" + skill_name) > 64:
+    if isinstance(plugin_name, str) and len(plugin_name + ":" + skill_name) > 64:
         errors.append("combined plugin:skill identity exceeds 64 chars")
 
-    if version and f"## [{version}]" not in changelog:
+    if isinstance(version, str) and version and f"## [{version}]" not in changelog:
         errors.append("CHANGELOG does not contain plugin version " + version)
-    if version and f"Current package version:** `{version}`" not in readme:
+    if isinstance(version, str) and version and f"Current package version:** `{version}`" not in readme:
         errors.append("README package version does not match plugin.json")
 
 
 # Codex compatibility manifest.
-try:
-    codex_plugin = json.loads(read(ROOT / ".codex-plugin" / "plugin.json"))
-except Exception as exc:
-    codex_plugin = {}
-    errors.append(".codex-plugin/plugin.json invalid JSON: " + str(exc))
+codex_plugin = json_mapping(ROOT / ".codex-plugin" / "plugin.json")
+
+for key in ["name", "version", "description", "skills"]:
+    if not isinstance(codex_plugin.get(key), str) or not codex_plugin[key].strip():
+        errors.append("Codex compatibility manifest missing/non-string " + key)
 
 if plugin and codex_plugin:
     if codex_plugin.get("name") != plugin.get("name"):
@@ -241,6 +269,9 @@ for key in ["display_name", "short_description", "default_prompt"]:
 short = interface.get("short_description", "")
 if isinstance(short, str) and not 25 <= len(short) <= 64:
     errors.append("agent short_description must be 25..64 chars")
+default_prompt = interface.get("default_prompt")
+if isinstance(default_prompt, str) and "$anti-vibecoding-ui" not in default_prompt:
+    errors.append("agent default_prompt must mention $anti-vibecoding-ui")
 if policy.get("allow_implicit_invocation") is not True:
     errors.append("agent allow_implicit_invocation must be true (boolean)")
 products = policy.get("products")
@@ -278,6 +309,26 @@ if "Adding a JS/Python test harness" in handover:
     errors.append("handover contradicts current validator architecture")
 if "condensed portable edition" not in paste.lower() or "skills/anti-vibecoding-ui/" not in paste:
     errors.append("portable edition disclosure missing")
+
+# Protect the portable output contract from accidental deletion. These are
+# structural presence checks, not proof that an agent obeys the instructions.
+output_block = paste.split("REVIEW OUTPUT", 1)[-1].split("For each real finding:", 1)[0]
+portable_guards = {
+    "evidence labels": r"Confirmed.*Likely.*Needs verification.*Not applicable",
+    "confirmed-only severity": r"Only confirmed defects justify.*Must-fix.*Fail",
+    "incomplete verification verdict": r"Use Pass.*required checks.*Not verified.*Blocked",
+    "legal applicability": r"Never assert a legal violation.*jurisdiction.*external verification",
+    "server effects": r"request headers.*server effects.*contract or executed response",
+    "current sources": r"current security/standards claims.*authoritative sources",
+    "domain accounting": r"one coverage row per domain:.*Secure SDLC.*Observability.*Regulated workflows.*external verification",
+}
+for label, pattern in portable_guards.items():
+    if not re.search(pattern, output_block, re.I | re.S):
+        errors.append("portable safety contract missing: " + label)
+install = read(ROOT / "INSTALL.md")
+contributor_block = install.split("## For contributors only", 1)[-1].split("---", 1)[0]
+if "python -m pip install -r requirements-dev.txt" not in contributor_block:
+    errors.append("INSTALL contributor QA dependency setup missing")
 
 priority_block = (
     paste.split("PRIORITY ORDER", 1)[1].split("MANDATORY AREAS TO CONSIDER", 1)[0]
