@@ -133,6 +133,7 @@ Run:
 python -m pip install -r requirements-dev.txt
 python scripts/validate_skill.py
 python scripts/test_validator.py
+python scripts/test_preparation.py
 ```
 
 The validator checks package structure, manifest/version consistency, OpenAI metadata constraints, skill-description length, self-contained references, evaluation counts, documentation consistency, relative links, and common secret patterns.

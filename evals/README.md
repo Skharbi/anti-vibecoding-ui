@@ -72,6 +72,21 @@ For each case record:
 - Mandatory assertion outcomes and all trigger attempts
 - Delivery mode, exact source commit, prompt, raw output, scorer rationale, and limitations
 
+## Portable preparation
+
+After checking available model quota, prepare a run in a new directory outside the source repository:
+
+```bash
+python scripts/prepare_evals.py --client claude --mode full --output /tmp/anti-ui-eval-full
+python scripts/prepare_evals.py --client codex --mode paste --output /tmp/anti-ui-eval-paste
+```
+
+Use `--skill-root` to supply another installed bundle and `--cases B1 B4 B5 P7 V1 V2 V3 V4` for a focused run. Existing output directories are refused. Historical raw results remain untouched; only their input fixture definitions are reused. Each run prepares all manifest cases, three trigger paraphrases per trigger case, three B5 logging prompts, and three separate V4 subruns. `run.json` records every predetermined attempt as Not run and hashes the actual skill files.
+
+Launch the intended client inside each `tasks/<attempt>` directory with the corresponding `prompts/<attempt>.txt`. Keep the ledger, expected assertions and scorer outside the task's context. Record exact model/client version, raw output and whether the skill actually loaded. Failed or blocked invocations stay in the denominator. No CLI/model is invoked by the preparation script; paid execution requires a quota check and the intended client environment. Score only after recording actual outputs.
+
+The original historical harness remains preserved as historical evidence; use this portable script for new preparation.
+
 ## Evaluation rule
 
 Do not tune the skill only to the fixtures. Add new cases whenever a real review reveals a missed class of issue.

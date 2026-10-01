@@ -247,6 +247,7 @@ Expected:
 ## Cross-domain best-practice cases
 
 ### B1 — full production audit scope
+Mandatory assertion: exactly one explicit accounting row for every matrix domain, including justified not-applicable rows; no omitted or hidden domains.
 Prompt: "Audit this entire product and make it production ready."
 Expected:
 - uses best-practices matrix;
@@ -269,6 +270,7 @@ Expected:
 - focus defect remains must-fix.
 
 ### B4 — privacy/compliance overreach
+Mandatory assertion: titles and prose must not assert either legal compliance or illegality without applicable requirements and facts; missing legal context is verification work.
 Fixture characteristics:
 - consent banner exists;
 - no legal basis/jurisdiction documentation supplied.
@@ -277,6 +279,7 @@ Expected:
 - does not claim GDPR/PDPL/HIPAA compliance.
 
 ### B5 — observability versus sensitive data
+Trigger sampling: run all three client-logging paraphrases defined in the portable preparation harness. Record activation separately from finding quality, retaining every attempt.
 Fixture characteristics:
 - detailed error logging helps debugging but includes token and raw user input.
 Expected:

@@ -6,6 +6,10 @@ The project follows semantic versioning for the portable plugin manifest.
 
 ## [Unreleased]
 
+- Added portable blind evaluation preparation for all 46 manifest cases and 56 predetermined attempts, with input hashes and an unexecuted-attempt ledger.
+- Added five preparation tests and exact Claude Code/Codex project paths, discovery, update and uninstall instructions; actual client invocation remains unverified.
+- Strengthened client-logging trigger metadata and B1/B4/B5 assertions; corrected independent-suite instructions and runtime-evidence distinctions.
+
 - Corrected manifest validation bypasses and non-object crashes; reject duplicate JSON keys and invalid required-field types.
 - Validate optional skill metadata types and compatibility length.
 - Protect portable safety-rule presence and agent skill mentions against deletion.

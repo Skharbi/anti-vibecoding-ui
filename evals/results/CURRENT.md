@@ -14,4 +14,8 @@ Second follow-up: external, dangling and cyclic installed symlinks are rejected;
 
 Four evidence-boundary cases (V1–V4) bring the manifest to 46 scenarios. They have not yet been agent-executed.
 
-Pending: portable evaluation harness/CI, named-client installation and discovery tests, fresh full-folder/paste behavioral runs, independent model release run, actual cross-browser/mobile-input evidence, and native-language review. No new scores are claimed. Historical reports and raw outputs remain unchanged and must not be used as current-revision approval.
+Two fresh-context boundary tasks were executed using full-folder privacy and portable API-client delivery. Both retained the intended evidence boundaries. Raw outputs and limitations are recorded in [focused checks](2026-10-01-focused-boundaries.md). These are same-family focused tasks, not completed V1–V4 suite runs or independent release scores.
+
+Portable evaluation preparation now supports all 46 manifest cases with 56 predetermined attempts, configurable skill roots, both client layouts and both delivery modes. Five local preparation tests verify full manifest coverage, file-copy layouts, paste isolation, refusal to overwrite evidence and unknown-case rejection. Exact client paths, discovery, update and uninstall steps are documented from official client guidance. This proves preparation/layout behavior only; no coding-client execution is claimed.
+
+Pending: actual named-client discovery/invocation/update/uninstall, complete fresh full-folder/paste behavioral runs, independent model release run, actual cross-browser/mobile-input evidence, and native-language review. Neither client CLI is installed in this workspace; paid quota is unverified. Optional hosted CI was not launched. No new aggregate scores are claimed. Historical reports and raw outputs remain unchanged and must not be used as current-revision approval.

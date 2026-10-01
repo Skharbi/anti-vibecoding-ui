@@ -14,6 +14,7 @@ Use this before changing the portable plugin version or publishing a release.
 
 ## Repository QA
 - [ ] Run `python scripts/validate_skill.py`.
+- [ ] Run `python scripts/test_validator.py` and `python scripts/test_preparation.py` after installing `requirements-dev.txt`.
 - [ ] Review the diff for stale counts/version claims.
 - [ ] Confirm no secrets or private data are present.
 - [ ] Confirm README, INSTALL, SECURITY, CONTRIBUTING, CHANGELOG, and HANDOVER are current.

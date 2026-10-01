@@ -91,6 +91,8 @@ def json_mapping(path):
 required = [
     ROOT / "requirements-dev.txt",
     ROOT / "scripts" / "test_validator.py",
+    ROOT / "scripts" / "prepare_evals.py",
+    ROOT / "scripts" / "test_preparation.py",
     ROOT / "evals" / "case-manifest.json",
     ROOT / "README.md",
     ROOT / "LICENSE",

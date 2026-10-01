@@ -13,6 +13,8 @@ This file contains public maintainer context only. It intentionally excludes pri
 - Repository validator: `python scripts/validate_skill.py`
 - Follow-up fixes: manifest container/type and duplicate-key checks, optional skill schema checks, portable-safety deletion probes, contributor dependency setup, installed symlink boundaries, all-domain coverage checks, and controlled URL errors. Deterministic suite: 33 test methods.
 - Behavioral suite: `evals/cases.md`
+- Portable preparation: `scripts/prepare_evals.py`; 46 manifest cases, 56 predetermined attempts; prepares only, no paid/model invocation.
+- Preparation/layout regression checks: `python scripts/test_preparation.py`; actual CLI discovery/invocation remains unverified.
 - Browser/runtime evidence: `evals/results/`
 
 ## Maintainer rules
