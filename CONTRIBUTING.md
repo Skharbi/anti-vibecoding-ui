@@ -27,7 +27,10 @@ A contribution should:
 Run:
 
 ```bash
+python -m pip install -r requirements-dev.txt
 python scripts/validate_skill.py
+python scripts/test_validator.py
+python scripts/test_preparation.py
 ```
 
 Then run the relevant cases from `evals/cases.md`.

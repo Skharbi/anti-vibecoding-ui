@@ -4,17 +4,19 @@ Use this packet with a **different model/agent family** from the one that author
 
 ## Goal
 
-Validate whether anti-vibecoding-ui behaves correctly across the full 42-case suite without being biased by the authoring model.
+Validate whether anti-vibecoding-ui behaves correctly across the full versioned case manifest without being biased by the authoring model. The current manifest contains 46 cases.
 
 ## Required setup
 
-Provide the second agent access to:
+Provide the independent scorer access to:
 - `skills/anti-vibecoding-ui/`
 - `evals/README.md`
 - `evals/cases.md`
 - `evals/EXECUTION-GATE.md`
 
 Do **not** give the second agent the existing self-test conclusions before it completes its own scoring.
+
+Keep the agent performing each task separate from the scorer. Task agents receive only isolated fixtures, prompts and the intended full-folder or portable delivery. Expected assertions, old results and the rubric belong outside their task directories. Use `scripts/prepare_evals.py` to prepare inputs and a predetermined attempt ledger; preparation does not execute agents or satisfy any release gate.
 
 ## Evaluation instruction
 

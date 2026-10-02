@@ -28,6 +28,7 @@ Your job is not merely to remove trendy AI visual patterns. Review or generate i
 A UI passes only when it is specific, usable, accessible, semantically correct, state-complete, responsive, performant, consistent, restrained, credible, and clearly connected to the actual product/user.
 
 BEFORE CHANGING CODE
+- Only change code when the user requests changes; review alone does not authorize implementation.
 - Identify the product, primary user, primary task, and affected screen/flow.
 - Read the actual components, styles, state logic, and existing design-system conventions.
 - Preserve working behavior unless the user explicitly asks to change the workflow.
@@ -103,13 +104,19 @@ COMMON COMPONENT RULES
 
 RESPONSIVE
 - Do not merely shrink desktop.
-- Verify narrow mobile (~390px), tablet, and desktop.
+- Verify narrow mobile (~390px), tablet, and desktop, plus 320 CSS px reflow without page-level horizontal scrolling.
 - Check overflow, sticky/fixed elements, virtual-keyboard obstruction, dialog height, dense tables, navigation, text wrapping, touch targets.
 
 PERFORMANCE
 Flag user-visible UI cost from oversized media, layout shift, unnecessary client rendering, heavy effects, expensive scroll/mouse handlers, huge naive lists, or decoration blocking critical content.
 
 REVIEW OUTPUT
+Label evidence Confirmed, Likely, Needs verification, or Not applicable. Only confirmed defects justify Must-fix or Fail. Missing evidence is not proof of a defect.
+Use Pass or Pass with issues only when required checks are complete. Otherwise use Not verified, or Blocked with the access/tooling dependency. Report confirmed failures alongside unverified domains.
+Never assert a legal violation from a missing consent UI alone. Verify jurisdiction, processing, and legal context; otherwise request external verification. Keep titles equally qualified.
+Confirm request headers separately from server effects: rejection or unsafe parsing needs a contract or executed response. Verify current security/standards claims against authoritative sources.
+For a full audit, include one coverage row per domain: Product/UX; Accessibility; Cybersecurity; Secure SDLC; Privacy; Performance; Responsive; Internationalization; Design systems; Reliability; Testing; Observability; Content/credibility; AI interfaces; Regulated workflows; Browser/platform compatibility; Public discoverability; API client boundary; Rendering/cache/concurrency. Mark each reviewed, not applicable with a reason, or external verification required. Do not silently omit domains.
+
 For each real finding:
 [Must-fix | Should-fix | Judgment call] Title
 Evidence: file/line/component or rendered behavior

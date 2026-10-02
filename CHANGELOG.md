@@ -4,7 +4,24 @@ All notable repository changes are documented here.
 
 The project follows semantic versioning for the portable plugin manifest.
 
+## [Unreleased]
+
+- Added portable blind evaluation preparation for all 46 manifest cases and 58 predetermined attempts, with input hashes and an unexecuted-attempt ledger.
+- Added five preparation tests and exact Claude Code/Codex project paths, discovery, update and uninstall instructions; actual client invocation remains unverified.
+- Strengthened client-logging trigger metadata and B1/B4/B5 assertions; corrected independent-suite instructions and runtime-evidence distinctions.
+
+- Corrected manifest validation bypasses and non-object crashes; reject duplicate JSON keys and invalid required-field types.
+- Validate optional skill metadata types and compatibility length.
+- Protect portable safety-rule presence and agent skill mentions against deletion.
+- Document contributor QA dependencies and expand deterministic regressions to 33 test methods.
+- Reject escaping/unresolvable installed symlinks, enforce every coverage domain exactly once, and handle malformed Markdown URLs without tracebacks.
+- Independent Claude Code CLI full-suite run (2026-10-02) found trigger misses on consent/compliance, security, dependency, lint sign-off, cache and keyboard-focus prompts, including one critical B4 failure. Added explicit trigger cues and 320 CSS px reflow guidance. Added B4 consent paraphrases.
+- Harness: ledger records per-attempt tool grants and paste-mode trigger limitations, and duplicate case IDs are deduplicated. A missing portable block now fails before any writes. Case-manifest duplicate keys are rejected. Corrected SECURITY, CONTRIBUTING, INSTALL, README tree and runtime-fixture notes.
+- Release behavioral/client/runtime gates remain pending; no version bump.
+
 ## [0.2.0] - 2026-09-24
+
+Historical validation below applies only to that revision, not October changes. See `evals/results/CURRENT.md`.
 
 ### Added
 - portable root `plugin.json` packaging;

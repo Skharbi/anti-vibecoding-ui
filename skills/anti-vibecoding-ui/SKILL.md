@@ -1,6 +1,6 @@
 ---
 name: anti-vibecoding-ui
-description: Review, redesign, or generate production-quality frontend UI/UX while preventing generic AI-generated patterns. Use for landing pages, dashboards, portfolios, product screens, design systems, accessibility, responsive/mobile, forms, tables, charts, frontend security/privacy, browser compatibility, public-page discoverability, API-client behavior, rendering/cache/concurrency, or production-readiness audits. Trigger on requests to build, improve, review, audit, or fix user-facing interfaces, including vague complaints about spacing, hierarchy, polish, accessibility, security, or usability. Do not use for backend-only logic, databases, infrastructure, or non-visual debugging unless user-facing behavior is part of the task.
+description: Review, redesign, or generate production-quality frontend UI/UX while preventing generic AI-generated patterns. Use for landing pages, dashboards, portfolios, product screens, design systems, accessibility, responsive/mobile, forms, tables, charts, frontend security/privacy, client observability/logging, browser compatibility, public-page discoverability, API-client behavior, rendering/cache/concurrency, or production-readiness audits. Trigger on requests to build, improve, review, audit, or fix user-facing interfaces, including vague complaints about spacing, hierarchy, polish, accessibility, security, or usability. Also trigger for keyboard/focus/modal problems, accessibility or lint sign-off, cookie/consent banners and "are we compliant?" questions, frontend security reviews, frontend dependency/supply-chain risk, client caching/account switching, and error logging. Do not use for backend-only logic, databases, infrastructure, or non-visual debugging unless user-facing behavior is part of the task.
 ---
 
 # Anti-Vibecoding UI
@@ -22,6 +22,8 @@ Use supporting files selectively:
 ## Operating rule
 
 Never approve an interface from appearance alone.
+
+Use Confirmed, Likely, Needs verification, and Not applicable evidence labels. Only confirmed defects justify must-fix or Fail. Incomplete required checks produce Not verified (or Blocked when access/tooling prevents them), never an overall Pass. Finding titles must not assert unverified legal violations or server-dependent effects. For full audits, account for all 19 best-practice domains individually, including justified not-applicable rows.
 
 A UI passes only when it is:
 **specific, usable, accessible, semantically correct, state-complete, responsive, performant, consistent, credible, and clearly connected to the real product and user workflow.**
@@ -203,6 +205,7 @@ Verify:
 - navigation changes intentionally;
 - dense tables have a usable narrow-screen strategy;
 - touch targets remain usable;
+- content reflows at 320 CSS px without page-level horizontal scrolling, except for content that genuinely needs two-dimensional layout;
 - text does not overflow or wrap absurdly;
 - fixed/sticky elements do not obscure content;
 - dialogs/drawers fit small viewports;

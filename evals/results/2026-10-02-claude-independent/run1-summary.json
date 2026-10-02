@@ -1,0 +1,664 @@
+{
+ "B1-B1-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md",
+   "best-practices-matrix.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 16,
+  "total_cost_usd": 0.19351919999999997,
+  "is_error": false
+ },
+ "B2-B2-1": {
+  "skill_loaded": true,
+  "refs": [],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 6,
+  "total_cost_usd": 0.0648712,
+  "is_error": false
+ },
+ "B3-B3-1": {
+  "skill_loaded": false,
+  "refs": [],
+  "leaks": [
+   "Read {\"file_path\": \"<run>/tasks/B3-B3-1/src/ShareDialog.tsx\"}",
+   "Read {\"file_path\": \"<run>/tasks/B3-B3-1/src/dialog.css\"}"
+  ],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 7,
+  "total_cost_usd": 0.0444382,
+  "is_error": false
+ },
+ "B4-B4-1": {
+  "skill_loaded": false,
+  "refs": [],
+  "leaks": [
+   "Read {\"file_path\": \"<run>/tasks/B4-B4-1/src/ConsentBanner.tsx\"}",
+   "Read {\"file_path\": \"<run>/tasks/B4-B4-1/src/trackers.ts\"}",
+   "Read {\"file_path\": \"<run>/tasks/B4-B4-1/src/banner.css\"}",
+   "Grep {\"pattern\": \"consent|cookie\", \"-i\": true, \"path\": \"<run>/tasks/B4-B4-1/.claude/skills/anti-vibecoding-ui/refer"
+  ],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 11,
+  "total_cost_usd": 0.0677924,
+  "is_error": false
+ },
+ "B5-B5-1": {
+  "skill_loaded": true,
+  "refs": [
+   "security.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 7,
+  "total_cost_usd": 0.0853922,
+  "is_error": false
+ },
+ "B5-B5-2": {
+  "skill_loaded": false,
+  "refs": [],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 5,
+  "total_cost_usd": 0.0406118,
+  "is_error": false
+ },
+ "B5-B5-3": {
+  "skill_loaded": true,
+  "refs": [],
+  "leaks": [
+   "Glob {\"pattern\": \"**/*\", \"path\": \"<run>/tasks/B5-B5-3\"}"
+  ],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 11,
+  "total_cost_usd": 0.10572419999999999,
+  "is_error": false
+ },
+ "F1-F1-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 7,
+  "total_cost_usd": 0.0963658,
+  "is_error": false
+ },
+ "F2-F2-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md",
+   "component-behavior.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 9,
+  "total_cost_usd": 0.11693099999999998,
+  "is_error": false
+ },
+ "F3-F3-1": {
+  "skill_loaded": true,
+  "refs": [
+   "component-behavior.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 8,
+  "total_cost_usd": 0.0828806,
+  "is_error": false
+ },
+ "G1-G1-1": {
+  "skill_loaded": true,
+  "refs": [
+   "checklist.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 16,
+  "total_cost_usd": 0.5876570000000001,
+  "is_error": false
+ },
+ "G2-G2-1": {
+  "skill_loaded": true,
+  "refs": [],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 7,
+  "total_cost_usd": 0.1377188,
+  "is_error": false
+ },
+ "G3-G3-1": {
+  "skill_loaded": true,
+  "refs": [],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 4,
+  "total_cost_usd": 0.16245559999999998,
+  "is_error": false
+ },
+ "P1-P1-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 9,
+  "total_cost_usd": 0.1411548,
+  "is_error": false
+ },
+ "P2-P2-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md",
+   "component-behavior.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 8,
+  "total_cost_usd": 0.0882352,
+  "is_error": false
+ },
+ "P3-P3-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md",
+   "checklist.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 9,
+  "total_cost_usd": 0.1320228,
+  "is_error": false
+ },
+ "P4-P4-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 7,
+  "total_cost_usd": 0.0905824,
+  "is_error": false
+ },
+ "P5-P5-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 8,
+  "total_cost_usd": 0.0893824,
+  "is_error": false
+ },
+ "P6-P6-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 7,
+  "total_cost_usd": 0.08501420000000001,
+  "is_error": false
+ },
+ "P7-P7-1": {
+  "skill_loaded": false,
+  "refs": [],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 6,
+  "total_cost_usd": 0.04942339999999999,
+  "is_error": false
+ },
+ "P8-P8-1": {
+  "skill_loaded": true,
+  "refs": [],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 5,
+  "total_cost_usd": 0.0618472,
+  "is_error": false
+ },
+ "R1-R1-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md",
+   "checklist.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 8,
+  "total_cost_usd": 0.1413116,
+  "is_error": false
+ },
+ "R10-R10-1": {
+  "skill_loaded": true,
+  "refs": [],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 8,
+  "total_cost_usd": 0.07365540000000001,
+  "is_error": false
+ },
+ "R2-R2-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 7,
+  "total_cost_usd": 0.0768066,
+  "is_error": false
+ },
+ "R3-R3-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 6,
+  "total_cost_usd": 0.09259440000000001,
+  "is_error": false
+ },
+ "R4-R4-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 6,
+  "total_cost_usd": 0.0767176,
+  "is_error": false
+ },
+ "R5-R5-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 7,
+  "total_cost_usd": 0.0880984,
+  "is_error": false
+ },
+ "R6-R6-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md",
+   "security.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 8,
+  "total_cost_usd": 0.11796979999999999,
+  "is_error": false
+ },
+ "R7-R7-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 8,
+  "total_cost_usd": 0.08563580000000001,
+  "is_error": false
+ },
+ "R8-R8-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 10,
+  "total_cost_usd": 0.0932678,
+  "is_error": false
+ },
+ "R9-R9-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 7,
+  "total_cost_usd": 0.0974034,
+  "is_error": false
+ },
+ "S1-S1-1": {
+  "skill_loaded": false,
+  "refs": [
+   "security.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 6,
+  "total_cost_usd": 0.06459039999999999,
+  "is_error": false
+ },
+ "S10-S10-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 6,
+  "total_cost_usd": 0.0781914,
+  "is_error": false
+ },
+ "S2-S2-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md",
+   "security.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 9,
+  "total_cost_usd": 0.10452020000000001,
+  "is_error": false
+ },
+ "S3-S3-1": {
+  "skill_loaded": true,
+  "refs": [
+   "security.md",
+   "review-protocol.md"
+  ],
+  "leaks": [
+   "Read {\"file_path\": \"<run>/tasks/S3-S3-1/src/session.ts\"}",
+   "Read {\"file_path\": \"<run>/tasks/S3-S3-1/src/records.ts\"}",
+   "Read {\"file_path\": \"<run>/tasks/S3-S3-1/src/types.ts\"}"
+  ],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 13,
+  "total_cost_usd": 0.1284212,
+  "is_error": false
+ },
+ "S4-S4-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md",
+   "security.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 8,
+  "total_cost_usd": 0.1049418,
+  "is_error": false
+ },
+ "S5-S5-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md",
+   "security.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 7,
+  "total_cost_usd": 0.10126080000000001,
+  "is_error": false
+ },
+ "S6-S6-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md",
+   "security.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 8,
+  "total_cost_usd": 0.1019654,
+  "is_error": false
+ },
+ "S7-S7-1": {
+  "skill_loaded": true,
+  "refs": [
+   "security.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 10,
+  "total_cost_usd": 0.0946792,
+  "is_error": false
+ },
+ "S8-S8-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md",
+   "security.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 9,
+  "total_cost_usd": 0.1041236,
+  "is_error": false
+ },
+ "S9-S9-1": {
+  "skill_loaded": false,
+  "refs": [],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 8,
+  "total_cost_usd": 0.0481394,
+  "is_error": false
+ },
+ "T1-T1-1": {
+  "skill_loaded": true,
+  "refs": [],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 11,
+  "total_cost_usd": 0.09468399999999999,
+  "is_error": false
+ },
+ "T1-T1-2": {
+  "skill_loaded": true,
+  "refs": [],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 10,
+  "total_cost_usd": 0.0962184,
+  "is_error": false
+ },
+ "T1-T1-3": {
+  "skill_loaded": true,
+  "refs": [],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 9,
+  "total_cost_usd": 0.07711000000000001,
+  "is_error": false
+ },
+ "T2-T2-1": {
+  "skill_loaded": false,
+  "refs": [],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 6,
+  "total_cost_usd": 0.055687600000000004,
+  "is_error": false
+ },
+ "T2-T2-2": {
+  "skill_loaded": false,
+  "refs": [],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 6,
+  "total_cost_usd": 0.047750600000000004,
+  "is_error": false
+ },
+ "T2-T2-3": {
+  "skill_loaded": false,
+  "refs": [],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 4,
+  "total_cost_usd": 0.041451,
+  "is_error": false
+ },
+ "T3-T3-1": {
+  "skill_loaded": true,
+  "refs": [
+   "component-behavior.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 9,
+  "total_cost_usd": 0.0922454,
+  "is_error": false
+ },
+ "T3-T3-2": {
+  "skill_loaded": false,
+  "refs": [
+   "component-behavior.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 6,
+  "total_cost_usd": 0.0560772,
+  "is_error": false
+ },
+ "T3-T3-3": {
+  "skill_loaded": false,
+  "refs": [],
+  "leaks": [
+   "Read {\"file_path\": \"<run>/tasks/T3-T3-3/src/ConfirmModal.tsx\"}",
+   "Read {\"file_path\": \"<run>/tasks/T3-T3-3/src/modal.css\"}",
+   "Grep {\"pattern\": \"modal|focus\", \"-i\": true, \"output_mode\": \"content\", \"path\": \"<run>/tasks/T3-T3-3/.claude/skills/a"
+  ],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 11,
+  "total_cost_usd": 0.07757919999999999,
+  "is_error": false
+ },
+ "V1-V1-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md",
+   "best-practices-matrix.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 7,
+  "total_cost_usd": 0.0982474,
+  "is_error": false
+ },
+ "V2-V2-1": {
+  "skill_loaded": true,
+  "refs": [
+   "security.md",
+   "review-protocol.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 7,
+  "total_cost_usd": 0.0975468,
+  "is_error": false
+ },
+ "V3-V3-1": {
+  "skill_loaded": true,
+  "refs": [
+   "review-protocol.md"
+  ],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 6,
+  "total_cost_usd": 0.0781264,
+  "is_error": false
+ },
+ "V4-V1-1": {
+  "skill_loaded": false,
+  "refs": [],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 3,
+  "total_cost_usd": 0.057528,
+  "is_error": false
+ },
+ "V4-V2-1": {
+  "skill_loaded": false,
+  "refs": [],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 3,
+  "total_cost_usd": 0.05282260000000001,
+  "is_error": false
+ },
+ "V4-V3-1": {
+  "skill_loaded": false,
+  "refs": [],
+  "leaks": [],
+  "model": "claude-sonnet-5-5",
+  "subtype": "success",
+  "num_turns": 3,
+  "total_cost_usd": 0.0554438,
+  "is_error": false
+ }
+}

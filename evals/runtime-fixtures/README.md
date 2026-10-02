@@ -33,8 +33,6 @@ For each fixture:
 - pass/fail against `../EXECUTION-GATE.md`;
 - any defect found.
 
-## Current environment note
+## Environment history
 
-On 2026-09-24, the authoring environment could not complete a local Chromium headless session even for a one-line HTML file. An external headless Chromium renderer was also attempted but was blocked by zero available rendering credits.
-
-Therefore these fixtures are committed as reproducible inputs, but runtime PASS claims remain open until executed successfully in a working browser environment.
+An early 2026-09-24 attempt could not start headless Chromium. Chromium runs were later recorded in `../results/`. Those results are Chromium-only. They do not stand in for Safari, Firefox, physical mobile keyboards or native-language review.

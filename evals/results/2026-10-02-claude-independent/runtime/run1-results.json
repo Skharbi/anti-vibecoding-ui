@@ -1,0 +1,993 @@
+{
+ "browser": "141.0.7390.37",
+ "date": "2026-10-02T17:45:13.041Z",
+ "targets": {
+  "R3-task": {
+   "file": "<run>/tasks/R3-R3-1/claims.html",
+   "widths": {
+    "320": {
+     "scrollW": 1237,
+     "clientW": 320,
+     "overflowX": true,
+     "dir": "ltr",
+     "lang": "en",
+     "controls": 6,
+     "smallTargets": 1,
+     "unlabeled": 0,
+     "fixed": [
+      {
+       "tag": "DIV",
+       "cls": "footer",
+       "top": 715,
+       "bottom": 780,
+       "h": 65
+      }
+     ],
+     "h1": 1,
+     "title": "Claims queue",
+     "tabStops": 6,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "390": {
+     "scrollW": 1237,
+     "clientW": 390,
+     "overflowX": true,
+     "dir": "ltr",
+     "lang": "en",
+     "controls": 6,
+     "smallTargets": 1,
+     "unlabeled": 0,
+     "fixed": [
+      {
+       "tag": "DIV",
+       "cls": "footer",
+       "top": 715,
+       "bottom": 780,
+       "h": 65
+      }
+     ],
+     "h1": 1,
+     "title": "Claims queue",
+     "tabStops": 6,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "768": {
+     "scrollW": 1237,
+     "clientW": 768,
+     "overflowX": true,
+     "dir": "ltr",
+     "lang": "en",
+     "controls": 6,
+     "smallTargets": 1,
+     "unlabeled": 0,
+     "fixed": [
+      {
+       "tag": "DIV",
+       "cls": "footer",
+       "top": 715,
+       "bottom": 780,
+       "h": 65
+      }
+     ],
+     "h1": 1,
+     "title": "Claims queue",
+     "tabStops": 6,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "1280": {
+     "scrollW": 1280,
+     "clientW": 1280,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "en",
+     "controls": 6,
+     "smallTargets": 1,
+     "unlabeled": 0,
+     "fixed": [
+      {
+       "tag": "DIV",
+       "cls": "footer",
+       "top": 835,
+       "bottom": 900,
+       "h": 65
+      }
+     ],
+     "h1": 1,
+     "title": "Claims queue",
+     "tabStops": 6,
+     "focusInvisible": 0,
+     "errors": []
+    }
+   }
+  },
+  "R3-fixture": {
+   "file": "<repo>/evals/runtime-fixtures/r3-responsive.html",
+   "widths": {
+    "320": {
+     "scrollW": 320,
+     "clientW": 320,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "",
+     "controls": 3,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [
+      {
+       "tag": "DIV",
+       "cls": "footer",
+       "top": 711,
+       "bottom": 780,
+       "h": 69
+      }
+     ],
+     "h1": 1,
+     "title": "",
+     "tabStops": 4,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "390": {
+     "scrollW": 390,
+     "clientW": 390,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "",
+     "controls": 3,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [
+      {
+       "tag": "DIV",
+       "cls": "footer",
+       "top": 711,
+       "bottom": 780,
+       "h": 69
+      }
+     ],
+     "h1": 1,
+     "title": "",
+     "tabStops": 4,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "768": {
+     "scrollW": 768,
+     "clientW": 768,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "",
+     "controls": 3,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [
+      {
+       "tag": "DIV",
+       "cls": "footer",
+       "top": 711,
+       "bottom": 780,
+       "h": 69
+      }
+     ],
+     "h1": 1,
+     "title": "",
+     "tabStops": 4,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "1280": {
+     "scrollW": 1280,
+     "clientW": 1280,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "",
+     "controls": 3,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [
+      {
+       "tag": "DIV",
+       "cls": "footer",
+       "top": 831,
+       "bottom": 900,
+       "h": 69
+      }
+     ],
+     "h1": 1,
+     "title": "",
+     "tabStops": 3,
+     "focusInvisible": 0,
+     "errors": []
+    }
+   }
+  },
+  "R9-fixture": {
+   "file": "<repo>/evals/runtime-fixtures/r9-rtl.html",
+   "widths": {
+    "320": {
+     "scrollW": 320,
+     "clientW": 320,
+     "overflowX": false,
+     "dir": "rtl",
+     "lang": "ar",
+     "controls": 0,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 1,
+     "title": "",
+     "tabStops": 0,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "390": {
+     "scrollW": 390,
+     "clientW": 390,
+     "overflowX": false,
+     "dir": "rtl",
+     "lang": "ar",
+     "controls": 0,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 1,
+     "title": "",
+     "tabStops": 0,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "768": {
+     "scrollW": 768,
+     "clientW": 768,
+     "overflowX": false,
+     "dir": "rtl",
+     "lang": "ar",
+     "controls": 0,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 1,
+     "title": "",
+     "tabStops": 0,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "1280": {
+     "scrollW": 1280,
+     "clientW": 1280,
+     "overflowX": false,
+     "dir": "rtl",
+     "lang": "ar",
+     "controls": 0,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 1,
+     "title": "",
+     "tabStops": 0,
+     "focusInvisible": 0,
+     "errors": []
+    }
+   }
+  },
+  "G1-generated": {
+   "file": "<run>/tasks/G1-G1-1/index.html",
+   "widths": {
+    "320": {
+     "scrollW": 329,
+     "clientW": 320,
+     "overflowX": true,
+     "dir": "ltr",
+     "lang": "en",
+     "controls": 13,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 1,
+     "title": "Store analytics · Fernhill Goods",
+     "tabStops": 13,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "390": {
+     "scrollW": 390,
+     "clientW": 390,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "en",
+     "controls": 13,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 1,
+     "title": "Store analytics · Fernhill Goods",
+     "tabStops": 13,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "768": {
+     "scrollW": 768,
+     "clientW": 768,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "en",
+     "controls": 16,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 1,
+     "title": "Store analytics · Fernhill Goods",
+     "tabStops": 16,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "1280": {
+     "scrollW": 1280,
+     "clientW": 1280,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "en",
+     "controls": 16,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 1,
+     "title": "Store analytics · Fernhill Goods",
+     "tabStops": 16,
+     "focusInvisible": 0,
+     "errors": []
+    }
+   }
+  },
+  "G2-generated": {
+   "file": "<run>/tasks/G2-G2-1/index.html",
+   "widths": {
+    "320": {
+     "scrollW": 320,
+     "clientW": 320,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "en",
+     "controls": 10,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 1,
+     "title": "[Your Name] — Healthcare Informatics",
+     "tabStops": 10,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "390": {
+     "scrollW": 390,
+     "clientW": 390,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "en",
+     "controls": 10,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 1,
+     "title": "[Your Name] — Healthcare Informatics",
+     "tabStops": 10,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "768": {
+     "scrollW": 768,
+     "clientW": 768,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "en",
+     "controls": 10,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [
+      {
+       "tag": "H2",
+       "cls": "",
+       "top": 369,
+       "bottom": 390,
+       "h": 21
+      },
+      {
+       "tag": "H2",
+       "cls": "",
+       "top": 999,
+       "bottom": 1020,
+       "h": 21
+      },
+      {
+       "tag": "H2",
+       "cls": "",
+       "top": 1273,
+       "bottom": 1316,
+       "h": 42
+      },
+      {
+       "tag": "H2",
+       "cls": "",
+       "top": 2065,
+       "bottom": 2086,
+       "h": 21
+      }
+     ],
+     "h1": 1,
+     "title": "[Your Name] — Healthcare Informatics",
+     "tabStops": 10,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "1280": {
+     "scrollW": 1280,
+     "clientW": 1280,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "en",
+     "controls": 10,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [
+      {
+       "tag": "H2",
+       "cls": "",
+       "top": 381,
+       "bottom": 402,
+       "h": 21
+      },
+      {
+       "tag": "H2",
+       "cls": "",
+       "top": 935,
+       "bottom": 956,
+       "h": 21
+      },
+      {
+       "tag": "H2",
+       "cls": "",
+       "top": 1170,
+       "bottom": 1212,
+       "h": 42
+      },
+      {
+       "tag": "H2",
+       "cls": "",
+       "top": 1806,
+       "bottom": 1827,
+       "h": 21
+      }
+     ],
+     "h1": 1,
+     "title": "[Your Name] — Healthcare Informatics",
+     "tabStops": 10,
+     "focusInvisible": 0,
+     "errors": []
+    }
+   }
+  },
+  "G3-generated": {
+   "file": "<run>/tasks/G3-G3-1/index.html",
+   "widths": {
+    "320": {
+     "scrollW": 320,
+     "clientW": 320,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "en",
+     "controls": 15,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [
+      {
+       "tag": "DIV",
+       "cls": "bar",
+       "top": 699,
+       "bottom": 780,
+       "h": 81
+      }
+     ],
+     "h1": 1,
+     "title": "Insurance authorization",
+     "tabStops": 19,
+     "focusInvisible": 1,
+     "errors": []
+    },
+    "390": {
+     "scrollW": 390,
+     "clientW": 390,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "en",
+     "controls": 15,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [
+      {
+       "tag": "DIV",
+       "cls": "bar",
+       "top": 699,
+       "bottom": 780,
+       "h": 81
+      }
+     ],
+     "h1": 1,
+     "title": "Insurance authorization",
+     "tabStops": 19,
+     "focusInvisible": 1,
+     "errors": []
+    },
+    "768": {
+     "scrollW": 768,
+     "clientW": 768,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "en",
+     "controls": 15,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [
+      {
+       "tag": "DIV",
+       "cls": "bar",
+       "top": 699,
+       "bottom": 780,
+       "h": 81
+      }
+     ],
+     "h1": 1,
+     "title": "Insurance authorization",
+     "tabStops": 19,
+     "focusInvisible": 1,
+     "errors": []
+    },
+    "1280": {
+     "scrollW": 1280,
+     "clientW": 1280,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "en",
+     "controls": 15,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [
+      {
+       "tag": "DIV",
+       "cls": "bar",
+       "top": 819,
+       "bottom": 900,
+       "h": 81
+      }
+     ],
+     "h1": 1,
+     "title": "Insurance authorization",
+     "tabStops": 19,
+     "focusInvisible": 1,
+     "errors": []
+    }
+   },
+   "interaction": {
+    "hasSubmit": true,
+    "afterSubmit": {
+     "invalid": 9,
+     "alerts": [
+      "Fix 9 items to continue\nLast name: Required.\nDate of birth: Required.\nMobile pho"
+     ],
+     "focused": "errsum"
+    },
+    "valuePreserved": true,
+    "submitVisibleAt450": true
+   }
+  },
+  "G1-fixture": {
+   "file": "<repo>/evals/runtime-fixtures/g1-dashboard.html",
+   "widths": {
+    "320": {
+     "scrollW": 320,
+     "clientW": 320,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "",
+     "controls": 1,
+     "smallTargets": 1,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 1,
+     "title": "",
+     "tabStops": 1,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "390": {
+     "scrollW": 390,
+     "clientW": 390,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "",
+     "controls": 1,
+     "smallTargets": 1,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 1,
+     "title": "",
+     "tabStops": 1,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "768": {
+     "scrollW": 768,
+     "clientW": 768,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "",
+     "controls": 1,
+     "smallTargets": 1,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 1,
+     "title": "",
+     "tabStops": 1,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "1280": {
+     "scrollW": 1280,
+     "clientW": 1280,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "",
+     "controls": 1,
+     "smallTargets": 1,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 1,
+     "title": "",
+     "tabStops": 1,
+     "focusInvisible": 0,
+     "errors": []
+    }
+   }
+  },
+  "G2-fixture": {
+   "file": "<repo>/evals/runtime-fixtures/g2-portfolio.html",
+   "widths": {
+    "320": {
+     "scrollW": 320,
+     "clientW": 320,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "",
+     "controls": 0,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 1,
+     "title": "",
+     "tabStops": 0,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "390": {
+     "scrollW": 390,
+     "clientW": 390,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "",
+     "controls": 0,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 1,
+     "title": "",
+     "tabStops": 0,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "768": {
+     "scrollW": 768,
+     "clientW": 768,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "",
+     "controls": 0,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 1,
+     "title": "",
+     "tabStops": 0,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "1280": {
+     "scrollW": 1280,
+     "clientW": 1280,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "",
+     "controls": 0,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 1,
+     "title": "",
+     "tabStops": 0,
+     "focusInvisible": 0,
+     "errors": []
+    }
+   }
+  },
+  "G3-fixture": {
+   "file": "<repo>/evals/runtime-fixtures/g3-mobile-form.html",
+   "widths": {
+    "320": {
+     "scrollW": 320,
+     "clientW": 320,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "",
+     "controls": 4,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [
+      {
+       "tag": "DIV",
+       "cls": "actions",
+       "top": 707,
+       "bottom": 780,
+       "h": 73
+      }
+     ],
+     "h1": 1,
+     "title": "",
+     "tabStops": 4,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "390": {
+     "scrollW": 390,
+     "clientW": 390,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "",
+     "controls": 4,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [
+      {
+       "tag": "DIV",
+       "cls": "actions",
+       "top": 707,
+       "bottom": 780,
+       "h": 73
+      }
+     ],
+     "h1": 1,
+     "title": "",
+     "tabStops": 4,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "768": {
+     "scrollW": 768,
+     "clientW": 768,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "",
+     "controls": 4,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [
+      {
+       "tag": "DIV",
+       "cls": "actions",
+       "top": 707,
+       "bottom": 780,
+       "h": 73
+      }
+     ],
+     "h1": 1,
+     "title": "",
+     "tabStops": 4,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "1280": {
+     "scrollW": 1280,
+     "clientW": 1280,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "",
+     "controls": 4,
+     "smallTargets": 0,
+     "unlabeled": 0,
+     "fixed": [
+      {
+       "tag": "DIV",
+       "cls": "actions",
+       "top": 827,
+       "bottom": 900,
+       "h": 73
+      }
+     ],
+     "h1": 1,
+     "title": "",
+     "tabStops": 4,
+     "focusInvisible": 0,
+     "errors": []
+    }
+   },
+   "interaction": {
+    "hasSubmit": true,
+    "afterSubmit": {
+     "invalid": 0,
+     "alerts": [],
+     "focused": "BUTTON"
+    },
+    "valuePreserved": true,
+    "submitVisibleAt450": true
+   }
+  },
+  "P1-task": {
+   "file": "<run>/tasks/P1-P1-1/checkout.html",
+   "widths": {
+    "320": {
+     "scrollW": 320,
+     "clientW": 320,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "en",
+     "controls": 1,
+     "smallTargets": 1,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 1,
+     "title": "Checkout",
+     "tabStops": 1,
+     "focusInvisible": 0,
+     "errors": [
+      "Access to script at 'file://<run>/tasks/P1-P1-1/src/checkoutStepper.js' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: chrome, chrome-extension, chrome-untrusted, data, http, https, isolated-app.",
+      "Failed to load resource: net::ERR_FAILED"
+     ]
+    },
+    "390": {
+     "scrollW": 390,
+     "clientW": 390,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "en",
+     "controls": 1,
+     "smallTargets": 1,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 1,
+     "title": "Checkout",
+     "tabStops": 1,
+     "focusInvisible": 0,
+     "errors": [
+      "Access to script at 'file://<run>/tasks/P1-P1-1/src/checkoutStepper.js' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: chrome, chrome-extension, chrome-untrusted, data, http, https, isolated-app.",
+      "Failed to load resource: net::ERR_FAILED"
+     ]
+    },
+    "768": {
+     "scrollW": 768,
+     "clientW": 768,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "en",
+     "controls": 1,
+     "smallTargets": 1,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 1,
+     "title": "Checkout",
+     "tabStops": 1,
+     "focusInvisible": 0,
+     "errors": [
+      "Access to script at 'file://<run>/tasks/P1-P1-1/src/checkoutStepper.js' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: chrome, chrome-extension, chrome-untrusted, data, http, https, isolated-app.",
+      "Failed to load resource: net::ERR_FAILED"
+     ]
+    },
+    "1280": {
+     "scrollW": 1280,
+     "clientW": 1280,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "en",
+     "controls": 1,
+     "smallTargets": 1,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 1,
+     "title": "Checkout",
+     "tabStops": 1,
+     "focusInvisible": 0,
+     "errors": [
+      "Access to script at 'file://<run>/tasks/P1-P1-1/src/checkoutStepper.js' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: chrome, chrome-extension, chrome-untrusted, data, http, https, isolated-app.",
+      "Failed to load resource: net::ERR_FAILED"
+     ]
+    }
+   },
+   "navigationForcedOff": {
+    "errors": [],
+    "body": "Checkout\nContinue"
+   }
+  },
+  "P1-fixture": {
+   "file": "<repo>/evals/runtime-fixtures/p1-browser-feature.html",
+   "widths": {
+    "320": {
+     "scrollW": 320,
+     "clientW": 320,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "",
+     "controls": 1,
+     "smallTargets": 1,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 0,
+     "title": "",
+     "tabStops": 1,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "390": {
+     "scrollW": 390,
+     "clientW": 390,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "",
+     "controls": 1,
+     "smallTargets": 1,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 0,
+     "title": "",
+     "tabStops": 1,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "768": {
+     "scrollW": 768,
+     "clientW": 768,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "",
+     "controls": 1,
+     "smallTargets": 1,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 0,
+     "title": "",
+     "tabStops": 1,
+     "focusInvisible": 0,
+     "errors": []
+    },
+    "1280": {
+     "scrollW": 1280,
+     "clientW": 1280,
+     "overflowX": false,
+     "dir": "ltr",
+     "lang": "",
+     "controls": 1,
+     "smallTargets": 1,
+     "unlabeled": 0,
+     "fixed": [],
+     "h1": 0,
+     "title": "",
+     "tabStops": 1,
+     "focusInvisible": 0,
+     "errors": []
+    }
+   },
+   "navigationForcedOff": {
+    "errors": [],
+    "body": "View Transitions supported; enhancement enabled.\nRun transition"
+   }
+  }
+ }
+}

@@ -44,4 +44,4 @@ Until formal releases are tagged, security fixes apply to the latest `main` bran
 
 The installable skill has no runtime dependencies.
 
-The repository QA validator uses only the Python standard library.
+The repository QA validator uses the Python standard library plus pinned PyYAML from `requirements-dev.txt` for duplicate-safe YAML parsing. This is a maintainer QA dependency only.

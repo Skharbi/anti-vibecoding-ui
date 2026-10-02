@@ -62,15 +62,42 @@ anti-vibecoding-ui/
     └── sources.md
 ```
 
-Install or copy that folder into the skills location supported by your client.
+Copy the whole folder into your target project's client directory:
 
-Because different clients use different install locations and those UI paths can change, follow your client's current Agent Skills instructions for where to place the folder.
+| Client | Project destination | Explicit invocation |
+|---|---|---|
+| Claude Code | `.claude/skills/anti-vibecoding-ui/` | `/anti-vibecoding-ui Review this interface` |
+| Codex CLI or IDE | `.agents/skills/anti-vibecoding-ui/` | `$anti-vibecoding-ui Review this interface` |
+
+From a local clone, copy `skills/anti-vibecoding-ui` into the chosen destination. The resulting `SKILL.md` must be directly inside `anti-vibecoding-ui`, not inside a second nested folder. Keep `agents/` and `references/` alongside it.
+
+For example, on macOS/Linux, from the cloned repository, replace the example target path with your actual project:
+
+```bash
+mkdir -p /path/to/your-project/.agents/skills
+cp -R skills/anti-vibecoding-ui /path/to/your-project/.agents/skills/
+```
+
+For Claude Code, use `.claude` instead of `.agents`. Run this only when the destination skill folder does not already exist. For an update, move the existing skill folder to a backup outside the client's skills directory, then copy the replacement and repeat discovery/invocation checks. To uninstall, move only the `anti-vibecoding-ui` folder outside that client's skills directory and restart the client; other skills stay in place.
+
+PowerShell equivalent, from the cloned repository (replace the example project path):
+
+```powershell
+New-Item -ItemType Directory -Force -Path "C:\path\to\your-project\.agents\skills"
+Copy-Item -Path ".\skills\anti-vibecoding-ui" -Destination "C:\path\to\your-project\.agents\skills" -Recurse
+```
+
+Apply the same destination-exists rule above. The PowerShell commands are documented but have not been executed in this Linux validation environment.
+
+Official client guidance: [Claude Code skills](https://code.claude.com/docs/en/skills) and [Codex skills](https://developers.openai.com/codex/skills). Folder-layout copying has been checked locally; actual client discovery/invocation and update/uninstall behavior remain unverified until tested in those clients.
 
 After installation, start a **new session** so the client can rediscover the skill.
 
 ---
 
 ## Option C — OpenAI Skills API
+
+Advanced route: upload and API invocation have not been tested for this revision. Use the current official documentation below for the applicable API workflow; this route is not included in verified client-support claims.
 
 OpenAI Skills accept a skill directory or a ZIP containing one top-level skill folder. The canonical bundle in this repository is:
 
@@ -88,6 +115,8 @@ https://developers.openai.com/api/docs/guides/tools-skills
 ---
 
 ## Option D — Codex/OpenAI plugin package
+
+Advanced route: repository packaging is structurally checked, but plugin installation, discovery and invocation have not been tested for this revision.
 
 Use this only if you specifically want the project packaged as a plugin rather than as a standalone skill.
 
@@ -113,6 +142,8 @@ If all you want is the skill, use Option B instead.
 
 After installation, try these prompts:
 
+First confirm discovery: in Claude Code type `/` and look for `anti-vibecoding-ui`; in Codex use `/skills` or type `$`. Then run the explicit invocation above and confirm that the skill and required references are actually loaded. Record client version and source commit; merely seeing copied files does not prove activation.
+
 1. `Review this dashboard. Something feels off about the spacing and hierarchy.`
 2. `My modal works with a mouse but keyboard users get stuck.`
 3. `Audit this frontend for security and privacy risks.`
@@ -132,8 +163,13 @@ You do **not** need this step just to use the skill.
 If you cloned the repository and are modifying it, run:
 
 ```bash
+python -m pip install -r requirements-dev.txt
 python scripts/validate_skill.py
+python scripts/test_validator.py
+python scripts/test_preparation.py
 ```
+
+These are maintainer QA dependencies only; the installed skill has no runtime dependencies.
 
 Expected result:
 
