@@ -89,11 +89,14 @@ anti-vibecoding-ui/
 ├── HANDOVER.md
 ├── LICENSE
 ├── PASTE-TO-INSTALL.md
+├── requirements-dev.txt
 ├── .github/
-│   └── PULL_REQUEST_TEMPLATE.md
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── ISSUE_TEMPLATE/
 ├── evals/
 │   ├── README.md
 │   ├── cases.md
+│   ├── case-manifest.json
 │   ├── EXECUTION-GATE.md
 │   ├── SECOND-AGENT-RUN.md
 │   ├── runtime-fixtures/
@@ -106,7 +109,10 @@ anti-vibecoding-ui/
 │   │   └── p1-browser-feature.html
 │   └── results/
 ├── scripts/
-│   └── validate_skill.py
+│   ├── validate_skill.py
+│   ├── test_validator.py
+│   ├── prepare_evals.py
+│   └── test_preparation.py
 └── skills/
     └── anti-vibecoding-ui/
         ├── SKILL.md

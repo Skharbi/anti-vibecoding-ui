@@ -232,6 +232,16 @@ class ValidatorTests(unittest.TestCase):
         self.edit("evals/case-manifest.json", lambda s: s.replace('"T1"', '"T999"', 1))
         self.rejected("case manifest does not match")
 
+    def test_duplicate_case_manifest_key(self):
+        self.edit("evals/case-manifest.json", lambda s: s.replace(
+            '"schema_version": 1,', '"schema_version": 2, "schema_version": 1,', 1))
+        self.rejected("invalid JSON")
+
+    def test_portable_block_extractable(self):
+        self.edit("PASTE-TO-INSTALL.md", lambda s: s.replace(
+            "You are applying the Anti-Vibecoding UI protocol.", "Apply the protocol.", 1))
+        self.rejected("portable instruction block not extractable")
+
     def test_secret_file_coverage(self):
         # Generated test value, not a credential. Do not store it in the checkout.
         synthetic = "ghp_" + "Z" * 30

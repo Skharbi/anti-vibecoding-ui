@@ -20,9 +20,9 @@ def definitions():
     spec.loader.exec_module(module)
     cases = dict(module.CASES)
     cases.update({
-        "V1": {"prompt": "Audit this interface for production readiness. Browser, server, product requirements and jurisdiction evidence are unavailable.", "files": {"index.html": '<!doctype html><html lang="en"><meta name="viewport" content="width=device-width"><title>Items</title><main><h1>Items</h1><p>No items.</p></main></html>'}},
-        "V2": {"prompt": "Review privacy risks of this analytics UI. Jurisdiction, processing purpose, identifiers and any separate consent mechanism are unknown.", "files": {"index.html": '<main><h1>Overview</h1><p>Dashboard</p></main><script src="https://analytics.example/sdk.js"></script>'}},
-        "V3": {"prompt": "Review this API client. Server contract and responses are unavailable.", "files": {"client.js": "export function send(data) { return fetch('/api/items', {method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify(data)}); }"}},
+        "V1": {"tools": "Skill Read Glob Grep", "prompt": "Audit this interface for production readiness. Browser, server, product requirements and jurisdiction evidence are unavailable.", "files": {"index.html": '<!doctype html><html lang="en"><meta name="viewport" content="width=device-width"><title>Items</title><main><h1>Items</h1><p>No items.</p></main></html>'}},
+        "V2": {"tools": "Skill Read Glob Grep", "prompt": "Review privacy risks of this analytics UI. Jurisdiction, processing purpose, identifiers and any separate consent mechanism are unknown.", "files": {"index.html": '<main><h1>Overview</h1><p>Dashboard</p></main><script src="https://analytics.example/sdk.js"></script>'}},
+        "V3": {"tools": "Skill Read Glob Grep", "prompt": "Review this API client. Server contract and responses are unavailable.", "files": {"client.js": "export function send(data) { return fetch('/api/items', {method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify(data)}); }"}},
     })
     # V4 is three fresh paste-only tasks, not a fixture containing answers.
     cases["V4"] = {"subcases": ["V1", "V2", "V3"]}
@@ -33,11 +33,16 @@ PARAPHRASES = {
     "T1": ["Something feels off about this dashboard spacing and hierarchy. Fix it.", "Improve this dashboard's layout and visual hierarchy.", "This dashboard feels crowded. Fix its spacing."],
     "T2": ["Optimize this Postgres query.", "Speed up this database query without changing its results.", "Analyze this SQL query's execution performance."],
     "T3": ["My modal works with the mouse but keyboard users get stuck.", "Review why keyboard navigation gets trapped in this dialog.", "Fix this modal's focus behavior for keyboard users."],
+    "B4": ["Review our cookie consent banner. Are we compliant?", "Is this consent banner GDPR compliant?", "Check whether our cookie banner meets privacy requirements."],
     "B5": ["Review these frontend error logs for useful diagnostics and privacy risks.", "Check whether client-side logging exposes tokens or user-entered data.", "Improve our frontend observability while protecting sensitive data."],
 }
 
 
+TRIGGER_CASES = set(PARAPHRASES)
+
+
 def prepare(output, skill_root, client, mode, selected):
+    selected = list(dict.fromkeys(selected))
     cases = definitions()
     manifest = json.loads((ROOT / "evals/case-manifest.json").read_text())
     if set(cases) != set(manifest["case_ids"]):
@@ -49,12 +54,15 @@ def prepare(output, skill_root, client, mode, selected):
         raise ValueError("Skill root must contain SKILL.md")
     if output.is_relative_to(ROOT):
         raise ValueError("Output must be outside the source repository to avoid inherited context")
+    block = re.search(r"```\n(You are applying.*?\n)```", (ROOT / "PASTE-TO-INSTALL.md").read_text(), re.S)
+    if not block:
+        raise ValueError("Portable instruction block not found in PASTE-TO-INSTALL.md")
+    portable = block.group(1)
     # A directory is never overwritten or deleted by this harness.
     output.mkdir(parents=True, exist_ok=False)
     source_commit = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip() or "unavailable"
     dirty = bool(subprocess.run(["git", "-C", str(ROOT), "status", "--porcelain"], capture_output=True, text=True).stdout.strip())
     hashes = {str(p.relative_to(skill_root)): hashlib.sha256(p.read_bytes()).hexdigest() for p in skill_root.rglob("*") if p.is_file()}
-    portable = re.search(r"```\n(You are applying.*?\n)```", (ROOT / "PASTE-TO-INSTALL.md").read_text(), re.S).group(1)
     attempts = []
     for cid in selected:
         runs = cases[cid].get("subcases", [cid])
@@ -78,11 +86,14 @@ def prepare(output, skill_root, client, mode, selected):
                 prompt_file = output / "prompts" / (aid + ".txt")
                 prompt_file.parent.mkdir(exist_ok=True)
                 prompt_file.write_text((portable + "\n\n" if delivery == "paste" else "") + prompt, encoding="utf-8")
+                limitations = []
+                if delivery == "paste" and cid in TRIGGER_CASES:
+                    limitations.append("Paste delivery always applies the protocol; skill activation is not measurable.")
                 attempts.append({"attempt_id": aid, "case_id": cid, "source_case": source_id,
-                                 "delivery": delivery, "task": str(task.relative_to(output)),
+                                 "delivery": delivery, "tools": fixture.get("tools", "").split(), "task": str(task.relative_to(output)),
                                  "prompt": str(prompt_file.relative_to(output)), "status": "Not run",
                                  "skill_loaded": None, "mandatory_assertions_pass": None,
-                                 "model": None, "raw_output": None, "limitations": []})
+                                 "model": None, "raw_output": None, "limitations": limitations})
     record = {"schema_version": 1, "source_commit": source_commit, "dirty_source": dirty,
               "skill_sha256": hashes, "client": client, "attempts": attempts,
               "portable_sha256": hashlib.sha256(portable.encode()).hexdigest(),

@@ -104,7 +104,7 @@ COMMON COMPONENT RULES
 
 RESPONSIVE
 - Do not merely shrink desktop.
-- Verify narrow mobile (~390px), tablet, and desktop.
+- Verify narrow mobile (~390px), tablet, and desktop, plus 320 CSS px reflow without page-level horizontal scrolling.
 - Check overflow, sticky/fixed elements, virtual-keyboard obstruction, dialog height, dense tables, navigation, text wrapping, touch targets.
 
 PERFORMANCE

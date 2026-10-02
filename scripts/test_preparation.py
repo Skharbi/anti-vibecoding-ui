@@ -1,6 +1,7 @@
 """Test preparation and bundle layouts without invoking a coding client."""
 import json
 from pathlib import Path
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -26,7 +27,8 @@ class PreparationTests(unittest.TestCase):
         ledger = json.loads((self.output / "run.json").read_text())
         manifest = json.loads((ROOT / "evals/case-manifest.json").read_text())
         self.assertEqual(set(a["case_id"] for a in ledger["attempts"]), set(manifest["case_ids"]))
-        self.assertEqual(len(ledger["attempts"]), 56)
+        self.assertEqual(len(ledger["attempts"]), 58)
+        self.assertTrue(all(a["tools"] and "Skill" in a["tools"] for a in ledger["attempts"]))
         self.assertTrue(all(a["status"] == "Not run" and a["raw_output"] is None for a in ledger["attempts"]))
         for a in ledger["attempts"]:
             task = self.output / a["task"]
@@ -54,6 +56,29 @@ class PreparationTests(unittest.TestCase):
             self.assertFalse((self.output / a["task"] / ".agents").exists())
             self.assertFalse((self.output / a["task"] / ".claude").exists())
             self.assertIn("Not verified", (self.output / a["prompt"]).read_text())
+
+    def test_paste_trigger_limitation_recorded(self):
+        r = self.run_prepare("claude", "paste", "--cases", "T2", "B4")
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        ledger = json.loads((self.output / "run.json").read_text())
+        self.assertEqual(len(ledger["attempts"]), 6)
+        self.assertTrue(all("not measurable" in " ".join(a["limitations"]) for a in ledger["attempts"]))
+
+    def test_duplicate_cases_deduplicated(self):
+        r = self.run_prepare("claude", "full", "--cases", "B1", "B1")
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertEqual(len(json.loads((self.output / "run.json").read_text())["attempts"]), 1)
+
+    def test_missing_portable_block_fails_before_writes(self):
+        repo = Path(self.tmp.name) / "repo"
+        shutil.copytree(ROOT, repo, ignore=shutil.ignore_patterns(".git", "__pycache__"))
+        paste = repo / "PASTE-TO-INSTALL.md"
+        paste.write_text(paste.read_text().replace("You are applying the Anti-Vibecoding UI protocol.", "Apply it."))
+        r = subprocess.run([sys.executable, str(repo / "scripts/prepare_evals.py"), "--client", "claude",
+                            "--output", str(self.output), "--cases", "B1"], capture_output=True, text=True, timeout=30)
+        self.assertEqual(r.returncode, 1)
+        self.assertNotIn("Traceback", r.stderr)
+        self.assertFalse(self.output.exists())
 
     def test_existing_output_refused(self):
         self.output.mkdir()

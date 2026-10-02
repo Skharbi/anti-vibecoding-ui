@@ -166,6 +166,7 @@ If you cloned the repository and are modifying it, run:
 python -m pip install -r requirements-dev.txt
 python scripts/validate_skill.py
 python scripts/test_validator.py
+python scripts/test_preparation.py
 ```
 
 These are maintainer QA dependencies only; the installed skill has no runtime dependencies.

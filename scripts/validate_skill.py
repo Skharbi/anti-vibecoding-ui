@@ -306,12 +306,8 @@ if nums != list(range(1, 39)):
     errors.append("checklist numbering is not consecutive 1..38")
 
 ids = re.findall(r"^###\s+([A-Z]+\d+)\s+—", cases, re.M)
-try:
-    manifest = json.loads(read(ROOT / "evals" / "case-manifest.json"))
-except (ValueError, OSError):
-    manifest = {}
-    errors.append("invalid case manifest JSON")
-if not isinstance(manifest, dict) or manifest.get("case_ids") != ids or manifest.get("schema_version") != 1:
+manifest = json_mapping(ROOT / "evals" / "case-manifest.json")
+if manifest.get("case_ids") != ids or manifest.get("schema_version") != 1:
     errors.append("case manifest does not match versioned case list")
 if len(ids) != len(set(ids)):
     errors.append("duplicate eval case IDs")
@@ -328,6 +324,9 @@ if "Adding a JS/Python test harness" in handover:
     errors.append("handover contradicts current validator architecture")
 if "condensed portable edition" not in paste.lower() or "skills/anti-vibecoding-ui/" not in paste:
     errors.append("portable edition disclosure missing")
+# prepare_evals.py extracts the paste prompt with this exact block shape.
+if not re.search(r"```\n(You are applying.*?\n)```", paste, re.S):
+    errors.append("portable instruction block not extractable")
 
 # Protect the portable output contract from accidental deletion. These are
 # structural presence checks, not proof that an agent obeys the instructions.

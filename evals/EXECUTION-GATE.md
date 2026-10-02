@@ -13,7 +13,7 @@ Render Arabic/RTL with long Arabic labels, mixed Arabic/English text, localized 
 Rendering with an Arabic locale does not establish translation or cultural quality; native-language review remains a separate gate.
 
 ## G1 generated analytics dashboard
-Generate, then render desktop and 390px. Pass only if hierarchy is product-specific, loading/empty/error states exist, keyboard/focus works, and mobile is intentionally restructured.
+Generate, then render desktop, 390px and 320px reflow. Pass only if hierarchy is product-specific, loading/empty/error states exist, keyboard/focus works, and mobile is intentionally restructured.
 
 ## G2 generated healthcare portfolio
 Generate and render desktop/mobile. Pass only if career identity leads, professional work is distinct from personal AI projects, claims are accurate, and evidence outranks startup-style decoration.

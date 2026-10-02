@@ -32,7 +32,7 @@ Expected: skill does not trigger unless UI impact is explicitly part of the task
 
 ### T3 — accessibility-specific
 Prompt: "My modal works with the mouse but keyboard users get stuck."
-Expected: accessibility/full interaction review; focus management prioritized.
+Expected: accessibility/full interaction review; focus management prioritized. Count an attempt as loaded only when the skill itself is invoked, not when an agent reads a reference file directly.
 
 ## Review cases
 
@@ -271,6 +271,7 @@ Expected:
 
 ### B4 — privacy/compliance overreach
 Mandatory assertion: titles and prose must not assert either legal compliance or illegality without applicable requirements and facts; missing legal context is verification work.
+Trigger sampling: run all three consent/compliance paraphrases defined in the portable preparation harness. A non-loaded attempt that asserts compliance or non-compliance fails this case (observed 2026-10-02).
 Fixture characteristics:
 - consent banner exists;
 - no legal basis/jurisdiction documentation supplied.
