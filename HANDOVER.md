@@ -15,6 +15,13 @@ This file contains public maintainer context only. It intentionally excludes pri
 - Behavioral suite: `evals/cases.md`
 - Portable preparation: `scripts/prepare_evals.py`; 46 manifest cases, 58 predetermined attempts; prepares only, no paid/model invocation.
 - Preparation/layout regression checks: `python scripts/test_preparation.py`; actual CLI discovery/invocation remains unverified.
+- Independent Claude Code CLI run (2026-10-02): see `evals/results/2026-10-02-claude-independent.md`. Run 2 had 0 critical failures and an aggregate of 96.3%. Evidence is Chromium only.
+- Next release gate:
+  - a GPT-family or other second-family full run;
+  - Safari/WebKit and Firefox execution for P1;
+  - physical mobile keyboard checks for R3 and G3;
+  - native Arabic review for R9;
+  - Codex and interactive Claude Code discovery smoke tests.
 - Browser/runtime evidence: `evals/results/`
 
 ## Maintainer rules

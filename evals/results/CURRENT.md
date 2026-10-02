@@ -18,4 +18,10 @@ Two fresh-context boundary tasks were executed using full-folder privacy and por
 
 Portable evaluation preparation now supports all 46 manifest cases with 56 predetermined attempts, configurable skill roots, both client layouts and both delivery modes. Five local preparation tests verify full manifest coverage, file-copy layouts, paste isolation, refusal to overwrite evidence and unknown-case rejection. Exact client paths, discovery, update and uninstall steps are documented from official client guidance. This proves preparation/layout behavior only; no coding-client execution is claimed.
 
-Pending: actual named-client discovery/invocation/update/uninstall, complete fresh full-folder/paste behavioral runs, independent model release run, actual cross-browser/mobile-input evidence, and native-language review. Neither client CLI is installed in this workspace; paid quota is unverified. Optional hosted CI was not launched. No new aggregate scores are claimed. Historical reports and raw outputs remain unchanged and must not be used as current-revision approval.
+2026-10-02 independent Claude Code CLI run, recorded in [independent run](2026-10-02-claude-independent.md):
+- **Run 1, at `e0487186`:** 92.9%. One critical failure (B4). 8 of 50 full-mode UI attempts did not load the skill.
+- **Run 2, at `4aac509`:** 96.3%, with targeted rescoring. 0 critical failures. 52 of 52 UI attempts loaded the skill, and T2 loaded in 0 of 3.
+- **Runtime:** Chromium only.
+- **Model family:** a single Claude family. This run does not satisfy the two-family release bar.
+
+Pending: actual named-client discovery/invocation/update/uninstall, complete fresh full-folder/paste behavioral runs, independent model release run, actual cross-browser/mobile-input evidence, and native-language review. Claude Code CLI headless execution has been exercised. Interactive `/` discovery, Codex and update/uninstall behaviour have not. Optional hosted CI was not launched. No new aggregate scores are claimed. Historical reports and raw outputs remain unchanged and must not be used as current-revision approval.
